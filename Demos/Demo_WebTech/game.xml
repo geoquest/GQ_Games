@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="New_WebTechExample" xmlformat="5" layout="html">
+ 
+    <mission type="NPCTalk" id="NPC_Dialog" charimage="drawable/NPCTalk_Dialog.png"
+     nextdialogbuttontext="Mehr Text ..." endbuttontext="Weiter bitte ..." textsize="15" cancel="fail">
+        
+        <dialogitem speaker="Tim" nextdialogbuttontext="Was sagt Tom dazu?">
+            Pinguine können fliegen!
+        </dialogitem>
+        <dialogitem speaker="Tom" nextdialogbuttontext="und Tim?">
+            Das ist doch nicht wahr!
+        </dialogitem>
+        <dialogitem speaker="Tim">
+            Doch, sonst wären es keine Vögel!
+        </dialogitem>
+    </mission>
+	
+</game>

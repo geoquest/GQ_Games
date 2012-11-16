@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game xmlns="http://geoquest.qeevee.org/gqml"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://geoquest.qeevee.org/gqml http:/geoquest.qeevee.org/schema/gqml.xsd"
+ name="TreasureMap Demo"
+ xmlformat="5">
+    
+    <mission type="StartAndExitScreen" id="screen_1" duration="20000"
+     image="drawable/TreasureMap.jpg">
+    </mission>
+</game>

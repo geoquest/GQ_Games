@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="InfoTest" xmlformat="5">
+	<mission type="Info" id="M_InfoTest"
+		file="html/demo.html" 
+		cancel="success">
+		<title>Test Mission Info</title>
+	</mission>
+</game>

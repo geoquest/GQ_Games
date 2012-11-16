@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="TaufMitInfo" xmlformat="5">
+	<mission type="Info" id="M_InfoTest" background="drawable/baptisterium_background.png"
+		image="drawable/baptisterium.png">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="M_InfoTest2" />
+			</rule>
+		</onEnd>
+		<item type="Text">
+			<h1>1. Mission</h1>
+			<h2>Erste Seite</h2>
+		</item>
+		<item type="Text">
+			<h1>1. Mission</h1>
+			<h2>Zweite Seite</h2>
+		</item>
+	</mission>
+	<mission type="Info" id="M_InfoTest2" background="drawable/domkreuz_background.png"
+		image="drawable/domkreuz.png">
+		<onEnd>
+			<rule>
+				<action type="EndGame" />
+			</rule>
+		</onEnd>
+		<item type="Text">
+			<h1>2. Mission</h1>
+			<h2>Erste Seite</h2>
+		</item>
+		<item type="Text">
+			<h1>2. Mission</h1>
+			<h2>Zweite Seite</h2>
+		</item>
+		<item type="Text">
+			<h1>2. Mission</h1>
+			<h2>Dritte Seite</h2>
+		</item>
+		<item type="MultipleChoiceQuestion" answerLength="short">
+			<question>
+				<h1>Erste Frage:</h1>
+				Wieviele Ecken hat mein Hut?
+			</question>
+			<answer>
+				<description>1</description>
+			</answer>
+			<answer>
+				<description>3</description>
+			</answer>
+			<answer>
+				<description>4</description>
+			</answer>
+			<answer>
+				<description>7</description>
+			</answer>
+		</item>
+		<item type="MultipleChoiceQuestion" answerLength="long">
+			<question><body style="text-align:justify">Sie stehen hinter dem Chor des Domes. Wenn
+				Sie nach oben
+				schauen, sehen Sie viele Formen
+				und Figuren in Stein und Gold. Welches
+				Zeichen
+				können Sie erkennen?</body>
+			</question>
+			<answer>
+				<description>Eine Leiter</description>
+			</answer>
+			<answer>
+				<description>Einen Stern</description>
+			</answer>
+			<answer>
+				<description>Ein Kreuz</description>
+			</answer>
+			<answer>
+				<description>Die Weltkugel</description>
+			</answer>
+		</item>
+	</mission>
+</game>

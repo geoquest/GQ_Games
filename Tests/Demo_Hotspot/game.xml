@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="Hotspot Demo" xmlformat="5">
+    
+    <mission type="MapOverview" id="Map_Mission" cancel="no"
+		zoomlevel="18" mapkind="satellite">
+		<hotspots>
+			<hotspot id="H_Dresden" latlong="51.03587,13.70478"
+					radius="10000">
+				<img src="drawable/GeoIcon.png" />
+				<onEnter>
+					<rule>
+						<action type="Vibrate"/>
+					</rule>
+				</onEnter>
+			</hotspot>
+		</hotspots>
+	</mission>
+</game>

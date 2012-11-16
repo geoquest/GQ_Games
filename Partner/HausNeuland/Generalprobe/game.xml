@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<game name="Tour um Haus Neuland" xmlformat="5">
+	<mission type="StartAndExitScreen" id="M_StartScreen"
+		image="drawable/StartScreen.jpg">
+		<onEnd>
+			<comStartMission id="M_Start" />
+		</onEnd>
+	</mission>
+
+	<mission type="NPCTalk" id="M_Start" charimage="drawable/HausNeuland.jpg"
+		nextdialogbuttontext="Mehr Text ..." endbuttontext="Mit der Tour fortfahren ..."
+		name="Kein Name" cancel="no">
+		<dialogitem>Willkommen zu unserer Tour rund um Haus
+			Neuland.
+		</dialogitem>
+		<dialogitem>Die Tour wird dich an viele Station im Wald um Haus
+			Neuland führen.
+        </dialogitem>
+		<dialogitem>Die Stationen sind mit dem Logo von Haus Neuland auf der
+			Karte eingezeichnet.</dialogitem>
+		<dialogitem>Wenn du im Wald keine Internetverbindung hast,
+			wird die
+			Karte grau bleiben. Deine Position (ein blauer Punkt) und
+			die nächsten
+			Stationen (Logo) sind aber zu sehen.
+        </dialogitem>
+		<dialogitem nextbuttontext="Weiter zu QR-Tags ...">Um die Stationen zu finden
+			wirst
+			du öfter nach
+			sogenannten QR-Tags suchen.</dialogitem>
+		<onEnd>
+			<comStartMission id="M_QRTagIntro" />
+		</onEnd>
+	</mission>
+
+	<mission type="NPCTalk" id="M_QRTagIntro" charimage="drawable/QRIntro.png"
+		nextdialogbuttontext="Mehr Text ..." name="Kein Name" cancel="success">
+		<dialogitem>So sieht ein QRTag aus. Du kennst ihn vielleicht von
+			ausgedruckten Fahrkahrten oder Plakaten.
+        </dialogitem>
+		<dialogitem>Wenn du den QRTag gefunden hast, kannst du ihn einscannen
+			und so herausfinden, wie die Tour weiter geht. Hinter jedem QRTag
+			ist
+			eine
+			Aufgabe oder eine Geschichte versteckt. 
+        </dialogitem>
+		<dialogitem nextbuttontext="Na dann los ...">Viel Spass beim Suchen und
+			Entdecken!</dialogitem>
+		<onEnd>
+			<comStartMission id="M_Haus_Neuland" />
+		</onEnd>
+	</mission>
+
+	<mission type="NPCTalk" id="M_Haus_Neuland" charimage="drawable/HausNeuland.jpg"
+		nextdialogbuttontext="Mehr Text ..." endbuttontext="Mit der Tour fortfahren ..."
+		name="M_Haus_Neuland" cancel="no">
+		 
+		<dialogitem>Ihr startet vor dem Haupteingang von
+			Haus Neuland und
+			begebt euch den Weg hinauf in Richtung Parkplatz.
+		</dialogitem>
+		<dialogitem>An
+			der kleinen Kreuzung seht ihr den Feldweg, der hinein in
+			den Wald auf
+			eine kleine Lichtung führt.</dialogitem>
+		<dialogitem>Diese überquert ihr und haltet euch dabei
+			etwas links.
+		</dialogitem>
+		<dialogitem>Mitten im Wald steht ein kleiner Holzunterstand, an dem
+			eure erste Mission zu finden ist.</dialogitem>
+		<onEnd>
+			<comStartMission id="MapMission" />
+		</onEnd>
+		 
+	</mission>
+	<mission type="MapOverview" id="MapMission" cancel="no"
+		mapkind="satellite" zoomlevel="17">
+
+		<mission type="QRTagReading" id="M_Holzhuette" buttontext="Start Code Scan"
+			taskdescription="Sucht nach der Holzhütte, ihr seid schon ganz nah ..."
+			initial_image="drawable/Holzhuette.jpg"
+			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
+			if_right="Ja prima. Ihr seid an der Holzhütte angekommen und habt den ersten QR Tag gefunden."
+			mode="product" expected_content="HausNeuland-QRTag-001">
+			<onEnd>
+				<comStartMission id="M_Holzhuette_2" />
+			</onEnd>
+		</mission>
+
+		<mission type="NPCTalk" id="M_Holzhuette_2" charimage="drawable/Holzhuette.jpg"
+			name="M_Holzhuette" nextdialogbuttontext="Zur Frage ..."
+			endbuttontext="Weiter gehen ...">
+			<dialogitem>Eure erste Aufgabe ist eine Schätzfrage:</dialogitem>
+			<dialogitem nextbuttontext="Wie geht's weiter?">Was meint ihr,
+				wie viel Prozent der Jugendlichen zwischen
+				12 und 18 Jahren würden
+				bei einer Prügelei in irgendeiner Form
+				eingreifen, egal ob aktiv
+				oder durch einen Anruf bei der Polizei?
+			</dialogitem>
+			<dialogitem>Wenn ihr eure Aufgabe gelöst habt, geht in der Richtung,
+				in der
+				ihr eben gegangen seid weiter.</dialogitem>
+			<dialogitem>Ihr findet, wenn ihr euch leicht
+				links haltet, nach ca. 50
+				Metern ein verstecktes weißes Haus.</dialogitem>
+			<dialogitem>Es ist
+				von einem Zaun umgeben, an dem ihr entlang gehen
+				sollt. Aber nicht
+				in Richtung Straße, sondern weiter in den Wald
+				hinein, rechts herum.</dialogitem>
+			<dialogitem>
+				Dann gelangt ihr auf einen Querweg, auf den ihr rechts
+				abbiegt.</dialogitem>
+			<dialogitem>Er
+				führt an einem Privatgrundstück vorbei, hinter dem auf
+				der rechten
+				Seite eure nächste Mission versteckt ist.</dialogitem>
+			<dialogitem>Sucht mal!
+            </dialogitem>
+		</mission>
+
+		<mission type="QRTagReading" id="M_Drillinge" buttontext="Start Code Scan"
+			taskdescription="Ihr seid ganz in der Nähe! Sucht jetzt den QR Tag und scant ihn."
+			initial_image="drawable/QRTagAmBaumImSchnee.jpg"
+			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
+			if_wrong_image="drawable/QRTagAmBaumImSchnee.jpg" if_right="Ok, ihr habt den QR-Tag gefunden."
+			mode="product" expected_content="HausNeuland-QRTag-002">
+			<onEnd>
+				<comStartMission id="M_Drillinge_2" />
+			</onEnd>
+		</mission>
+		<mission type="NPCTalk" id="M_Drillinge_2" charimage="drawable/Fussballerin.jpg"
+			name="M_Drillinge">
+			<dialogitem>Parolen paroli bieten: Sicherlich habt
+				ihr die beiden
+				folgenden Sprüche schon einmal gehört. Sie sind
+				Beispiele für
+				Parolen, denen man mit Zivilcourage begegnen kann.
+				</dialogitem>
+			<dialogitem nextbuttontext="1. Spruch">Sucht euch eine aus und bietet
+				paroli: was würdet ihr auf
+				diese
+				Sprüche sagen? Schreibt eure
+				Antworten
+				auf!</dialogitem>
+			<dialogitem nextbuttontext="2. Spruch">1. Die Ausländer
+				nehmen uns
+				Deutschen die Arbeitsplätze weg!</dialogitem>
+			<dialogitem nextdialogbuttontext="Fertig?">2. Frauen verstehen
+				nichts von
+				Fußball!</dialogitem>
+			<dialogitem nextdialogbuttontext="Ja, weiter ...">Ihr seid fertig mit Eurer
+				Aufnahme?
+				Dann drückt den Knopf und es geht weiter ...</dialogitem>
+			<onEnd>
+				<comStartMission id="M_Drillinge_3" />
+			</onEnd>
+		</mission>
+
+		<mission type="NPCTalk" id="M_Drillinge_3" charimage="drawable/Rutsche.jpg"
+			name="M_Drillinge">
+			 
+			<dialogitem>Der Weg, auf dem ihr gekommen seid, führt euch in die
+				gleiche Richtung weiter zu einer kleinen Weggabelung, die mit einer
+				Stromleitung überspannt ist.</dialogitem>
+			<dialogitem>Geht unter ihr her, um eure nächste
+				Mission zu finden.
+			</dialogitem>
+			<dialogitem nextdialogbuttontext="Auf die Suche ...">Sie liegt an einem Ort,
+				an dem
+				Kinder auch ohne
+				Schlitten gerne mal heruntergleiten.
+			</dialogitem>
+		</mission>
+
+		<mission type="NPCTalk" id="M_Spielplatz" charimage="drawable/Rutsche.jpg"
+			name="M_Spielplatz">
+			<dialogitem>Ihr habt den Spielplatz gefunden,
+				super!</dialogitem>
+			<dialogitem>Stress, Gewalt und Mobbing gibt es auch an solchen Orten,
+				wo
+				Kinder eigentlich nur spielen wollen.</dialogitem>
+			<dialogitem>Denkt euch eine kurze Szene aus, in der Zivilcourage
+				gezeigt wird. Ihr könnt sie nacher den anderen vorspielen!
+			</dialogitem>
+			<dialogitem nextdialogbuttontext="Nach dem Filmen ...">Aber verliert
+				nicht zu
+				viel Zeit, es
+				warten noch andere
+				Stationen auf euch!
+			</dialogitem>
+			<onEnd>
+				<comStartMission id="M_Spielplatz_2" />
+			</onEnd>
+		</mission>
+		<mission type="NPCTalk" id="M_Spielplatz_2" charimage="drawable/ReitwegSchild.jpg"
+			name="M_Spielplatz">
+			<dialogitem>Habt ihr eure Szene fertig? Dann überquert den
+				Fußballplatz und geht rechts auf den etwas breiteren Weg.
+			</dialogitem>
+			<dialogitem>Ihr lasst
+				den Campingplatz links liegen und geht den
+				Wanderweg, den auch gerne
+				mal Reiter benutzen, entlang.</dialogitem>
+			<dialogitem>Wenn ihr auf der rechten Wegseite die
+				Hinweisschilder für
+				Reiter gefunden habt, biegt davor rechts auf den
+				kleinen Trampelpfad
+				ab.</dialogitem>
+			<dialogitem nextdialogbuttontext="Weiter gehen ...">Links von euch ist jetzt
+				eine
+				gerodete
+				Fläche und an der nächsten Weggabelung findet ihr einen
+				Baum
+				mit
+				Wanderhinweis.</dialogitem>
+		</mission>
+
+		<mission type="QRTagReading" id="M_Torbogen" buttontext="Start Code Scan"
+			taskdescription="Habt ihr den Wanderhinweis gefunden? Ganz in der Nähe ist der nächste QR-Tag!"
+			initial_image="drawable/Wanderhinweis.jpg"
+			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
+			if_right="Ok, ihr habt den richtigen Tag gefunden." mode="product"
+			expected_content="HausNeuland-QRTag-004">
+			<onEnd>
+				<comStartMission id="M_Torbogen_2" />
+			</onEnd>
+		</mission>
+		<mission type="NPCTalk" id="M_Torbogen_2" charimage="drawable/DemHassKeineChance.gif"
+			name="M_Torbogen">
+			 
+			<dialogitem>Die Landeszentrale für politische
+				Bildung in Bremen
+				vergibt jedes Jahr einen Preis an couragierte
+				Jugendliche.
+			</dialogitem>
+			<dialogitem>Unter dem Titel "dem Hass keine Chance" werden Projekte
+				und Taten von Schülerinnen und Schülern und jungen Menschen
+				ausgezeichnet.</dialogitem>
+			<dialogitem>Die Eröffnungsrede zur Preisverleihung 2010 in Bremen
+				sollt ihr halten!</dialogitem>
+			<dialogitem nextdialogbuttontext="Fertig? Weiter?">Überlegt euch, warum es
+				wichtig
+				ist, Zivilcourage im Alltag zu zeigen und worauf es ankommt!
+			</dialogitem>
+			<onEnd>
+				<comStartMission id="M_Torbogen_3" />
+			</onEnd>
+		</mission>
+		<mission type="NPCTalk" id="M_Torbogen_3" charimage="drawable/Wanderhinweis.jpg"
+			name="M_Torbogen">
+			 
+			<dialogitem>Der Pfeil an dem Baum zeigt leider in die falsche
+				Richtung. Euer Weg führt zwischen dem etwas jüngeren Wald mit den
+				kleineren Bäumen links und dem alten Nadelwald rechts hindurch.
+			</dialogitem>
+			<dialogitem nextdialogbuttontext="Seid ihr soweit?">Am
+				Ende des Weges kommt
+				ihr auf eine
+				Querstraße.</dialogitem>
+			<dialogitem>Hier ist die
+				Zivilisation nicht mehr weit. Wo Menschen
+				wohnen ist fast immer auch
+				Strom und dort wo Strom ist, liegt eure
+				nächste Mission bereit.</dialogitem>
+			<dialogitem>Ein
+				kleiner Tipp: Sie liegt etwa 100 Meter vor dem
+				Parkplatz von Haus
+				Neuland ganz nahe am Wegesrand. </dialogitem>
+		</mission>
+
+		<mission type="QRTagReading" id="M_Stromkabel" buttontext="Start Code Scan"
+			taskdescription="Sucht den QR-Tag wo Strom ist, ca. 100m vor dem Parkplatz von Haus Neuland."
+			initial_image="drawable/Stromleitung.jpg"
+			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
+			if_right="Ok, ihr habt den richtigen Tag gefunden." mode="product"
+			expected_content="HausNeuland-QRTag-005">
+			<onEnd>
+				<comStartMission id="M_Stromkabel_2" />
+			</onEnd>
+		</mission>
+		<mission type="NPCTalk" id="M_Stromkabel_2"
+			charimage="drawable/MobbingAmArbeitsplatz.jpg" name="M_Stromkabel">
+			<dialogitem>Mobbing findet auch am Arbeitsplatz unter Erwachsenen
+				statt.</dialogitem>
+			<dialogitem>Schätzt mal: wie viele Erwerbstätige sind wohl von
+				Mobbing
+				betroffen?</dialogitem>
+			<onEnd>
+				<comStartMission id="M_Stromkabel_3" />
+			</onEnd>
+		</mission>
+		<mission type="NPCTalk" id="M_Stromkabel_3" charimage="drawable/WeissesHaus.jpg"
+			name="M_Stromkabel">
+			<dialogitem>Mission erfüllt? Super!</dialogitem>
+			<dialogitem>Ihr seht ja schon das Haus
+				Neuland. Aber es gibt noch drei
+				weitere Stationen.</dialogitem>
+			<dialogitem>Sie liegen auf
+				der anderen Seite im Wald. Dazu geht bitte
+				über den Parkplatz und
+				findet zwischen dem Lila Haus und dem
+				Mitarbeiterparkplatz einen
+				kleinen Trampelpfad, der euch zu einer
+				kleinen Steintreppe mit 65
+				Stufen führt.</dialogitem>
+			<dialogitem>Seid VORSICHTIG!</dialogitem>
+			<dialogitem>Es ist rutschig hier und am
+				Treppenende ist ein kleines
+				Loch.</dialogitem>
+			<dialogitem>Geht um das weiße Haus herum und folgt
+				dem Bach bis zu der
+				kleinen Hütte, die mit Efeu berankt ist.</dialogitem>
+			<dialogitem>Ganz in
+				der Nähe ist die vorletzte Station zu finden!
+			</dialogitem>
+		</mission>
+
+		<mission type="QRTagReading" id="M_Bach" buttontext="Start Code Scan"
+			taskdescription="Ja gut, ihr seid schon nahe dran ..." initial_image="drawable/WeissesHaus.jpg"
+			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
+			if_right="Ok, ihr habt den richtigen Tag gefunden." mode="product"
+			expected_content="HausNeuland-QRTag-006">
+			<onEnd>
+				<comStartMission id="M_Bach_2" />
+			</onEnd>
+		</mission>
+		<mission type="NPCTalk" id="M_Bach_2" charimage="drawable/KeinBild.jpg"
+			name="M_Bach_2">
+			<dialogitem>Wir haben im Seminar über Mobbing gesprochen: Welche
+				Synonyme, welche anderen Ausdrücke fallen euch für "Mobbing" noch
+				ein?</dialogitem>
+			<dialogitem nextdialogbuttontext="Fertig? Dann weiter ...">Schreibt sie bitte auf!
+			</dialogitem>
+			<onEnd>
+				<comStartMission id="M_Bach_3" />
+			</onEnd>
+		</mission>
+		<mission type="NPCTalk" id="M_Bach_3" charimage="drawable/HausNeulandLogo.jpg"
+			name="M_Bach_3">
+			<dialogitem>Jetzt ist es wirklich nicht mehr weit!</dialogitem>
+			<dialogitem>Folgt dem Weg
+				weiter in Richtung Busparkplatz und
+				überquert diesen.</dialogitem>
+			<dialogitem>Sicher erkennt
+				ihr den Ort, denn die Straße führt rechts
+				in Richtung Neuland.</dialogitem>
+			<dialogitem>Aber
+				wie finden Fremde von der Hauptstraße aus den Weg zu
+				der
+				Bildungsstätte?</dialogitem>
+			<dialogitem>Wenn ihr das wisst, könnt ihr auch die letzte
+				Aufgabe
+				lösen.</dialogitem>
+			<dialogitem>Bitte gebt Acht auf den
+				Verkehr,
+				die Autofahrer sehen
+				euch
+				nur schlecht!</dialogitem>
+			<dialogitem nextdialogbuttontext="Auf zur Suche ...">Tipp: Die Farbe grün
+				sticht bei diesem Wetter gut hervor.</dialogitem>
+		</mission>
+
+		<mission type="QRTagReading" id="M_Parkplatz" buttontext="Start Code Scan"
+			taskdescription="Ja hier in der Nähe seid ihr richtig ..."
+			initial_image="drawable/HausNeulandLogo.jpg"
+			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
+			if_right="Ok, ihr habt den richtigen Tag gefunden." mode="product"
+			expected_content="HausNeuland-QRTag-007">
+			<onEnd>
+				<comStartMission id="M_Parkplatz_2" />
+			</onEnd>
+		</mission>
+		<mission type="NPCTalk" id="M_Parkplatz_2" charimage="drawable/Khatib.jpg"
+			name="M_Parkplatz">
+			 
+			<dialogitem>Dies ist Ismael Khatib, ein
+				Palästinensischer Vater von 6
+				Kindern.</dialogitem>
+			<dialogitem>Über ihn wurde kürzlich der
+				Film "Das Herz von Jenin"
+				gedreht, denn Ismael hat wahre
+				Zivilcourage gezeigt: Nachdem sein
+				Sohn von israelischen Soldaten
+				tödlich am Kopf verletzt wurde, hat er
+				sich dazu entschieden, die
+				Organe seines Sohnes zu spenden.
+			</dialogitem>
+			<dialogitem>Und zwar
+				an israelische Kinder.</dialogitem>
+			<dialogitem>
+				Obwohl die zwei Völker befeindet sind, hat er
+				6 Kindern
+				neues Leben
+				geschenkt, unabhängig von ihrer Herkunft. Das
+				ist wahre
+				Zivilcourage!</dialogitem>
+			<onEnd>
+				<comStartMission id="M_Parkplatz_3" />
+			</onEnd>
+		</mission>
+		<mission type="NPCTalk" id="M_Parkplatz_3" charimage="drawable/Tagungshalle.jpg"
+			name="M_Parkplatz">
+			 
+			<dialogitem>Das war die letzte Station.</dialogitem>
+			<dialogitem>Geht den Weg zurück zum Haus
+				Neuland, am Parkplatz für
+				Kursleiter vorbei und dahinter rechts in
+				den Innenhof von Haus
+				Neuland.</dialogitem>
+			<dialogitem>Wenn ihr mitten im Innenhof steht,
+				habt ihr den Blick auf
+				die Tagungshalle.</dialogitem>
+			<dialogitem nextdialogbuttontext="Na los!">Sucht den Schatz!
+			</dialogitem>
+		</mission>
+
+		<mission type="QRTagReading" id="M_Innenhof" buttontext="Start Code Scan"
+			taskdescription="Ja hier ganz in der Nähe ..." initial_image="drawable/Tagungshalle.jpg"
+			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
+			if_right="Super! Ihr habt den Schatz gefunden." mode="product"
+			expected_content="HausNeuland-QRTag-008">
+			<onEnd>
+				<comStartMission id="M_Innenhof_2" />
+			</onEnd>
+		</mission>
+		<mission type="NPCTalk" id="M_Innenhof_2" charimage="drawable/Smiley.jpg"
+			name="M_Innenhof" endbuttontext="Spiel beenden.">
+			 
+			<dialogitem>Ihr seid angekommen.
+			</dialogitem>
+			<dialogitem>Danke,
+				dass ihr so gut durchgehalten habt.</dialogitem>
+			<dialogitem>Hoffentlich hat euch die kleine
+				Tour gefallen!
+			</dialogitem>
+			<dialogitem>Zur Belohnung gibt es
+				eine kleine Überraschung für
+				euch.
+			</dialogitem>
+		</mission>
+
+		<hotspots>
+			<hotspot id="H_Holzhuette" latitude="51.950844" longitude="8.631712"
+				radius="50">
+				<img src="drawable/icon.jpg" />
+				<onEnter>
+					<reqMissionStatus id="M_Holzhuette" new="1"
+						success="0" fail="0" running="0" />
+					<comStartMission id="M_Holzhuette" />
+				</onEnter>
+				<visible>
+					<reqMissionStatus id="M_Holzhuette" new="1"
+						success="0" fail="1" running="1" />
+				</visible>
+			</hotspot>
+
+			<hotspot id="H_Drillinge" latitude="51.951756" longitude="8.631347"
+				radius="40">
+				<img src="drawable/icon.jpg" />
+				<onEnter>
+					<reqMissionStatus id="M_Drillinge" new="1"
+						success="0" fail="0" running="0" />
+					<comStartMission id="M_Drillinge" />
+				</onEnter>
+				<visible>
+                   <reqMissionStatus id="M_Holzhuette" new="0"
+                        success="1" fail="1" running="0" />
+					<reqMissionStatus id="M_Drillinge" new="1"
+						success="0" fail="1" running="1" />
+				</visible>
+			</hotspot>
+
+			<hotspot id="H_Spielplatz" latitude="51.952761" longitude="8.633686"
+				radius="50">
+				<img src="drawable/icon.jpg" />
+				<onEnter>
+					<reqMissionStatus id="M_Spielplatz" new="1"
+						success="0" fail="0" running="0" />
+					<comStartMission id="M_Spielplatz" />
+				</onEnter>
+				<visible>
+                   <reqMissionStatus id="M_Drillinge" new="0"
+                        success="1" fail="1" running="0" />
+					<reqMissionStatus id="M_Spielplatz" new="1"
+						success="0" fail="1" running="1" />
+				</visible>
+			</hotspot>
+
+			<hotspot id="H_Torbogen" latlong="51.953667,8.63485" radius="30">
+				<img src="drawable/icon.jpg" />
+				<onEnter>
+					<reqMissionStatus id="M_Torbogen" new="1" success="0"
+						fail="0" running="0" />
+					<comStartMission id="M_Torbogen" />
+				</onEnter>
+				<visible>
+                   <reqMissionStatus id="M_Spielplatz" new="0"
+                        success="1" fail="1" running="0" />
+					<reqMissionStatus id="M_Torbogen" new="1" success="0"
+						fail="1" running="1" />
+				</visible>
+			</hotspot>
+
+			<hotspot id="H_Stromkabel" latlong="51.951683,8.635017"
+				radius="30">
+				<img src="drawable/icon.jpg" />
+				<onEnter>
+					<reqMissionStatus id="M_Stromkabel" new="1"
+						success="0" fail="0" running="0" />
+					<comStartMission id="M_Stromkabel" />
+				</onEnter>
+				<visible>
+                   <reqMissionStatus id="M_Torbogen" new="0"
+                        success="1" fail="1" running="0" />
+					<reqMissionStatus id="M_Stromkabel" new="1"
+						success="0" fail="1" running="1" />
+				</visible>
+			</hotspot>
+
+			<hotspot id="H_Bach" latlong="51.948967,8.635017" radius="25">
+				<img src="drawable/icon.jpg" />
+				<onEnter>
+					<reqMissionStatus id="M_Bach" new="1" success="0"
+						fail="0" running="0" />
+					<comStartMission id="M_Bach" />
+				</onEnter>
+				<visible>
+                    <reqMissionStatus id="M_Stromkabel" new="0"
+                        success="1" fail="1" running="0" />
+					<reqMissionStatus id="M_Bach" new="1" success="0"
+						fail="1" running="1" />
+				</visible>
+			</hotspot>
+
+			<hotspot id="H_Parkplatz" latlong="51.948717,8.632717"
+				radius="30">
+				<img src="drawable/icon.jpg" />
+				<onEnter>
+					<reqMissionStatus id="M_Parkplatz" new="1"
+						success="0" fail="0" running="0" />
+					<comStartMission id="M_Parkplatz" />
+				</onEnter>
+				<visible>
+                    <reqMissionStatus id="M_Bach" new="0"
+                        success="1" fail="1" running="0" />
+					<reqMissionStatus id="M_Parkplatz" new="1"
+						success="0" fail="1" running="1" />
+				</visible>
+			</hotspot>
+
+			<hotspot id="H_Innenhof" latlong="51.949817,8.634517" radius="40">
+				<img src="drawable/icon.jpg" />
+				<onEnter>
+					<reqMissionStatus id="M_Parkplatz" new="0"
+						success="1" fail="1" running="0" />
+					<reqMissionStatus id="M_Innenhof" new="1" success="0"
+						fail="0" running="0" />
+					<comStartMission id="M_Innenhof" />
+				</onEnter>
+				<visible>
+                    <reqMissionStatus id="M_Parkplatz" new="0"
+                        success="1" fail="1" running="0" />
+					<reqMissionStatus id="M_Innenhof" new="1" success="0"
+						fail="1" running="1" />
+				</visible>
+			</hotspot>
+			 
+		</hotspots>
+		 
+	</mission>
+	 
+</game>

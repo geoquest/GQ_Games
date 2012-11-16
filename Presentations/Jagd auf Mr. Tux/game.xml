@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="Jagd auf Mr. Tux" xmlformat="5"> 
+
+	<!-- Start Screen -->
+	<mission type="StartAndExitScreen" id="Start_Screen" image="drawable/MrTux_mit_Text.jpg" duration="3000">
+		<onEnd>        
+		    <rule>
+                <action type="StartMission" id="Intro"/>
+            </rule>	
+		</onEnd>
+	</mission>
+
+	<!-- Game Start -->
+    <mission type="NPCTalk" id="Intro" name="Intro" cancel="success" charimage="drawable/Horst.png"> 
+    
+       	<onStart>
+        	<rule>
+        		<action type="PlayAudio" file="sound/Horst_Screams.mp3"/>
+        	</rule>
+        </onStart>    
+      	<onEnd>
+			<rule>
+        		<action type="StartMission" id="Map_Mission"/>
+      		</rule>	    
+      	</onEnd>
+      
+      	<dialogitem>Als du nichts ahnend auf der Suche nach Kaffee bist, kommt dir Horst, ein Mitarbeiter der Abteilung 3, entgegengelaufen.</dialogitem>
+      	<dialogitem speaker="Horst" >Der fiese Pinguin Mr. Tux hat das üPhone geklaut. Das ist unsere geheimste Neuentwicklung! Du musst mir Helfen ihn zu finden!</dialogitem>
+      	<dialogitem>Während Horst vor sich hin wimmert, überkommt dich ein Schwall von Tatendrang und du beschließt ihm zu helfen.</dialogitem>
+      	<dialogitem speaker="Horst" >Vielleicht flieht Mr. Tux mit dem Bus. Wir sollten mal an den Haltestellen vor der PH nachsehen.</dialogitem>
+       
+    </mission>
+		 
+	<mission type="MapOverview" id="Map_Mission" cancel="no" mapkind="satellite" zoomlevel="18"> 
+
+	  	<!-- Haltestellen -->  
+      	<mission type="NPCTalk" id="Haltestelle_1_Mission" name="Haltestelle" cancel="success" charimage="drawable/Student.png"> 
+      		<dialogitem>Ihr trefft einen Studenten, der auf dem Heimweg ist. Horst spricht ihn an.</dialogitem>
+        	<dialogitem speaker="Horst" >Hast du einen Pinguin mit einem üPhone gesehen?</dialogitem> 	
+        	<dialogitem speaker="Student" >Nein, tut mir leid.</dialogitem>
+        	<dialogitem speaker="Horst" >Dann müssen wir wohl weiter suchen.</dialogitem> 		
+      	</mission>  
+      	
+      	<mission type="NPCTalk" id="Haltestelle_2_Mission" name="Haltestelle" cancel="success" charimage="drawable/Studentin.png"> 
+      		<dialogitem>Ihr trefft eine Studentin, die auf den Bus wartet. Horst spricht sie an.</dialogitem>
+        	<dialogitem speaker="Horst">Hast du Mr. Tux mit meinem üPhone gesehen?</dialogitem> 	
+        	<dialogitem speaker="Studentin">Ich hab keine Ahnung wer Mr. Tux ist.</dialogitem>
+        	<dialogitem speaker="Horst">Zu dumm, dann sehen wir uns weiter um.</dialogitem> 		
+      	</mission>
+      	
+      	<!-- Andy Missionen -->
+        <mission type="NPCTalk" id="Andy_Start_Mission" name="Ein guter Kumpel" cancel="success" charimage="drawable/Andy.png"> 
+        
+            <onStart>
+        		<rule>
+        			<action type="PlayAudio" file="sound/Andy_Husten.mp3"/>
+        		</rule>
+        	</onStart>
+        	
+      		<dialogitem>Was für ein Zufall! Ihr trefft deinen besten Kumpel Andy.</dialogitem>
+      		<dialogitem>Nach der gestrigen PSI-Party sieht er nicht wirklich "frisch" aus...</dialogitem>
+        	<dialogitem speaker="Horst" >Hi! Hast du Mr. Tux gesehen?</dialogitem> 	
+        	<dialogitem speaker="Andy" >Ja, der lief eben an mir vorbei.</dialogitem>
+        	<dialogitem speaker="Horst" >In welche Richtung?</dialogitem> 	
+        	<dialogitem speaker="Andy" >Ich führe euch hin. Folgt mir!</dialogitem>	
+      	</mission>
+      	
+        <mission type="NPCTalk" id="Andy_End_Mission" name="Ein guter Kumpel" cancel="success" charimage="drawable/Andy.png"> 
+      		<dialogitem>Plötzlich wird es Andy schlecht und er verschwindet im Gebäude.</dialogitem>
+      		<dialogitem>Jetzt steht ihr wieder allein da. Aber immerhin wisst ihr, dass Mr. Tux noch auf dem Gelände ist.</dialogitem>
+        	<dialogitem>Da hat Horst die Idee! Er installiert ein Trackingsystem für sein üPhone auf deinem Handy.</dialogitem> 	
+        	<dialogitem>Jetzt müsst ihr nur noch zur Markierung auf der Karte gehen, um das üPhone und Mr. Tux zu finden.</dialogitem>
+      	</mission>   
+      	
+      	<!-- Die magische Mensafrau -->
+      	
+      	<mission type="NPCTalk" id="MR_Tux_Flucht_Mission" name="Oh nein!!!" cancel="success" charimage="drawable/MrTux.png"> 
+      	
+      	    <onStart>
+        		<rule>
+        			<action type="PlayAudio" file="sound/Mr_Tux_Laughing.mp3"/>
+        		</rule>
+        	</onStart>
+      	    <onEnd>
+      	    	<rule>
+                	<action type="StartMission" id="Mensa_Mission"/>
+            	</rule>
+        	</onEnd>
+
+      		<dialogitem>Oh nein! Ihr seht, wie Mr. Tux im Hubschrauber wegfliegt.</dialogitem>
+      		<dialogitem speaker="Mr. Tux">Ich wusste doch, dass ihr mich nicht erwischt!</dialogitem>
+        	<dialogitem speaker="Mr. Tux">Ich werde euch nie verraten, wo das üPhone versteckt ist!</dialogitem> 	
+        	<dialogitem>Tja, das war es dann wohl mit dem üPhone.</dialogitem>
+        	
+      	</mission> 
+      	
+      	<mission type="NPCTalk" id="Mensa_Mission" name="Hunger?" cancel="success" charimage="drawable/Mensafrau.png"> 
+      	
+      	    <onStart>
+        		<rule>
+        			<action type="PlayAudio" file="sound/Magische_Mensafrau.mp3"/>
+        		</rule>
+        	</onStart>
+      	    <onEnd>
+      	    	<rule>
+                	<action type="StartMission" id="Drei_Fragen_Mission"/>
+            	</rule>
+        	</onEnd>
+
+      		<dialogitem>Plötzlich erscheint hinter euch die magische Mensafrau Mera.</dialogitem>
+        	<dialogitem speaker="Mera">Wenn ihr mir drei Fragen richtig beantwortet, verrate ich euch, wo das üPhone ist.</dialogitem> 	
+        	
+      	</mission> 
+      	
+      	<mission type="QuestionAndAnswer" name="Die 3 Fragen" id="Drei_Fragen_Mission"
+			correctAnswersNeeded="3" shuffle="false" cancel="success">
+			
+			<onEnd>
+      	    	<rule>
+                	<action type="StartMission" id="Mensa_End_Mission"/>
+            	</rule>			
+			</onEnd>
+			
+			<question>
+				<questiontext>Wo kann man hier richtig leckeres Essen finden?</questiontext>
+				<answer correct="1" onChoose="Natürlich, wo denn sonst...">
+					Natürlich in der Mensa!
+				</answer>
+				<answer onChoose="Nein! Das ist ungesundes Fastfood!">
+					In dem Supermarkt um die Ecke.
+				</answer>
+				<answer onChoose="Nein! Das ist zwar günstig, aber nicht schmackhaft.">
+					In der Biotonne vom Hausmeister.
+				</answer>
+			</question>
+			
+			<question>
+				<questiontext>Wie ist die Binärdarstellung der Zahl 15?</questiontext>
+				<answer correct="1" onChoose="Fantastisch! Das ist richtig!">
+					1111
+				</answer>
+				<answer onChoose="Das ist falsch. Was seid ihr denn für Informatiker?">
+					10011
+				</answer>
+				<answer onChoose="Das ist falsch. Was seid ihr denn für Informatiker?">
+					11111
+				</answer>
+			</question>
+			
+			<question>
+				<questiontext>Was ist deine Lieblingsfarbe?</questiontext>
+				
+				<answer onChoose="Ich denke nicht, dass das stimmt...">
+					Grau?
+				</answer>
+				
+				<answer onChoose="Blödsinn! Das ist doch Gemüse.">
+					Ähhhhh Aubergine...
+				</answer>
+				<answer onChoose="Ich denke nicht, dass das stimmt...">
+					Natürlich Pink!
+				</answer>
+			</question>
+
+		</mission>  
+		
+      	<mission type="NPCTalk" id="Mensa_End_Mission" name="Hunger?" cancel="success" charimage="drawable/Mensafrau.png"> 
+      		<dialogitem speaker="Mera">Das war wohl nichts!</dialogitem>
+      		<dialogitem speaker="Mera">Aber weil heute Sonntag ist, gebe ich euch einen Hinweis.</dialogitem>
+        	<dialogitem speaker="Mera">Euer Trackingsystem wird euch einen Ort auf der Karte zeigen, an dem Mr. Tux etwas verloren hat.</dialogitem> 	
+        	<dialogitem speaker="Mera">Es ist ein Zettel, auf dem kodierte Informationen abgebildet sind.</dialogitem>
+        	<dialogitem speaker="Mera">Leider sind mein Kräfte zu gering, um die Informationen zu entschlüsseln.</dialogitem>  
+        	<dialogitem speaker="Mera">Aber euer Handy wird euch dabei helfen.</dialogitem>  	
+      	</mission> 	
+      	 
+      	<!-- Finde QR-Tag -->
+      	<mission type="QRTagReading" id="Kodierte_Informationen_QR-Tag" buttontext="QR-Tag gefunden!"
+				initial_image="drawable/QR-Tag_Hint.png"
+				taskdescription="Finde den versteckten Zettel, auf dem kodierte Informationen abgebildet sind. Dein Handy wird dir beim entschlüsseln Helfen."
+				mode="treasure" cancel="no" feedbacktext="@result@">
+				
+			<onEnd>
+      	    	<rule>
+                	<action type="StartMission" id="Finde_üPhone"/>
+            	</rule>	
+			</onEnd>
+		</mission>
+	
+      	<!-- Hotspots -->
+      
+      	<hotspots> 
+      
+      		<!-- Haltestellen -->
+  
+        	<hotspot id="Haltestelle_1_Hotspot" latitude="50.751843" longitude="7.096065" radius="20">
+         		<img src="drawable/Char_Green.png"/>
+          		<onEnter>
+          			<reqMissionStatus id="Haltestelle_1_Mission" new="1" success="0" fail="0" running="0" />
+          			<comPlaySound file="sound/beep_long.mp3" />
+            		<comStartMission id="Haltestelle_1_Mission" />
+          		</onEnter>
+          		<visible>
+          			<reqMissionStatus id="Haltestelle_1_Mission" new="1" success="0" fail="0" running="0" />
+          		</visible>
+        	</hotspot> 
+
+         	<hotspot id="Haltestelle_2_Hotspot" latitude="50.751346" longitude="7.096229" radius="15">
+          		<img src="drawable/Char_Green.png"/>
+          		<onEnter>
+          			<reqMissionStatus id="Haltestelle_2_Mission" new="1" success="0" fail="0" running="0" />
+          			<comPlaySound file="sound/beep_long.mp3" />
+            		<comStartMission id="Haltestelle_2_Mission" />
+          		</onEnter>
+          		<visible>
+          			<reqMissionStatus id="Haltestelle_2_Mission" new="1" success="0" fail="0" running="0" />
+          		</visible>
+        	</hotspot> 
+  
+			<!-- Folgt Andy -->
+			
+        	<hotspot id="Andy_Start_Hotspot" latitude="50.751417" longitude="7.096422" radius="15">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqMissionStatus id="Haltestelle_2_Mission" new="0" success="1" fail="0" running="0" />
+          			<reqAttribute name="Andy_Follow_Val" value="NOT_SET" />
+          			<comPlaySound file="sound/beep_long.mp3" />
+          			<comAttribute name="Andy_Follow_Val" value="0" />
+            		<comStartMission id="Andy_Start_Mission" />
+          		</onEnter>
+          		<visible>
+          			<reqMissionStatus id="Haltestelle_2_Mission" new="0" success="1" fail="0" running="0" />
+          			<reqAttribute name="Andy_Follow_Val" value="NOT_SET" />
+          		</visible>
+        	</hotspot>  
+        	
+            <hotspot id="Andy_Follow_1_Hotspot" latitude="50.751271" longitude="7.096548" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Andy_Follow_Val" value="0" />
+            		<comPlaySound file="sound/beep_long.mp3" />
+            		<comAttribute name="Andy_Follow_Val" value="1" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Andy_Start_Val" value="0" />
+          		</visible>
+        	</hotspot>  	       
+
+            <hotspot id="Andy_Follow_2_Hotspot" latitude="50.75104" longitude="7.096722" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Andy_Follow_Val" value="1" />
+            		<comPlaySound file="sound/beep_long.mp3" />
+            		<comAttribute name="Andy_Follow_Val" value="2" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Andy_Follow_Val" value="1" />
+          		</visible>
+        	</hotspot>  
+        	
+        	<hotspot id="Andy_Follow_3_Hotspot" latitude="50.751101" longitude="7.097184" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Andy_Follow_Val" value="2" />
+            		<comPlaySound file="sound/beep_long.mp3" />
+            		<comAttribute name="Andy_Follow_Val" value="3" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Andy_Follow_Val" value="2" />
+          		</visible>
+        	</hotspot> 
+        	
+         	<hotspot id="Andy_Follow_4_Hotspot" latitude="50.751242" longitude="7.097634" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Andy_Follow_Val" value="3" />
+            		<comPlaySound file="sound/beep_long.mp3" />
+            		<comAttribute name="Andy_Follow_Val" value="4" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Andy_Follow_Val" value="3" />
+          		</visible>
+        	</hotspot> 
+        	
+         	<hotspot id="Andy_Follow_5_Hotspot" latitude="50.751622" longitude="7.097387" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          		<reqAttribute name="Andy_Follow_Val" value="4" />
+          			<reqMissionStatus id="Andy_End_Mission" new="1" success="0" fail="0" running="0" />
+            		<comPlaySound file="sound/beep_long.mp3" />
+            		<comAttribute name="Andy_Follow_Val" value="5" />
+            		<comStartMission id="Andy_End_Mission" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Andy_Follow_Val" value="4" />
+          			<reqMissionStatus id="Andy_End_Mission" new="1" success="0" fail="0" running="0" />
+          		</visible>
+        	</hotspot>  
+
+           	<hotspot id="Mensa_Hotspot" latitude="50.752669" longitude="7.097294" radius="20">
+          		<img src="drawable/Phone_Pink.png"/>
+          		<onEnter>
+          			<reqAttribute name="Andy_Follow_Val" value="5" />         	
+            		<comStartMission id="MR_Tux_Flucht_Mission" />
+          		</onEnter>
+          		<visible>         		
+          			<reqAttribute name="Andy_Follow_Val" value="5" />         		
+          			<reqMissionStatus id="MR_Tux_Flucht_Mission" new="1" success="0" fail="0" running="0" />
+          		</visible>
+        	</hotspot> 
+        	
+        	<hotspot id="Kodierte_Informationen_Hotspot" latitude="50.751861" longitude="7.097529" radius="20">
+          		<img src="drawable/Informationen.png"/>
+          		<onEnter>
+          		 	<reqMissionStatus id="Kodierte_Informationen_QR-Tag" new="1" success="0" fail="0" running="0" />
+          		 	<reqMissionStatus id="Mensa_End_Mission" new="0" success="1" fail="0" running="0" />
+            		<comStartMission id="Kodierte_Informationen_QR-Tag" />
+          		</onEnter>
+          		<visible>
+          			<reqMissionStatus id="Kodierte_Informationen_QR-Tag" new="1" success="0" fail="0" running="0" />
+          			<reqMissionStatus id="Mensa_End_Mission" new="0" success="1" fail="0" running="0" />
+          		</visible>
+        	</hotspot> 
+        	      	   	        	        	      	   	      
+      </hotspots> 
+       
+    </mission> 
+    
+    <!-- Endmissionen -->
+   	<mission type="NPCTalk" id="Finde_üPhone" name="üPhone" cancel="success" charimage="drawable/Horst.png"> 
+   		<onEnd>
+   	    	<rule>
+               	<action type="StartMission" id="üPhone_QR-Tag"/>
+           	</rule>					
+		</onEnd>
+   		<dialogitem speaker="Horst">In dem Raum muss das wertvolle üPhone sein!</dialogitem>
+   		<dialogitem speaker="Horst">Lass uns hingehen und nachsehen!</dialogitem>	
+   	</mission>	
+      	
+   	<mission type="QRTagReading" id="üPhone_QR-Tag" buttontext="QR-Tag gefunden!"
+		initial_image="drawable/Phone.png"
+		taskdescription="Findet das üPhone in dem Raum. Euer Handy wird euch beim Erkennen des üPhones Helfen."
+		mode="treasure" cancel="no" feedbacktext="@result@">
+				
+		<onEnd>
+   	    	<rule>
+               	<action type="StartMission" id="Inform_Foto_Mission"/>
+           	</rule>				
+		</onEnd>
+	</mission> 
+		
+   	<mission type="NPCTalk" id="Inform_Foto_Mission" name="üPhone" cancel="success" charimage="drawable/Fachschaftler.png"> 
+   		<onEnd>
+   	    	<rule>
+               	<action type="StartMission" id="Inform_Foto"/>
+           	</rule>	      		
+		</onEnd>
+		<dialogitem>Plötzlich taucht ein Fachschaftler im Raum auf.</dialogitem>
+    	<dialogitem speaker="Fachschaftler">Super! Ihr habt das üPhone wieder gefunden.</dialogitem>
+    	<dialogitem speaker="Fachschaftler">Ich brauche unbedingt für die nächste "Inform" ein Foto von euch.</dialogitem>	
+    	<dialogitem speaker="Fachschaftler">Die ganze Welt soll von dieser Heldentat erfahren.</dialogitem>	
+    </mission>		
+      		    		
+	<mission type="ImageCapture" id="Inform_Foto" buttontext="Foto vom Helden"
+		taskdescription="Macht zum Abschluss ein Foto von euch ..."
+		initial_image="drawable/foto-machen.jpg" cancel="fail">
+		<onEnd>
+        	<rule>
+               	<action type="StartMission" id="End_Screen"/>
+           	</rule>					
+		</onEnd>
+	</mission>
+		    
+    <mission type="NPCTalk" id="End_Screen" name="Ente...." cancel="success" charimage="drawable/End_Screen.jpg"
+    	endbuttontext="Ente!" > 
+    	<onEnd>
+			<rule>
+				<action type="EndGame"></action>
+			</rule>
+		</onEnd>
+     	<dialogitem>Danke, dass ihr an unserem tollen Spiel teilgenommen habt! ;)</dialogitem>
+    	<dialogitem>Wir hoffen ihr hattet Spaß!</dialogitem>	
+    </mission>
+  
+</game>

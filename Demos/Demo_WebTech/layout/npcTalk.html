@@ -1,0 +1,37 @@
+<html>
+	<head>	    
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="style2.css" />
+		<!-- Einbindung von externen JavaScript-Dateien: Siehe customer.js-->
+	</head>
+	<body>
+	
+	    <div id="DivTop">
+			<!-- In dem Element mit der Klasse charimage wird das Bild aus der Mission eingefügt. -->
+	    	<img class="charimage" >
+	    </div>
+		<!-- 
+			Soll die Seite in XHTML geschrieben werden, dann dürfen den Elementen mit den Klassen speaker und dialogitem keine IDs 
+			zugewiesen werden. 
+		-->
+		<div id="DivMid">
+			<div id="Test">
+			</div>
+			<!-- In dem Element mit der Klasse speaker wird der aktuelle Speaker aus der Mission eingefügt. -->
+			<div class="speaker">
+			</div>
+			<!-- 
+				In dem Element mit der Klasse dialogitem wird der aktuelle Dialog aus der Mission eingefügt. 
+				Sollte das Element Daten enthalten, werden diese überschrieben!
+			-->
+			<div class="dialogitem">
+			</div>
+		</div>
+		
+	    <div id="DivBot">
+			<!-- In dem Element mit der Klasse nextdialogbuttontext wird der Text des Next- oder End-Buttons eingefügt. -->
+	    	<input type="button" class="nextdialogbuttontext"  />
+	    </div>
+	    
+	</body>
+</html>

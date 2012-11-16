@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game
+	name="RadioRanzen Station 5"
+	xmlformat="5"
+>
+	<mission
+		id="M_S5_localization"
+		endbutton="Angekommen ..."
+		image="drawable/logo_02_roboter.png"
+		type="NPCTalk"
+	>
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+				<action
+					file="sound/radiobot_angekommen.mp3"
+					type="PlayAudio" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action
+					id="M_S5_qa_ukw"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem> Wenn ihr an der nächsten Station angekommen seid, könnt
+			ihr die Mission starten indem ihr unten auf den Knopf drückt.
+		</dialogitem>
+	</mission>
+	<mission
+		id="M_S5_qa_ukw"
+		loopUntilSuccess="true"
+		type="MultipleChoiceQuestion"
+	>
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+				<action
+					file="sound/radiobot_station5_frage_ukw.mp3"
+					type="PlayAudio" />
+			</rule>
+		</onStart>
+		<onSuccess>
+			<rule>
+				<action
+					type="PlayAudio"
+					file="sound/radiobot_station5_ploppschutz_npc_intro.mp3" />
+			</rule>
+		</onSuccess>
+		<onFail>
+			<rule>
+				<action
+					type="PlayAudio"
+					file="sound/radiobot_falsch_nein.mp3" />
+			</rule>
+		</onFail>
+		<onEnd>
+			<rule>
+				<action
+					id="M_S5_intro_ploppschutz"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<question>
+			<questiontext> Na, wisst ihr noch was UKW bedeutet?
+			</questiontext>
+			<answer
+				correct="1"
+				onChoose="Ja, genau."
+			> Ultrakurzwelle
+			</answer>
+			<answer
+				correct="0"
+				onChoose="Nein, nicht ganz."
+			> Unterkurzwelle
+			</answer>
+			<answer
+				correct="0"
+				onChoose="Ach, woher das denn?"
+			> Unterkielwelle
+			</answer>
+		</question>
+	</mission>
+	<mission
+		id="M_S5_intro_ploppschutz"
+		endbutton="Zur Frage ..."
+		image="drawable/ploppschutz.png"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="M_S5_qa_ploppschutz"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem sound="sound/radiobot_station5_ploppschutz_npc_teil1.mp3"> Hört euch jetzt die Aufnahme an und sagt
+			mir dann, was das Bild zeigt.
+		</dialogitem>
+		<dialogitem
+			sound="sound/radiobot_station5_ploppschutz_npc_teil2.mp3"
+			nextbuttontext="Noch einmal"
+		> „Die Pusteblume pfiff laut Papperlapapp“
+		</dialogitem>
+		<dialogitem sound="sound/radiobot_station5_ploppschutz_npc_teil2.mp3"> „Die Pusteblume pfiff laut Papperlapapp“
+		</dialogitem>
+	</mission>
+	<mission
+		id="M_S5_qa_ploppschutz"
+		loopUntilSuccess="true"
+		type="MultipleChoiceQuestion"
+	>
+		<onSuccess>
+			<rule>
+				<action
+					type="PlayAudio"
+					file="sound/radiobot_richtig.mp3" />
+			</rule>
+		</onSuccess>
+		<onFail>
+			<rule>
+				<action
+					type="PlayAudio"
+					file="sound/radiobot_falsch_nein.mp3" />
+			</rule>
+		</onFail>
+		<onEnd>
+			<rule>
+				<action
+					id="M_S5_outro"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<question>
+			<questiontext> Und, was war auf dem Bild zu sehen?
+			</questiontext>
+			<answer
+				correct="0"
+				onChoose="Nein, sieht bloss ähnlich aus."
+			> Eine Clownnase
+			</answer>
+			<answer
+				correct="0"
+				onChoose="Ach wo. Viel zu klein."
+			> Eine Babymütze
+			</answer>
+			<answer
+				correct="1"
+				onChoose="Richtig!"
+			> Ein Ploppschutz
+			</answer>
+		</question>
+	</mission>
+	<mission
+		id="M_S5_outro"
+		endbuttontext="Im Treppenhaus ..."
+		image="drawable/logo_02_roboter.png"
+		type="NPCTalk"
+	>
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<dialogitem sound="sound/radiobot_station5_outro_teil_1.mp3">Das Bild zeigt einen Ploppschutz. Ein
+			Ploppschutz verhindert das der Wind oder Zisch- und Plopplaute die
+			Aufnahme unbrauchbar machen.
+		</dialogitem>
+		<dialogitem sound="sound/radiobot_station5_outro_teil_2.mp3">Und schon habt ihr die nächste Kanalzahl
+			für die Frequenz des Radioranzens: Sie lautet: 0.
+		</dialogitem>
+		<dialogitem sound="sound/radiobot_station5_outro_teil_3.mp3">Sucht nun im Treppenhaus das nächste
+			Radio, das euch weiter hilft.
+		</dialogitem>
+	</mission>
+</game>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="NPCTalk Demo" xmlformat="5">
+	<mission type="NPCTalk" id="NPC_1" charimage="drawable/Kreuzblume.jpg"
+		nextdialogbuttontext="Mehr Text ..." endbuttontext="Mit der Tour fortfahren ..."
+		cancel="fail">
+
+		<dialogitem>
+			Sie wollen, dass Ihr Kind getauft
+			wird. Bevor es soweit ist, laden wir Sie ein, etwas mehr über die
+			Taufe zu erfahren.
+        </dialogitem>
+
+		<dialogitem>
+			Bitte halten Sie Stift und Papier
+			bereit, denn unterwegs sammeln Sie einen Code mit dem Sie sich am Ende im
+			Domforum
+			ein kleines Geschenk abholen oder den Code als login für eine
+			Überraschung im Internet nutzen können.
+        </dialogitem>
+
+		<dialogitem>
+			Dann kann es ja los gehen.
+        </dialogitem>
+
+		<dialogitem>
+			Bitte gehen Sie zum Modell der so
+			genannten Kreuzblume auf den Domtürmen in Originalgröße. Es ist auf
+			dem Bild oben abgebildet. Dort startet unsere Tour.
+        </dialogitem>
+	</mission>
+
+
+</game>

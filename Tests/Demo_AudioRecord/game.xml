@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="AudioRecord Demo" layout="html" xmlformat="5">
+	<mission type="AudioRecord" id="testMission1" layout="native" cancel="success">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="testMission1"></action>
+			</rule>
+		</onEnd>
+	</mission>
+</game>

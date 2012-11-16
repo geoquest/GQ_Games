@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<game name="QRTag Tour um Haus Neuland" xmlformat="5">
+	<mission type="NPCTalk" id="M_Start" charimage="drawable/HausNeuland.jpg"
+		nextdialogbuttontext="Mehr Text ..." endbuttontext="Mit der Tour fortfahren ..."
+		name="Kein Name" cancel="no">
+		<dialogitem>Willkommen zu unserer Tour rund um Haus
+			Neuland.
+		</dialogitem>
+		<dialogitem>Die Tour wird dich an viele Station im Wald um Haus
+			Neuland führen.
+        </dialogitem>
+		<dialogitem nextbuttontext="Weiter zu QR-Tags ...">Um die Stationen zu finden
+			wirst
+			du öfter nach
+			sogenannten QR-Tags suchen.</dialogitem>
+		<onEnd>
+			<comStartMission id="M_QRTagIntro" />
+		</onEnd>
+	</mission>
+
+	<mission type="NPCTalk" id="M_QRTagIntro" charimage="drawable/QRIntro.png"
+		nextdialogbuttontext="Mehr Text ..."
+		name="Kein Name" cancel="success">
+		<dialogitem>So sieht ein QRTag aus. Du kennst ihn vielleicht von
+			ausgedruckten Fahrkahrten oder Plakaten.
+        </dialogitem>
+		<dialogitem>Wenn du den QRTag gefunden hast, kannst du ihn einscannen
+			und so herausfinden, wie die Tour weiter geht. Hinter jedem QRTag
+			ist
+			eine
+			Aufgabe oder eine Geschichte versteckt. 
+        </dialogitem>
+		<dialogitem nextbuttontext="Tour starten ...">Viel Spass beim Suchen und
+			Entdecken!</dialogitem>
+	</mission>
+
+	<mission type="QRTagReading" id="M_Toter_Baum" buttontext="Start Code Scan"
+		taskdescription="Suche den Toten Baum, du bist schon ganz nah ..."
+		initial_image="drawable/chest_closed.jpg" if_wrong_image="drawable/chest_closed.jpg"
+		if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
+		if_right_image="drawable/DreiAffen.jpg" if_right="Ja prima. Das war genau das, was wir gesucht haben."
+		mode="product" expected_content="HausNeuland-QRTag-001">
+		<onEnd>
+			<comStartMission id="M_Toter_Baum_out" />
+		</onEnd>
+	</mission>
+
+	<mission type="NPCTalk" id="M_Toter_Baum_out" charimage="drawable/DreiAffen.jpg"
+		name="M_Toter_Baum">
+
+		<!-- TODO WEITER HIER -->
+		 
+		<dialogitem speaker="Erzähler">Dieses Bild zeigt die drei Affen, die
+			"nichts hören, nichts sehen und nichts sagen".</dialogitem>
+		<dialogitem>Stellt das Bild nach
+			und fotografiert euch!</dialogitem>
+	</mission>
+
+	<mission type="NPCTalk" id="M_Holzhuette" charimage="drawable/TanzendeBaeume.jpg"
+		name="M_Holzhuette">
+		 
+		<dialogitem speaker="Erzähler">Nun eine Schätzfrage: Was meint ihr,
+			wie viel Prozent der Jugendlichen zwischen 12 und 18 Jahren würden
+			bei einer Prügelei in irgendeiner Form eingreifen, egal ob aktiv
+			oder
+			durch einen Anruf bei der Polizei?</dialogitem>
+	</mission>
+
+	<mission type="NPCTalk" id="M_Drillinge" charimage="drawable/TanzendeBaeume.jpg"
+		name="M_Drillinge">
+		 
+		<dialogitem>Parolen paroli bieten: Sicherlich habt
+			ihr die beiden
+			folgenden Sprüche schon einmal gehört. Sie sind
+			Beispiele für
+			Parolen,
+			denen man mit Zivilcourage begegnen kann.
+				</dialogitem>
+		<dialogitem>Sucht euch eine aus und bietet paroli: was würdet ihr auf
+			diese
+			Sprüche sagen? Nehmt eure Antworten auf! 1. Die Ausländer
+			nehmen
+			uns
+			Deutschen die Arbeitsplätze weg! 2. Frauen verstehen
+			nichts von
+			Fußball!</dialogitem>
+	</mission>
+
+	<mission type="NPCTalk" id="M_Spielplatz" charimage="drawable/TanzendeBaeume.jpg"
+		name="M_Spielplatz">
+		 
+		<dialogitem speaker="Erzähler">Ihr habt den Spielplatz gefunden,
+			super! Stress, Gewalt und Mobbing gibt es auch an solchen Orten, wo
+			Kinder eigentlich nur spielen wollen. Denkt euch eine kurze Szene
+			aus, in der Zivilcourage gezeigt wird und filmt sie. Aber verliert
+			nicht zu viel Zeit, es warten noch andere Stationen auf euch!
+		</dialogitem>
+	</mission>
+
+	<mission type="NPCTalk" id="M_Torbogen" charimage="drawable/TanzendeBaeume.jpg"
+		name="M_Torbogen">
+		 
+		<dialogitem speaker="Erzähler">Die Landeszentrale für politische
+			Bildung in Bremen vergibt jedes Jahr einen Preis an couragierte
+			Jugendliche.</dialogitem>
+		<dialogitem>Unter dem Titel "dem Hass keine Chance" werden Projekte
+			und Taten von Schülerinnen und Schülern und jungen Menschen
+			ausgezeichnet.</dialogitem>
+		<dialogitem>Die Eröffnungsrede zur Preisverleihung 2010 in Bremen
+			sollt ihr halten!</dialogitem>
+		<dialogitem>Überlegt euch, warum es wichtig ist, Zivilcourage
+			im
+			Alltag
+			zu zeigen und worauf es ankommt! Macht ein Video oder eine
+			Audiodatei
+			davon.</dialogitem>
+	</mission>
+
+	<mission type="NPCTalk" id="M_Stromkabel" charimage="drawable/TanzendeBaeume.jpg"
+		name="M_Stromkabel">
+		 
+		<dialogitem speaker="Erzähler">Mobbing findet auch am Arbeitsplatz
+			unter Erwachsenen statt. Schätzt mal: wie viele Erwerbstätige sind
+			wohl von Mobbing betroffen?</dialogitem>
+	</mission>
+
+	<mission type="NPCTalk" id="M_Bach" charimage="drawable/TanzendeBaeume.jpg"
+		name="M_Bach">
+		 
+		<dialogitem speaker="Erzähler">Wisst ihr noch einige Unterschiede
+			zwischen psychischer und physischer Gewalt? Bringt eure Ergebnisse
+			in
+			irgendeiner Form mit!</dialogitem>
+	</mission>
+
+	<mission type="NPCTalk" id="M_Parkplatz" charimage="drawable/Khatib.jpg"
+		name="M_Parkplatz">
+		 
+		<dialogitem>Dies ist Ismael Khatib, ein
+			Palästinensischer Vater von 6
+			Kindern.</dialogitem>
+		<dialogitem>Über ihn wurde kürzlich der
+			Film "Das Herz von Jenin"
+			gedreht, denn Ismael hat wahre
+			Zivilcourage gezeigt: Nachdem sein
+			Sohn
+			von israelischen Soldaten
+			tödlich am Kopf verletzt wurde, hat er
+			sich
+			dazu entschieden, die
+			Organe seines Sohnes zu spenden.
+			</dialogitem>
+		<dialogitem>Und zwar
+			an israelische Kinder.</dialogitem>
+		<dialogitem>
+			Obwohl die zwei Völker befeindet sind, hat er
+			6 Kindern
+			neues Leben
+			geschenkt, unabhängig von ihrer Herkunft. Das
+			ist wahre
+			Zivilcourage!</dialogitem>
+	</mission>
+
+	<mission type="NPCTalk" id="M_Innenhof" charimage="drawable/TanzendeBaeume.png"
+		name="M_Innenhof">
+		 
+		<dialogitem speaker="Erzähler">Herzlichen Glückwunsch, ihr seid nicht
+			im Wald verloren gegangen, sondern habt zum Haus Neuland zurück
+			gefunden! Zum Schluss der Route findet ihr hier noch eine kleine
+			Überraschung.</dialogitem>
+	</mission>
+
+	<hotspots>
+		<hotspot id="H_Haus_Neuland" latitude="51.949763" longitude="8.633645"
+			radius="50">
+			<img src="drawable/DomforumIcon.png" />
+			<onEnter>
+				<comStartMission id="M_Haus_Neuland" />
+				<comPlaySound file="sound/beep.mp3" />
+			</onEnter>
+			<visible>
+				<reqMissionStatus id="M_Start" new="1" success="1"
+					fail="1" running="1" />
+			</visible>
+		</hotspot>
+
+		<hotspot id="H_Toter_Baum" latitude="51.950289" longitude="8.63109"
+			radius="50">
+			<img src="drawable/DomforumIcon.png" />
+			<onEnter>
+				<comStartMission id="M_Toter_Baum" />
+				<comPlaySound file="sound/beep.mp3" />
+			</onEnter>
+			<visible>
+				<reqMissionStatus id="M_Start" new="1" success="1"
+					fail="1" running="1" />
+			</visible>
+		</hotspot>
+
+		<hotspot id="H_Holzhuette" latitude="51.950844" longitude="8.631712"
+			radius="50">
+			<img src="drawable/DomforumIcon.png" />
+			<onEnter>
+				<comStartMission id="M_Holzhuette" />
+				<comPlaySound file="sound/beep.mp3" />
+			</onEnter>
+			<visible>
+				<reqMissionStatus id="M_Start" new="1" success="1"
+					fail="1" running="1" />
+			</visible>
+		</hotspot>
+
+		<hotspot id="H_Drillinge" latitude="51.951756" longitude="8.631347"
+			radius="50">
+			<img src="drawable/DomforumIcon.png" />
+			<onEnter>
+				<comStartMission id="M_Drillinge" />
+				<comPlaySound file="sound/beep.mp3" />
+			</onEnter>
+			<visible>
+				<reqMissionStatus id="M_Start" new="1" success="1"
+					fail="1" running="1" />
+			</visible>
+		</hotspot>
+
+		<hotspot id="H_Spielplatz" latitude="51.952761" longitude="8.633686"
+			radius="50">
+			<img src="drawable/DomforumIcon.png" />
+			<onEnter>
+				<comStartMission id="M_Spielplatz" />
+				<comPlaySound file="sound/beep.mp3" />
+			</onEnter>
+			<visible>
+				<reqMissionStatus id="M_Start" new="1" success="1"
+					fail="1" running="1" />
+			</visible>
+		</hotspot>
+
+		<hotspot id="H_Torbogen" latitude="51.953839" longitude="8.634716"
+			radius="50">
+			<img src="drawable/DomforumIcon.png" />
+			<onEnter>
+				<comStartMission id="M_Torbogen" />
+				<comPlaySound file="sound/beep.mp3" />
+			</onEnter>
+			<visible>
+				<reqMissionStatus id="M_Start" new="1" success="1"
+					fail="1" running="1" />
+			</visible>
+		</hotspot>
+
+		<hotspot id="H_Stromkabel" latitude="51.951478" longitude="8.635381"
+			radius="50">
+			<img src="drawable/DomforumIcon.png" />
+			<onEnter>
+				<comStartMission id="M_Stromkabel" />
+				<comPlaySound file="sound/beep.mp3" />
+			</onEnter>
+			<visible>
+				<reqMissionStatus id="M_Start" new="1" success="1"
+					fail="1" running="1" />
+			</visible>
+		</hotspot>
+
+		<hotspot id="H_Bach" latitude="51.94956" longitude="8.634941"
+			radius="50">
+			<img src="drawable/DomforumIcon.png" />
+			<onEnter>
+				<comStartMission id="M_Bach" />
+				<comPlaySound file="sound/beep.mp3" />
+			</onEnter>
+			<visible>
+				<reqMissionStatus id="M_Start" new="1" success="1"
+					fail="1" running="1" />
+			</visible>
+		</hotspot>
+
+		<hotspot id="H_Parkplatz" latitude="51.948965" longitude="8.633106"
+			radius="50">
+			<img src="drawable/DomforumIcon.png" />
+			<onEnter>
+				<comStartMission id="M_Parkplatz" />
+				<comPlaySound file="sound/beep.mp3" />
+			</onEnter>
+			<visible>
+				<reqMissionStatus id="M_Start" new="1" success="1"
+					fail="1" running="1" />
+			</visible>
+		</hotspot>
+
+		<hotspot id="H_Innenhof" latitude="51.94995" longitude="8.63448"
+			radius="50">
+			<img src="drawable/DomforumIcon.png" />
+			<onEnter>
+				<comStartMission id="M_Innenhof" />
+				<comPlaySound file="sound/beep.mp3" />
+			</onEnter>
+			<visible>
+				<reqMissionStatus id="M_Start" new="1" success="1"
+					fail="1" running="1" />
+			</visible>
+		</hotspot>
+		 
+	</hotspots>
+	 
+</game>

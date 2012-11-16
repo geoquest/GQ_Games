@@ -1,0 +1,26 @@
+.dialogitem {
+	font-size:20px;
+	color:white;
+	width:100%;
+}
+
+.speaker {
+	font-size:20px;
+	font-weight:bold;
+	color:white;
+	width:100%;
+}
+
+.charimage {
+	width:123px;
+	height:144px;
+	display: block;
+	margin: auto;
+}
+
+.nextdialogbuttontext {
+	display: block;
+	margin: auto;
+	font-size:20px;
+	color:black;
+}

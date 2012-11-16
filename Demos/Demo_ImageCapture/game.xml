@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="Image Capture Demo" xmlformat="5">
+
+	<mission type="ImageCapture" id="Take_Picture_1" buttontext="Mach mal ein schönes Foto ..."
+		taskdescription="Demo wie du das Aufnehmen von Fotos in dein Quest einbauen kannst ..."
+		initial_image="drawable/chest_closed.jpg" uploadURL="http://geoquest.qeevee.org/upload-images/upload.php"
+		cancel="fail">
+	</mission>
+</game>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="Der durstige Seminarteilnehmer" xmlformat="5">
+	<mission type="NPCTalk" id="startdialog" name="Intro" cancel="success"
+		charimage="drawable/durstigerSemi.jpg">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="Automat_QR_Tag"></action>
+			</rule>
+		</onEnd>
+		<dialogitem>Am Rande der Zivilisation,
+			in der Akademie Remscheid, gab
+			es einen Rohrbruch (Materialverschleiß)
+		</dialogitem>
+		<dialogitem>Ein Seminarteilnehmer hat Durst. </dialogitem>
+	</mission>
+	<mission type="QRTagReading" id="Automat_QR_Tag"
+		taskdescription="Im Haus gibt es keinen Wasserspender, 
+		wo holt Ihr ihm automatisch was zu trinken? Dort findet Ihr einen QR-Tag."
+		mode="treasure" cancel="no" feedbacktext="@result@">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="Automat_Mission"></action>
+			</rule>
+		</onEnd>
+	</mission>
+	<mission type="NPCTalk" id="Automat_Mission" name="Erste Wasserquelle"
+		cancel="success" charimage="drawable/Automatentasten.jpg">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="Kneipe_QR_Tag"></action>
+			</rule>
+		</onEnd>
+		<dialogitem>Zählt alle Getränkeknöpfe, davon zieht Ihr die ab, die
+			oben abgebildet
+			sind. </dialogitem>
+	</mission>
+	<mission type="QRTagReading" id="Kneipe_QR_Tag"
+		taskdescription="Das Ergebnis entspricht einer Hausnummer hier 
+		in Küppelstein. Dort befindet sich der nächste QR-Tag."
+		mode="treasure" cancel="no" feedbacktext="@result@">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="Kneipe_Mission"></action>
+			</rule>
+		</onEnd>
+	</mission>
+	<mission type="NPCTalk" id="Kneipe_Mission" name="No 
+		money –no cry"
+		cancel="success">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="Kneipe_Aufnahme"></action>
+			</rule>
+		</onEnd>
+		<dialogitem>Bringt euch wieder in Stimmung!</dialogitem>
+		<dialogitem>Singt dafür ein Trinklied und nehmt es mit dem Handy auf.
+		</dialogitem>
+	</mission>
+	<mission type="AudioRecord" id="Kneipe_Aufnahme"
+		taskdescription="Dann lasst Eure schönen Stimmen erklingen ..."
+		cancel="success">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="Kneipe_Ende"></action>
+			</rule>
+		</onEnd>
+	</mission>
+	<mission type="NPCTalk" id="Kneipe_Ende" name="No money –no cry"
+		cancel="success">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="Map_Mission"></action>
+			</rule>
+		</onEnd>
+		<dialogitem>Trotz Eures Talents gab es nichts trinkbares, aber an
+			diesem Ort könnte Hilfe warten.</dialogitem>
+		<dialogitem>Geht über den Parkplatz rechts an der Akademie vorbei und
+			geht zum roten
+			Punkt auf der Karte ...</dialogitem>
+	</mission>
+	<mission type="MapOverview" id="Map_Mission" cancel="no"
+		mapkind="satellite" zoomlevel="16">
+		<mission type="NPCTalk" id="Kompost_Mission" name="Kompost"
+			cancel="success">
+			<dialogitem>Hier am Komposthaufen gibt es noch kein Wasser.
+			</dialogitem>
+			<dialogitem>Geht bitte hinter dem Komposthaufen rechts entlang. Dort
+				beginnt ein kleiner Pfad, der Euch weiterbringt.
+			</dialogitem>
+			<dialogitem>Vielleicht findet Ihr ja am nächsten roten Punkt Wasser.
+			</dialogitem>
+		</mission>
+		<mission type="NPCTalk" id="Baum_Mission" name="Hilfe am Baum"
+			cancel="success">
+			<onEnd>
+				<rule>
+					<action type="StartMission" id="Baum_Picture"></action>
+				</rule>
+			</onEnd>
+			<dialogitem>Auch hier ist es trocken.</dialogitem>
+		</mission>
+		<mission type="ImageCapture" id="Baum_Picture" buttontext="Sagt Cheeeeeese ..."
+			taskdescription="Macht jetzt ein Beweisfoto Eures Engagements von der Bank aus mit der schönen Landschaft für den durstigen Seminarteilnehmer."
+			cancel="fail">
+			<onEnd>
+				<rule>
+					<action type="StartMission" id="Wuenschelrute"></action>
+				</rule>
+			</onEnd>
+		</mission>
+		<mission type="NPCTalk" id="Wuenschelrute" name="Bundesbüdchen"
+			charimage="drawable/wuenschelrute.jpg" cancel="success">
+			<dialogitem>Schick seht Ihr aus, dafür haben wir
+				die sprechende
+				Wünschelroutenapp
+				aktiviert.</dialogitem>
+			<dialogitem>Also hört gut hin und fühlt die Schwingungen.
+			</dialogitem>
+			<dialogitem>Folgt dem Weg bergab!</dialogitem>
+		</mission>
+		<mission type="NPCTalk" id="Wuenschelrute_1" name="Folge den Schwingungen..."
+			cancel="success">
+			<onStart>
+				<rule>
+					<action type="Vibrate" duration="300"></action>
+				</rule>
+			</onStart>
+			<dialogitem speaker="Wünschelrute" sound="sounds/schritt1.3gp">Walk on: Der Weg
+				ist das Ziel!</dialogitem>
+		</mission>
+		<mission type="NPCTalk" id="Wuenschelrute_2" name="Folge den Schwingungen..."
+			cancel="success">
+			<onStart>
+				<rule>
+					<action type="Vibrate" duration="600"></action>
+				</rule>
+			</onStart>
+			<dialogitem speaker="Wünschelrute" sound="sounds/schritt2.3gp">Weiter auf
+				Schuster's Rappen ...'</dialogitem>
+		</mission>
+		<mission type="NPCTalk" id="Wuenschelrute_3" name="Folge den Schwingungen..."
+			cancel="success">
+			<onStart>
+				<rule>
+					<action type="Vibrate" duration="900"></action>
+				</rule>
+			</onStart>
+			<onEnd>
+				<rule>
+					<action type="StartMission" id="Wuenschelrute_End"></action>
+				</rule>
+			</onEnd>
+			<dialogitem speaker="Wünschelrute" sound="sounds/schritt3.3gp">Das Wandern ist
+				des Pädagogen Lust. Gleich seid ihr am Ziel.</dialogitem>
+		</mission>
+		<mission type="NPCTalk" id="Wuenschelrute_End" name="Endlich Wasser!"
+			cancel="success" charimage="drawable/abschluss.jpg">
+			<dialogitem>Endlich Wasser: Aber wie kommt es zum Teilnehmer nach
+				oben in den Seminarraum?</dialogitem>
+			<dialogitem>Das Bild oben zeigt euch eine günstige Stelle, Wasser zu
+				schöpfen.</dialogitem>
+			<dialogitem>Die Gruppe vor Euch hat hier in der Nähe wichtige
+				Utensilien vergessen,
+				die zum Transport nützlich sein könnten.
+			</dialogitem>
+			<dialogitem>Für den Rückweg: Nehmt den Zugang zum Röntgenweg
+				(Wanderweg R)
+			</dialogitem>
+		</mission>
+		<mission type="NPCTalk" id="Zahl_13" name="Rettet den Durstigen..."
+			cancel="success">
+			<onStart>
+				<rule>
+					<action type="Vibrate" duration="900"></action>
+				</rule>
+			</onStart>
+			<onEnd>
+				<rule>
+					<action type="StartMission" id="Ende_QR_Tag"></action>
+				</rule>
+			</onEnd>
+			<dialogitem>Die Zahl 13 steht nicht nur für das Unglück an sich,
+			</dialogitem>
+			<dialogitem>sondern auch für den Ort, wo der unglückliche sich
+				befindet.</dialogitem>
+		</mission>
+		<mission type="QRTagReading" id="Ende_QR_Tag" buttontext="QR-Tag gefunden!"
+			taskdescription="Findet den durstigen Seminarteilnehmer im Haus. Er ist mit einem QR-Tag markiert."
+			mode="treasure" cancel="no" feedbacktext="@result@" initial_image="drawable/durstigerSemi.jpg">
+			<onEnd>
+				<rule>
+					<action type="StartMission" id="Ende_Danke"></action>
+				</rule>
+			</onEnd>
+		</mission>
+		<mission type="NPCTalk" id="Ende_Danke" name="Rettet den Durstigen..."
+			endbuttontext="Spiel beenden" cancel="success">
+			<onEnd>
+				<rule>
+					<action type="EndGame"></action>
+				</rule>
+			</onEnd>
+			<dialogitem>Danke! Ihr seid echte Lebensretter!</dialogitem>
+		</mission>
+		<hotspots>
+			<hotspot id="Kompost" latlong="51.154911,7.138929" radius="30">
+				<img src="drawable/punkt_rot.png" />
+				<onEnter>
+					<reqMissionStatus id="Kneipe_Ende" new="0"
+						success="1" fail="1" running="0" />
+					<reqMissionStatus id="Kompost_Mission" new="1"
+						success="0" fail="0" running="0" />
+					<comStartMission id="Kompost_Mission" />
+				</onEnter>
+				<visible>
+					<reqMissionStatus id="Kompost_Mission" new="1"
+						success="0" fail="0" running="0" />
+				</visible>
+			</hotspot>
+
+			<hotspot id="Baum" latitude="51.154091" longitude="7.137295"
+				radius="30">
+				<img src="drawable/punkt_rot.png" />
+				<onEnter>
+					<reqMissionStatus id="Baum_Mission" new="1"
+						success="0" fail="0" running="0" />
+					<reqMissionStatus id="Kompost_Mission" new="0"
+						success="1" fail="1" running="0" />
+					<comStartMission id="Baum_Mission" />
+					<comPlaySound file="sound/beep.mp3" />
+				</onEnter>
+				<visible>
+					<reqMissionStatus id="Baum_Mission" new="1"
+						success="0" fail="0" running="0" />
+					<reqMissionStatus id="Kompost_Mission" new="0"
+						success="1" fail="1" running="0" />
+				</visible>
+			</hotspot>
+
+			<hotspot id="WRute_1" latlong="51.153775,7.138585" radius="30">
+				<img src="drawable/punkt_rot.png" />
+				<onEnter>
+					<reqMissionStatus id="Wuenschelrute" new="0"
+						success="1" fail="0" running="0" />
+					<reqMissionStatus id="Wuenschelrute_1" new="1"
+						success="0" fail="0" running="0" />
+					<comStartMission id="Wuenschelrute_1" />
+				</onEnter>
+				<visible>
+					<reqMissionStatus id="Ende_Danke" new="0" success="1"
+						fail="0" running="0" />
+				</visible>
+			</hotspot>
+
+			<hotspot id="WRute_2" latlong="51.153374,7.140689" radius="30">
+				<img src="drawable/punkt_rot.png" />
+				<onEnter>
+					<reqMissionStatus id="Wuenschelrute" new="0"
+						success="1" fail="0" running="0" />
+					<reqMissionStatus id="Wuenschelrute_2" new="1"
+						success="0" fail="0" running="0" />
+					<comStartMission id="Wuenschelrute_2" />
+				</onEnter>
+				<visible>
+					<reqMissionStatus id="Ende_Danke" new="0" success="1"
+						fail="0" running="0" />
+				</visible>
+			</hotspot>
+
+			<hotspot id="WRute_3" latlong="51.154168,7.142062" radius="30">
+				<img src="drawable/punkt_rot.png" />
+				<onEnter>
+					<reqMissionStatus id="Wuenschelrute" new="0"
+						success="1" fail="0" running="0" />
+					<reqMissionStatus id="Wuenschelrute_3" new="1"
+						success="0" fail="0" running="0" />
+					<comStartMission id="Wuenschelrute_3" />
+				</onEnter>
+				<visible>
+					<reqMissionStatus id="Ende_Danke" new="0" success="1"
+						fail="0" running="0" />
+				</visible>
+			</hotspot>
+		</hotspots>
+	</mission>
+</game>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="QRTag Product Demo" xmlformat="5">
+
+	<mission type="NPCTalk" id="QR_Intro" charimage="drawable/QRIntro.png"
+		nextdialogbuttontext="Mehr Text ..." endbuttontext="Mit der Demo fortfahren ..."
+		cancel="no">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="QR_Product_1" />
+			</rule>
+		</onEnd>
+		<dialogitem>
+			Willkommen zur QR-Tag Reading Demo. Hier stellen wir dir
+			den 'product' mode vor.
+        </dialogitem>
+		<dialogitem>
+			Als erstes zeigen wir dir eine Mission, bei der du einen
+			QR Tag einscannen musst.
+        </dialogitem>
+		<dialogitem>
+			Oben ist ein QR Tag abgebildet.
+			Du kannst dir diese z.B.
+			mit einem Generator im Internet selbst
+			erstellen.
+        </dialogitem>
+		<dialogitem nextdialogbuttontext="Zum Scannen ...">
+			Falls du das jetzt nicht tun
+			kannst, drücke nachher einfach die Back-Hardware Taste, um die Mission zu
+			übergehen.
+        </dialogitem>
+	</mission>
+
+	<mission type="QRTagReading" id="QR_Product_1" buttontext="QR-Tag scannen ..."
+		taskdescription="Suche einen QR-Tag der den Text 'ABC' enthält." mode="product"
+		initial_image="drawable/abc.png" expected_content="ABC" cancel="fail">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="BarCode_Intro" />
+			</rule>
+		</onEnd>
+	</mission>
+
+	<mission type="NPCTalk" id="BarCode_Intro" charimage="drawable/LinearBarCode.gif"
+		nextdialogbuttontext="Mehr Text ..." endbuttontext="Mit der Demo fortfahren ..."
+		cancel="no">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="QR_Product_2" />
+			</rule>
+		</onEnd>
+		<dialogitem>
+			Als nächstes zeigen wir, wie man verschiedene BarCodes
+			benutzen kann.
+        </dialogitem>
+		<dialogitem>
+			Oben siehst du einen linearen BarCode im Code-128 Format.
+        </dialogitem>
+		<dialogitem>
+			Auch dieses Format kann man mit
+			Generatoren im Internet
+			selbst erstellen.
+        </dialogitem>
+		<dialogitem nextdialogbuttontext="Zum Scannen ...">
+			Auch diesmal kannst du nachher einfach
+			die Back-Hardware Taste drücken, um die Mission zu
+			übergehen.
+        </dialogitem>
+	</mission>
+
+	<mission type="QRTagReading" id="QR_Product_2" buttontext="BarCode scannen ..."
+		taskdescription="Suche einen BarCode der den Text 'Hallo BarCodes' enthält."
+		mode="product" initial_image="drawable/LinearBarCode.gif"
+		expected_content="Hallo BarCodes" cancel="fail">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="BarCode_Cola_Intro" />
+			</rule>
+		</onEnd>
+	</mission>
+
+	<mission type="NPCTalk" id="BarCode_Cola_Intro" charimage="drawable/BarCodeCola.jpg"
+		nextdialogbuttontext="Mehr Text ..." endbuttontext="Zum Ende der Demo ..."
+		cancel="no">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="QR_Product_3" />
+			</rule>
+		</onEnd>
+		<dialogitem>
+			Als nächstes zeigen wir, wie man verschiedene EAN-BarCodes
+			benutzen kann.
+        </dialogitem>
+		<dialogitem>
+			Oben siehst du den EAN Code von einer 0.5l Cola Flasche.
+        </dialogitem>
+		<dialogitem>
+			Falls du solch eine Flasche zur Hand hast, kannst du
+			gleich das Scannen ausprobieren.
+        </dialogitem>
+		<dialogitem nextdialogbuttontext="Zum Scannen ...">
+			Wie vorher kannst du nachher einfach
+			die Back-Hardware Taste drücken, um die Mission zu
+			übergehen.
+        </dialogitem>
+	</mission>
+
+	<mission type="QRTagReading" id="QR_Product_3" buttontext="BarCode scannen ..."
+		taskdescription="Suche eine Cola Flasche 0.5l PET" mode="product"
+		initial_image="drawable/BarCodeCola.jpg" expected_content="54491229"
+		cancel="fail" if_right="Ja du hast den richtigen Code gescannt. Prost!">
+	</mission>
+
+</game>

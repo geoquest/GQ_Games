@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="Tauftour (2.1)" xmlformat="5">
+	<mission type="StartAndExitScreen" id="Start"
+		image="drawable/StartScreen.png" cancel="no">
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+				<action type="PlayAudio" file="sound/bell.mp3" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="M_Ausleihe" />
+			</rule>
+		</onEnd>
+	</mission>
+	
+	<mission type="Info" id="M_Ausleihe" background="drawable/backbild-00-einleitung.png"
+	image="drawable/Kreuzblume.png">
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="Map_Mission" />
+			</rule>
+		</onEnd>
+		<item type="Text" sound="sound/Tauftext_01_64.MP3" >
+			<h1>Einführung</h1>
+			Wenn Sie mehr über die Bedeutung der Taufe wissen wollen, 
+			haben Sie mit dieser Tour die richtige Wahl getroffen. 
+			Es gibt was zu entdecken, nachzudenken und – zu gewinnen! 
+			Der Startpunkt liegt an der Kreuzblume vor Domforum und 
+			Hauptportal Dom. Bevor es losgeht, sollten Sie sich mit 
+			Stift und Papier versorgen: Damit können Sie einen Code 
+			notieren, der in unseren Spielverlauf eingebaut ist. 
+			Mit dem Code können Sie sich für eine Überraschung im 
+			Internet einloggen oder sich ein kleines Geschenk von 
+			uns zuschicken lassen.	
+        </item>
+	</mission>
+	
+	<mission type="Info" id="M_Kreuzblume" background="drawable/backbild-00-einleitung.png"
+		image="drawable/Kreuzblume_Plastik.jpg">
+		<onEnd>
+			<rule>
+				<action type="SetHotspotVisibility" id="H_Kreuzblume" visible="false"/>
+				<action type="SetHotspotVisibility" id="H_Domkreuz" visible="true"/>
+			</rule>
+		</onEnd>
+		<item type="Text" sound="sound/Tauftext_03_64.MP3" >
+			<h1>Kreuzblume</h1>
+			Sie stehen vor einem 1:1 Modell der so genannten Kreuzblume, 
+			Ausgangspunkt für viele Rundgänge um den Dom. Ein Original 
+			dieser Blume findet sich jeweils hoch oben auf den beiden 
+			Domtürmen. Wie die Menschen damals diese Riesendinger völlig 
+			ohne motorisierte Maschinen auf die Domspitzen befördern konnten, 
+			übersteigt irgendwie die Vorstellungskraft. Etwas leichter 
+			ist es zu erklären, wie die Verbindung von ‚Kreuz’ und ‚Blume’ 
+			zustande kam ... Bitte etwas Geduld, das werden wir Ihnen im 
+			Laufe des Rundgangs entschlüsseln. Wir laden Sie jetzt ein, 
+			auf die andere Seite des Domes zu gehen. Umrunden Sie dazu die
+			Kathedrale an ihrer linken Seite.
+		</item>
+	</mission>
+	
+	<mission type="Info" id="M_Domkreuz" background="drawable/backbild-02-domkreuz.png"
+		image="drawable/domkreuz.png">
+		<onEnd>
+			<rule>
+				<action type="SetHotspotVisibility" id="H_Domkreuz" visible="false"/>
+				<action type="StartMission" id="M_Baptisterium" />
+			</rule>
+		</onEnd>
+		<item type="MultipleChoiceQuestion" answerLength="long" sound="sound/Tauftext_04_64.MP3">
+			<question>Sie stehen hinter dem Chor des Domes. Wenn 
+			Sie nach oben schauen, sehen Sie viele Formen 
+			und Figuren in Stein und Gold. Welche Zeichen 
+			können Sie erkennen?
+			</question>
+			<answer>
+				<description>Eine Leiter</description>
+			</answer>
+			<answer>
+				<description>Einen Stern</description>
+			</answer>
+			<answer>
+				<description>Ein Kreuz</description>
+			</answer>
+			<answer>
+				<description>Die Weltkugel</description>
+			</answer>
+		</item>
+	</mission>
+	
+	<mission type="Info" id="M_Baptisterium" background="drawable/baptisterium_background.png"
+		image="drawable/Baptisterium.png">
+		<onEnd>
+			<rule>
+				<action type="SetHotspotVisibility" id="H_Spielbrunnen" visible="true"/>
+			</rule>
+		</onEnd>
+		<item type="Text" sound="sound/Tauftext_06_1.MP3" >
+			<h1>Baptisterium</h1>
+			Der älteste Taufort in Köln stammt aus dem 6. Jahrhundert: 
+			Das Taufbecken unter dem Kölner Dom, das sogenannte ‚Baptisterium’, 
+			stammt aus dieser Zeit. So alt und nur wenige Schritte entfernt. 
+			Gehen Sie die Treppe vor Ihnen (halb links) hinunter zur Gittertür. 
+			Achtung: Leider ist der Weg nicht für Kinderwagen geeignet. 
+		</item>
+		<item type="MultipleChoiceQuestion" answerLength="short" sound="sound/Tauftext_06_2.MP3">
+			<question>Lesen Sie die Tafel. Die Menschen, die das Taufbecken 
+			gebaut haben, wussten viel von der Symbolik der Zahlen. 
+			Zahlen sind eben nicht nur zum Rechnen da. Wie viele 
+			Strahlen bzw. Ecken hat das alte Taufbecken?
+			</question>
+			<answer>
+				<description>6</description>
+			</answer>
+			<answer>
+				<description>8</description>
+			</answer>
+			<answer>
+				<description>12</description>
+			</answer>
+		</item>
+		<item type="Text" sound="sound/Tauftext_06_6.MP3" >
+			<!-- "Jetzt" ist am Anfang abgeschnitten. -->
+			Jetzt geht es um einen Teil des Codes – Sammeln und am Ende 
+			gegen ein kleines Geschenk eintauschen! Also: Bitte notieren 
+			Sie die beiden Buchstaben der linken und rechten Kammer, 
+			wie sie auf der Tafel zu sehen sind.
+        </item>
+		<item type="Text" sound="sound/Tauftext_06_7.MP3" >
+			Weiter gehts zwischen dem Museum Ludwig und der 
+			Hohenzollernbrücke, hinunter zum Rhein. Sie finden 
+			dort einen Brunnen mit Wasserquellen, der Kinder zum 
+			Spielen einlädt.
+		</item>
+	</mission>
+	
+	<mission type="Info" id="M_Spielbrunnen" background="drawable/backbild-04-spielbrunnen.png"
+		image="drawable/Spielbrunnen.jpg">
+		<onEnd>
+			<rule>
+				<action type="SetHotspotVisibility" id="H_Spielbrunnen" visible="false"/>
+				<action type="SetHotspotVisibility" id="H_Eule" visible="true"/>
+			</rule>
+		</onEnd>
+		<item type="MultipleChoiceQuestion" answerLength="long" sound="sound/Tauftext_07_1.MP3">
+			<question>Eine kleine Oase. Das sprudelnde Wasser des 
+			Spielbrunnens bietet vor allem im Sommer ein 
+			erfrischendes Bild. Warum wird eigentlich mit 
+			Wasser getauft?
+			</question>
+			<answer>
+				<description>Weil Wasser reinigt.</description>
+			</answer>
+			<answer>
+				<description>Weil Wasser Leben spendet.</description>
+			</answer>
+			<answer>
+				<description>Weil Gott so weit ist wie das Meer.</description>
+			</answer>
+		</item>
+		<item type="Text" sound="sound/Tauftext_07_8.MP3" >
+			Gehen Sie nun rheinaufwärts, bis Sie zu einem kleinen Platz 
+			kommen. Biegen Sie rechts ein, nach wenigen Schritten stehen 
+			Sie vor einer Gaststätte auf der linken Seite.
+		</item>
+	</mission>
+	
+	<mission type="Info" id="M_Eule" background="drawable/backbild-05-eule.png"
+		image="drawable/Eule.png">
+		<onEnd>
+			<rule>
+				<action type="SetHotspotVisibility" id="H_Eule" visible="false"/>
+				<action type="SetHotspotVisibility" id="H_Groß_St_Martin" visible="true"/>
+			</rule>
+		</onEnd>
+		<item type="MultipleChoiceQuestion" answerLength="long" sound="sound/Tauftext_08_1.MP3">
+			<question>Bei diesem rheinischen Lokal interessiert uns das Schild. Die 
+			Eule, die da ein Auge zudrückt, ist bekannt als Symbol der 
+			Weisheit. Ein anderer Vogel gilt in der Kirche als Symbol 
+			des Heiligen Geistes? Wissen Sie welcher?
+			</question>
+			<answer>
+				<description>Adler</description>
+			</answer>
+			<answer>
+				<description>Spatz</description>
+			</answer>
+			<answer>
+				<description>Taube</description>
+			</answer>
+			<answer>
+				<description>Falke</description>
+			</answer>
+		</item>
+		<item type="Text" >
+			Folgen Sie dem Fingerzeig der Eule, um mehr über den
+			Heiligen Geist zu erfahren.
+		</item>
+	</mission>
+	
+	<mission type="Info" id="M_Groß_St_Martin" background="drawable/backbild-06-gross_st_martin.png"
+		image="drawable/Grosser_st_martin.jpg">
+		<onEnd>
+			<rule>
+				<action type="SetHotspotVisibility" id="H_Groß_St_Martin" visible="false"/>
+				<action type="SetHotspotVisibility" id="H_Duftmuseum" visible="true"/>
+			</rule>
+		</onEnd>
+		<item type="MultipleChoiceQuestion" answerLength="short" sound="sound/Tauftext_09_1.MP3">
+			<question>Neben dem Portal finden Sie eine Hinweistafel. 
+			Wie viele so genannte ‚Konchen‘ hat die Kirche?
+			</question>
+			<answer>
+				<description>1</description>
+			</answer>
+			<answer>
+				<description>2</description>
+			</answer>
+			<answer>
+				<description>3</description>
+			</answer>
+			<answer>
+				<description>4</description>
+			</answer>
+		</item>
+		<item type="Text" sound="sound/Tauftext_09_6.MP3" >
+			Bitte notieren Sie sich als Code die
+			Anzahl der Konchen
+			von Groß St. Martin.
+        </item>
+		<item type="Text" sound="sound/Tauftext_10_1.MP3" >
+			Gehen Sie nun am besten Ihrer Nase nach ... , 
+			denn die führt Sie an einen Ort, an dem es 
+			besonders gut riecht.
+        </item>
+	</mission>
+	
+	<mission type="Info" id="M_Duftmuseum" background="drawable/backbild-07-duftmuseum.png"
+		image="drawable/Duftmuseum.jpg">
+		<onEnd>
+			<rule>
+				<action type="SetHotspotVisibility" id="H_Duftmuseum" visible="false"/>
+				<action type="SetHotspotVisibility" id="H_Frings_Statue" visible="true"/>
+			</rule>
+		</onEnd>
+		<item type="MultipleChoiceQuestion" answerLength="long" sound="sound/Tauftext_10_2.MP3">
+			<question>Sie stehen am Duftmuseum von Köln. 
+			300 Jahre Duftkultur werden im Museum ausgestellt. 
+			Wer möchte, darf an den kostbaren Inhaltsstoffen 
+			schnuppern. Mit kostbaren Duftstoffen wird auch 
+			jeder Täufling gesalbt. Wissen Sie warum?
+			</question>
+			<answer>
+				<description>Vielleicht, weil alles was gut riecht, 
+				eine Erinnerung daran ist, dass Gott 
+				es gut mit uns meint?</description>
+			</answer>
+			<answer>
+				<description>Werden nicht auch Priester bei ihrer Weihe 
+				gesalbt. Hat es etwas damit zu tun?</description>
+			</answer>
+		</item>
+		<item type="Text" sound="sound/Tauftext_10_5.MP3" >
+				Richtig! Eine gute Salbe oder Crème benutzt 
+				man einfach gerne, weil es gut tut, wie sie 
+				sanft verteilt wird und langsam ‚unter die 
+				Haut geht’. Bei der Taufe wird mit Chrisam 
+				gesalbt, hergestellt aus Oliven-Öl und Balsam. 
+				Diese kostbare, wohlriechende Mischung deutet 
+				auf die Güte Gottes hin, die den Menschen 
+				durch die Taufe erfahren. Übrigens: die 
+				andere Antwort wäre auch richtig gewesen!
+		</item>
+		<item type="Text" sound="sound/Tauftext_11_1.MP3" >
+			Rechts sehen Sie schon die Domspitzen über den 
+			Dächern. Gehen Sie darauf zu, um zurück zum Dom 
+			zu kommen. Ach ja: Fragen Sie unterwegs Kardinal 
+			Frings, wie lange er Erzbischof von Köln war.
+		</item>
+	</mission>
+	
+	<mission type="Info" id="M_Frings_Statue" background="drawable/backbild-08-kardinal_frings.png"
+		image="drawable/Frings.png">
+		<onEnd>
+			<rule>
+				<action type="SetHotspotVisibility" id="H_Frings_Statue" visible="false"/>
+				<action type="SetHotspotVisibility" id="H_Dom_Suedportal" visible="true"/>
+			</rule>
+		</onEnd>
+		<item type="Text" sound="sound/Tauftext_11_2.MP3" >
+			Prima, Sie haben die Statue von Kardinal Frings gefunden. 
+			Notieren Sie für Ihren  Code die Anzahl der Jahre, die er 
+			Erzbischof von Köln war.
+			Gehen Sie nun die Straße ‚Unter Goldschmied‘ 
+			weiter Richtung Dom, bis Sie vor dem Südportal stehen.
+		</item>
+	</mission>
+	
+	<mission type="Info" id="M_Dom_Suedportal" background="drawable/backbild-09-dom_suedportal.png"
+		image="drawable/Dom_suedportal.jpg">
+		<onEnd>
+			<rule>
+				<action type="SetHotspotVisibility" id="H_Dom_Suedportal" visible="false"/>
+				<action type="SetHotspotVisibility" id="H_Dom_Hauptportal" visible="true"/>
+			</rule>
+		</onEnd>
+		<item type="Text" sound="sound/Tauftext_12_1.MP3" >
+			Sie stehen vor dem Südportal des Doms. Über dem Bogen finden 
+			sie rechts und links vier Männergestalten mit Schriftrollen. 
+			Die vier Figuren stellen die Autoren der vier biblischen 
+			Berichte über das Leben Jesu dar. Jeder von ihnen steht 
+			über seinem Symbol: Ein Mensch versinnbildlicht Matthäus, 
+			der Löwe Markus, der Stier Lukas und der Adler Johannes. 
+			Die Flügel aller Symbolwesen gehen zurück auf eine Prophetenvision 
+			im Alten Testament. Irgendwie faszinierend, dass diese Symbole in 
+			Kirchen auf der ganzen Welt zu finden sind.
+			Alles, was wir von Jesus wissen, verdanken wir diesen vier 
+			Autoren oder Evangelisten. Allen ging es um Jesus Christus. 
+			Deshalb steht er auch zwischen ihnen in der Mitte, auf der 
+			Spitze des Bogens. Und die wichtigste Nachricht aller 
+			Evangelisten? Jesus hat den Tod besiegt. Er ist auferstanden 
+			und lebt.
+			Darum geht es auch in der Taufe: Alle, die getauft werden, 
+			erhalten Anteil am Leben Jesu Christi. Für die Feier der Taufe 
+			Ihres Kindes können Sie selber einen Bibeltext auswählen, der 
+			das nach Ihrer Meinung besonders gut ausdrückt. Wenn Sie uns 
+			Ihre E-Mail-Adresse mitteilen, erhalten Sie dazu weitere Hinweise.
+        </item>
+		<item type="Text" sound="sound/Tauftext_12_2.MP3" >
+			Nehmen Sie nun den Weg links um den Dom bis vor das Hauptportal 
+			in der Mitte.
+		</item>
+	</mission>
+	
+	<mission type="Info" id="M_Dom_Hauptportal" background="drawable/backbild-10-dom_hauptportal.png"
+		image="drawable/Dom_hauptportal.jpg">
+		<onEnd>
+			<rule>
+				<action type="SetHotspotVisibility" id="H_Dom_Hauptportal" visible="false"/>
+				<action type="StartMission" id="M_Dom_Osterkerze" />
+			</rule>
+		</onEnd>
+		<item type="MultipleChoiceQuestion" answerLength="long" sound="sound/Tauftext_13_1.MP3">
+			<question>Ganz gleich, ob es eine große Kathedrale oder eine 
+			kleine Kapelle ist, in der eine Tauffeier stattfindet: 
+			Der Täufling (und seine Eltern) werden an der Türe 
+			des Gotteshauses abgeholt. Was steckt dahinter?
+			</question>
+			<answer>
+				<description>Sie sollen den Weg zum Taufbecken finden.</description>
+			</answer>
+			<answer>
+				<description>Kinder zahlen ja noch keine Kirchensteuer.</description>
+			</answer>
+			<answer>
+				<description>Der Einzug wird dann feierlicher.</description>
+			</answer>
+		</item>
+		<item type="Text" sound="sound/Tauftext_13_8.MP3" >
+			Der ganze Taufgottesdienst ist übrigens als ein Weg 
+			durch die Kirche angelegt: Begrüßung am Portal, 
+			Lesungen aus der Bibel am sog. Ambo, dem Lesepult. 
+			Dann die Taufe am Taufbrunnen und der Abschluss mit 
+			Segen am Altar. Wir schicken Ihnen gerne nähere 
+			Informationen darüber zu.
+		</item>
+		<item type="Text" sound="sound/Tauftext_14_1.MP3" >
+			Wenn Sie Zeit haben und der Dom geöffnet ist: 
+			Gehen Sie doch einmal in den Dom! Hier gibt es 
+			verschiedene Orte, an denen Kerzen leuchten. 
+			Achtung: Im Dom haben Sie keine automatische 
+			Navigation. Sie müssen also ohne Gerät suchen. 
+			Wenn Sie den Dom verlassen, drücken Sie bitte 
+			"Tour fortsetzen" unten.
+        </item>
+	</mission>
+	
+	<mission type="Info" id="M_Dom_Osterkerze" background="drawable/backbild-11-licht_des_lebens.png"
+		image="drawable/Dom_Osterkerze.jpg">
+		<onEnd>
+			<rule>
+				<action type="EndGame"/>
+			</rule>
+		</onEnd>
+		<item type="Text" sound="sound/Tauftext_14_2_1.MP3" >
+			Die Osterkerze ist die größte und bedeutendste Kerze 
+			in der ganzen Kirche. In vielen Kirchen findet man 
+			sie das ganze Jahr über im Kirchenraum. Im Dom ist 
+			sie nur während der Osterzeit in der Nähe des Altares 
+			zu finden. Die Osterkerze ist ein Symbol für Christus, 
+			das Licht der Welt, das den Tod besiegt hat. Beides 
+			kann man an der Kerze sozusagen ablesen: Fünf tiefrote 
+			Erhebungen markieren die Wunden des Gekreuzigten. 
+			Und der erste und der letzte Buchstabe des griechischen 
+			Alphabets zeigen, dass der Auferstandene die Welt von 
+			Anfang bis zum Ende, von A bis Z, beherrscht.
+		</item>
+		<item type="MultipleChoiceQuestion" answerLength="long" sound="sound/Tauftext_14_2_2.MP3">
+			<question>Für jeden Menschen, der getauft wird, wird am 
+			Licht der Osterkerze eine Taufkerze angezündet. 
+			Können Sie sich denken, weshalb es diese 
+			Tradition gibt?
+			</question>
+			<answer>
+				<description>Weil Christus das Licht der Welt ist.</description>
+			</answer>
+			<answer>
+				<description>Man hat dann für die Erstkommunion auch schon eine Kerze.</description>
+			</answer>
+			<answer>
+				<description>Weil jede Taufe an Ostern erinnert.</description>
+			</answer>
+		</item>
+		<item type="Text" sound="sound/Tauftext_14_9_1.MP3" >
+			Wenn Sie wollen, können Sie im Dom noch eine Kerze für
+			Ihr Kind anstecken.
+		</item>
+		<item type="Text" sound="sound/Tauftext_14_9_2.MP3" >
+			Damit ist unsere Tour zum Thema ‚Taufe’ zu Ende gekommen. 
+			Wir hoffen, es hat Ihnen Freude gemacht. Wenn Sie ein 
+			Leihgerät erhalten haben, dann geben Sie diesen 
+			elektronischen Begleiter bitte wieder im Domforum ab.
+			Ach ja, wenn Sie Ihren Code unterwegs notiert haben, können Sie 
+			A: den Code hier eingeben, um sich einen kurzen Film anzuschauen.
+			B: sich im Domforum ein kleines Geschenk abholen.
+		</item>
+	</mission>
+	
+	<!-- MAP MISSION STARTS HERE: -->
+	<mission type="MapOverview" id="Map_Mission" cancel="no"
+		zoomlevel="18" mapkind="satellite">
+		
+		<!-- HOTSPOTS START HERE: -->
+		<hotspots>
+			<hotspot id="H_Domforum" latitude="50.940974" longitude="6.95636"
+				radius="40" initialVisibility="false" img="drawable/GeoIcon.png" >
+				<visible>
+					<reqMissionStatus id="M_Ausleihe" new="1" success="1"
+						fail="1" running="1" />
+				</visible>
+			</hotspot>
+			<hotspot id="H_Kreuzblume" latlong="50.941289,6.956395"
+				radius="30" initialVisibility="true" img="drawable/GeoIcon.png" >
+				<onEnter>
+					<rule>
+						<if>
+							<missionState id="M_Kreuzblume" state="new" />
+						</if>
+						<action type="StartMission" id="M_Kreuzblume" />
+					</rule>
+				</onEnter>
+			</hotspot>
+			<hotspot id="H_Domkreuz" latitude="50.94137" longitude="6.959574"
+				radius="40" initialVisibility="false" img="drawable/GeoIcon.png" >
+				<onEnter>
+					<rule>
+						<if>
+							<missionState id="M_Domkreuz" state="new" />
+						</if>
+						<action type="StartMission" id="M_Domkreuz" />
+					</rule>
+				</onEnter>
+			</hotspot>
+			<hotspot id="H_Spielbrunnen" latitude="50.940373" longitude="6.96238"
+				radius="40" initialVisibility="false" img="drawable/GeoIcon.png">
+				<onEnter>
+					<rule>
+						<if>
+							<missionState id="M_Spielbrunnen" state="new" />
+						</if>
+						<action type="StartMission" id="M_Spielbrunnen" />
+					</rule>
+				</onEnter>
+			</hotspot>
+			<hotspot id="H_Eule" latitude="50.938208" longitude="6.96214"
+				radius="40" initialVisibility="false" img="drawable/GeoIcon.png">
+				<onEnter>
+					<rule>
+						<if>
+							<missionState id="M_Eule" state="new" />
+						</if>
+						<action type="StartMission" id="M_Eule" />
+					</rule>
+				</onEnter>
+			</hotspot>
+			<hotspot id="H_Groß_St_Martin" latitude="50.938482"
+				longitude="6.961224" radius="40" initialVisibility="false" img="drawable/GeoIcon.png">
+				<onEnter>
+					<rule>
+						<if>
+							<missionState id="M_Groß_St_Martin" state="new" />
+						</if>
+						<action type="StartMission" id="M_Groß_St_Martin" />
+					</rule>
+				</onEnter>
+			</hotspot>
+			<hotspot id="H_Duftmuseum" latitude="50.937641" longitude="6.958138"
+				radius="40" initialVisibility="false" img="drawable/GeoIcon.png">
+				<onEnter>
+					<rule>
+						<if>
+							<missionState id="M_Duftmuseum" state="new" />
+						</if>
+						<action type="StartMission" id="M_Duftmuseum" />
+					</rule>
+				</onEnter>
+			</hotspot>
+			<hotspot id="H_Frings_Statue" latitude="50.938503" longitude="6.958078"
+				radius="40" initialVisibility="false" img="drawable/GeoIcon.png">
+				<onEnter>
+					<rule>
+						<if>
+							<missionState id="M_Frings_Statue" state="new" />
+						</if>
+						<action type="StartMission" id="M_Frings_Statue" />
+					</rule>
+				</onEnter>
+			</hotspot>
+			<hotspot id="H_Dom_Suedportal" latitude="50.940897"
+				longitude="6.958203" radius="40" initialVisibility="false" img="drawable/GeoIcon.png">
+				<onEnter>
+					<rule>
+						<if>
+							<missionState id="M_Dom_Suedportal" state="new" />
+						</if>
+						<action type="StartMission" id="M_Dom_Suedportal" />
+					</rule>
+				</onEnter>
+			</hotspot>
+			<hotspot id="H_Dom_Hauptportal" latitude="50.94126"
+				longitude="6.957067" radius="40" initialVisibility="false" img="drawable/GeoIcon.png">
+				<onEnter>
+					<rule>
+						<if>
+							<missionState id="M_Dom_Hauptportal" state="new" />
+						</if>
+						<action type="StartMission" id="M_Dom_Hauptportal" />
+					</rule>
+				</onEnter>
+			</hotspot>
+		</hotspots>
+	</mission>
+</game>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="Verkehrszaehlung" xmlformat="5">
+	<mission type="MapOverview" id="Map_Mission" cancel="no"
+		mapkind="satellite" zoomlevel="20">
+		<mission type="ExternalMission" id="em_1"
+			app_package="edu.ubonn.tests.ext_app_sample">
+			<parameters>
+				<argument name="Zählpunkt" value="(unset)" />
+				<result name="Ergebnis" default="(unset)" />
+			</parameters>
+		</mission>
+		
+		<hotspots>
+		
+			<hotspot id="h1" latlong="50.748669,7.201881" radius="20" img="drawable/Char_Red.png">
+				<onEnter>
+					<rule>
+						<action type="StartExternalMission" id="em_1">
+							<parameters>
+								<argument name="Zählpunkt" value="1" />
+							</parameters>
+						</action>
+					</rule>
+				</onEnter>
+			</hotspot>
+		
+			<hotspot id="h2" latlong="50.748832,7.202894" radius="20" img="drawable/Char_Red.png">
+				<onEnter>
+					<rule>
+						<action type="StartExternalMission" id="em_1">
+							<parameters>
+								<argument name="Zählpunkt" value="2" />
+							</parameters>
+						</action>
+					</rule>
+				</onEnter>
+			</hotspot>
+			
+		</hotspots>
+	</mission>
+</game>

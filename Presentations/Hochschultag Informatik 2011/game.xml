@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<game name="Informatik Ralley" xmlformat="5">
+
+	<!-- Start Screen -->
+	<mission type="StartAndExitScreen" id="Start_Screen" image="drawable/logo.jpg"
+		duration="1000">
+		<onEnd>
+			<comStartMission id="Intro" />
+		</onEnd>
+	</mission>
+
+
+	<!-- =========== INTRO =========== -->
+	<mission type="NPCTalk" id="Intro" nextdialogbuttontext="Weiter ..."
+		charimage="drawable/Hochschultag-Logo.png" endbuttontext="Ralley starten"
+		name="Intro zur Ralley">
+
+		<dialogitem>
+			Wilkommen bei der Informatik Ralley zum Hochschultag 2011!
+		</dialogitem>
+
+		<dialogitem>
+			Wir wünschen Dir viel Spaß und Erfolg! 
+		</dialogitem>
+
+		<onEnd>
+			<comStartMission id="Question_1" />
+		</onEnd>
+
+	</mission>
+
+	<!-- =========== QUESTION 1 =========== -->
+	<mission type="QuestionAndAnswer" id="Question_1" name="Fragen zu Robotern"
+		questions="2" correctAnswersNeeded="2" shuffle="false" cancel="fail">
+
+		<intro>Als erstes ein paar Fragen zu Robotern ...</intro>
+
+		<question>
+
+			<questiontext>Woher stammt der Begriff "Roboter"?</questiontext>
+
+			<answer
+				onChoose="Das ist leider falsch. Roboter stammt vom slawischen Wort robota (Arbeit).">
+				Vom englischen R.O.B.O.T. (Realistic Optimal Balanced
+				Operator-free Tinman)
+			</answer>
+
+			<answer correct="1" onChoose="Super, die Antwort ist richtig!">
+				Vom slawischen Wort robota
+				(Arbeit).
+			</answer>
+
+			<answer
+				onChoose="Das ist leider falsch. Roboter stammt vom slawischen Wort robota (Arbeit).">
+				Der Erfinder des ersten Roboters hieß ROBert OTERnoff.
+			</answer>
+
+		</question>
+
+		<question>
+
+			<questiontext>Wie viele Beine hatte der erste Laufroboter?
+			</questiontext>
+
+			<answer onChoose="Das ist leider falsch. Der erste Laufroboter 4 Beine."> 1 </answer>
+
+			<answer correct="1" onChoose="Super, die Antwort ist richtig! "> 4 </answer>
+
+			<answer onChoose="Das ist leider falsch. Der erste Laufroboter 4 Beine."> 6 </answer>
+
+		</question>
+
+		<onSuccess>
+			<comAttribute name="Succ_1" value="true" />
+			<comStartMission id="Info_1" />
+		</onSuccess>
+
+		<onFail>
+			<comAttribute name="Succ_1" value="false" />
+			<comStartMission id="Info_1" />
+		</onFail>
+
+	</mission>
+
+	<!-- =========== INFOS 1 =========== -->
+	<mission type="NPCTalk" id="Info_1" nextdialogbuttontext="Weiter ..."
+		charimage="drawable/Phony-pony.jpg" endbuttontext="Ralley fortfahren ..."
+		name="Infos">
+
+		<dialogitem>
+			Karel Čapek nutzte den Begriff "Roboter" in seinem
+			Theaterstück R.U.R. im Jahr 1921.
+		</dialogitem>
+
+		<dialogitem>
+			Es war eine Bezeichnung für in Tanks gezüchtete
+			menschenähnliche künstliche Arbeiter.
+		</dialogitem>
+
+		<dialogitem>
+			Der erste Laufroboter hieß "Phoney Pony". Er hatte 4 Beine
+			und wurde 1968 von McGhee und Frank entwickelt. 
+		</dialogitem>
+
+		<dialogitem>
+			Oben siehst Du ein Bild von ihm.
+		</dialogitem>
+
+		<onEnd>
+			<reqAttribute name="Succ_1" value="true" />
+			<comStartMission id="QR-Tag_1_Succ" />
+		</onEnd>
+
+		<onEnd>
+			<reqAttribute name="Succ_1" value="false" />
+			<comStartMission id="QR-Tag_1_Fail" />
+		</onEnd>
+
+	</mission>
+
+	<!-- =========== QR-TAG 1 =========== -->
+	<mission type="QRTagReading" id="QR-Tag_1_Succ" buttontext="QR-Tag gefunden!"
+		initial_image="drawable/QR-Tag-Hint-1.jpg"
+		taskdescription="Finde den Bestuhlungsplan im großen Saal. Daneben befindet sich der Qr-Tag mit dem ersten Decodierungsblock."
+		mode="treasure" cancel="no" feedbacktext="@result@">
+
+		<onEnd>
+			<comStartMission id="Question_2" />
+		</onEnd>
+
+	</mission>
+
+	<mission type="QRTagReading" id="QR-Tag_1_Fail" buttontext="QR-Tag gefunden!"
+		initial_image="drawable/QR-Tag-Hint-1.jpg"
+		taskdescription="Finde diesen Bestuhlungsplan. Daneben befindet sich der Qr-Tag mit dem ersten Decodierungsblock."
+		mode="treasure" cancel="no" feedbacktext="@result@">
+
+		<onEnd>
+			<comStartMission id="Question_2" />
+		</onEnd>
+
+	</mission>
+
+	<!-- =========== QUESTION 2 =========== -->
+	<mission type="QuestionAndAnswer" id="Question_2"
+		name="Fragen über das Programmieren" questions="2"
+		correctAnswersNeeded="2" shuffle="false" cancel="fail">
+
+		<intro> Und nun ein paar Fragen über das Programmieren ... </intro>
+
+		<question>
+
+			<questiontext> Welcher der folgenden Begriffe bezeichnet keine
+				Programmiersprache? </questiontext>
+
+			<answer correct="1"
+				onChoose="Richtig! Das sind nämlich die leckeren Kekse. :)">
+				Jaffa
+			</answer>
+
+			<answer onChoose="Das ist leider falsch. Kennst du etwa keine Jaffa Kekse? ;)">
+				False 
+			</answer>
+
+			<answer onChoose="Das ist leider falsch. Kennst du etwa keine Jaffa Kekse? ;)">
+				Gofer
+			</answer>
+
+		</question>
+
+		<question>
+
+			<questiontext> Was verwendet man typischerweise beim Programmieren?
+			</questiontext>
+
+			<answer onChoose="Das ist leider falsch. Die richtige Antwort ist Schleife.">
+				Fliegen </answer>
+
+			<answer onChoose="Das ist leider falsch. Die richtige Antwort ist Schleife.">
+				Krawatten </answer>
+
+			<answer correct="1" onChoose="Super, die Antwort ist richtig!">
+				Schleifen </answer>
+		</question>
+
+		<onSuccess>
+			<comAttribute name="Succ_2" value="true" />
+			<comStartMission id="Info_2" />
+		</onSuccess>
+
+		<onFail>
+			<comAttribute name="Succ_2" value="false" />
+			<comStartMission id="Info_2" />
+		</onFail>
+
+	</mission>
+
+	<!-- =========== INFOS 2 =========== -->
+	<mission type="NPCTalk" id="Info_2" nextdialogbuttontext="Weiter ..."
+		charimage="drawable/Computer-Keyboard.jpg" endbuttontext="Ralley fortfahren ..."
+		name="Infos">
+
+		<dialogitem>
+			False ist eine esoterische Programmiersprache. Sie wird
+			nicht für seriöse Programmierung verwendet. 
+		</dialogitem>
+
+		<dialogitem>
+			Esoterische Programmiersprachen sind meist kompliziert und
+			schwer lesbar.
+		</dialogitem>
+
+		<dialogitem>
+			Beispielcode: 
+		</dialogitem>
+
+		<dialogitem>
+			99 9[1-$][\$@$@$@$@\/*=[1-$$[%\1-$@]?0=[\$.',\]?]?]#
+		</dialogitem>
+
+		<dialogitem nextdialogbuttontext="Auflösung ...">
+			Hast Du eine Idee was
+			dieses Stück Code macht? 
+		</dialogitem>
+
+		<dialogitem>
+			Es gibt alle Primzahlen zwischen 1 und 100 aus.
+		</dialogitem>
+
+		<dialogitem>
+			Gofer ist eine funktionale Programmiersprache.
+		</dialogitem>
+
+		<dialogitem>
+			Grob erklärt fassen funktionale Programmiersprachen
+			Programme als mathematische Funktion auf. 
+		</dialogitem>
+
+		<onEnd>
+			<reqAttribute name="Succ_2" value="true" />
+			<comStartMission id="QR-Tag_2_Succ" />
+		</onEnd>
+
+		<onEnd>
+			<reqAttribute name="Succ_2" value="false" />
+			<comStartMission id="QR-Tag_2_Fail" />
+		</onEnd>
+
+	</mission>
+
+	<!-- =========== QR-TAG 2 =========== -->
+	<mission type="QRTagReading" id="QR-Tag_2_Succ" buttontext="QR-Tag gefunden!"
+		initial_image="drawable/QR-Tag-Hint-2-suc.jpg"
+		taskdescription="Finde diese Pflanze im Erdgeschoß. Der QR-Tag mit dem zweiten Decodierungs-Block befindet sich daneben."
+		mode="treasure" cancel="no" feedbacktext="@result@">
+
+		<onEnd>
+			<comStartMission id="Question_3" />
+		</onEnd>
+
+	</mission>
+
+	<mission type="QRTagReading" id="QR-Tag_2_Fail" buttontext="QR-Tag gefunden!"
+		initial_image="drawable/QR-Tag-Hint-2-fail.jpg"
+		taskdescription="Finde diese Pflanze. Der QR-Tag mit dem zweiten Decodierungs-Block befindet sich daneben."
+		mode="treasure" cancel="no" feedbacktext="@result@">
+
+		<onEnd>
+			<comStartMission id="Question_3" />
+		</onEnd>
+
+	</mission>
+	<!-- =========== QUESTION 3 =========== -->
+	<mission type="QuestionAndAnswer" id="Question_3" name="Fragen über Netzwerke"
+		questions="2" correctAnswersNeeded="2" shuffle="true" cancel="fail">
+
+		<intro> Jetzt kommen wir zu Fragen über Netzwerke ... </intro>
+
+		<question>
+
+			<questiontext> Wie Bezeichnet man eine Angriffsform, die in
+				Netzwerken ihre Anwendung findet? </questiontext>
+
+			<answer
+				onChoose="Das ist leider falsch. Man-in-the-Middle-Attack ist die korrekte Antwort.">
+				Ceasar-Attack
+			</answer>
+
+			<answer
+				onChoose="Das ist leider falsch. Man-in-the-Middle-Attack ist die korrekte Antwort.">
+				Divide &amp; Conquer Attack
+			</answer>
+
+			<answer correct="1" onChoose="Super, die Antwort ist richtig!">
+				Man-in-the-Middle-Attack </answer>
+
+		</question>
+
+		<question>
+
+			<questiontext>Welcher der folgenden Begriffe bezeichnet einen Dienst
+				der Angreifer in einem Netzwerk ablenken oder anlocken soll?
+			</questiontext>
+
+			<answer onChoose="Das ist leider falsch. Honeypot ist die korrekte Antwort."> Jam Jar </answer>
+
+			<answer correct="1" onChoose="Super, das ist die richtige Antwort!"> Honeypot </answer>
+
+			<answer onChoose="Das ist leider falsch. Honeypot ist die korrekte Antwort."> Flytrap </answer>
+
+		</question>
+
+		<onSuccess>
+			<comAttribute name="Succ_3" value="true" />
+			<comStartMission id="Info_3" />
+		</onSuccess>
+
+		<onFail>
+			<comAttribute name="Succ_3" value="false" />
+			<comStartMission id="Info_3" />
+		</onFail>
+
+	</mission>
+
+	<!-- =========== INFOS 3 =========== -->
+	<mission type="NPCTalk" id="Info_3" nextdialogbuttontext="Weiter ..."
+		charimage="drawable/MITMA.jpg" endbuttontext="Ralley fortfahren ..."
+		name="Infos">
+
+		<dialogitem>
+			Beim Man-in-the-Middle-Angriff befindet sich der Angreifer
+			zwischen zwei Kommunikations- partnern. 
+		</dialogitem>
+
+		<dialogitem>
+			Der Angreifer manipuliert Daten, die zwischen den
+			Kommunikations-
+			partnern ausgetauscht werden.
+		</dialogitem>
+
+		<dialogitem>
+			Oben siehst Du eine Abbildung zum
+			Man-in-the-Middle-Angriff.
+		</dialogitem>
+
+		<dialogitem>
+			Ein Honeypot kann ein Server oder Programm in einem
+			Netzwerk sein. 
+		</dialogitem>
+
+		<dialogitem>
+			Es soll den Angreifer vom eigentlichen Ziel ablenken oder
+			ihn in einen
+			Bereich hineinlocken.
+		</dialogitem>
+
+		<onEnd>
+			<reqAttribute name="Succ_3" value="true" />
+			<comStartMission id="QR-Tag_3_Succ" />
+		</onEnd>
+
+		<onEnd>
+			<reqAttribute name="Succ_3" value="false" />
+			<comStartMission id="QR-Tag_3_Fail" />
+		</onEnd>
+	</mission>
+
+	<!-- =========== QR-TAG 3 =========== -->
+	<mission type="QRTagReading" id="QR-Tag_3_Succ" buttontext="QR-Tag gefunden!"
+		initial_image="drawable/QR-Tag-Hint-3-suc.jpg"
+		taskdescription="Finde dieses Objekt im Untergeschoß. Der QR-Tag mit dem dritten Decodierungs-Block befindet sich in daneben."
+		mode="treasure" cancel="no" feedbacktext="@result@">
+
+		<onEnd>
+			<comStartMission id="Question_4" />
+		</onEnd>
+
+	</mission>
+
+	<mission type="QRTagReading" id="QR-Tag_3_Fail" buttontext="QR-Tag gefunden!"
+		initial_image="drawable/QR-Tag-Hint-3-fail.jpg"
+		taskdescription="Finde dieses Objekt. Der QR-Tag mit dem dritten Decodierungs-Block befindet sich in daneben."
+		mode="treasure" cancel="no" feedbacktext="@result@">
+
+		<onEnd>
+			<comStartMission id="Question_4" />
+		</onEnd>
+
+	</mission>
+
+	<!-- =========== QUESTION 4 =========== -->
+	<mission type="QuestionAndAnswer" id="Question_4"
+		name="Fragen zur theoretischen Informatik" questions="2"
+		correctAnswersNeeded="2" shuffle="true" cancel="fail">
+
+		<intro> Jetzt noch etwas über die theoretische Informatik ... </intro>
+
+		<question>
+
+			<questiontext> Welcher der folgenden Begriffe ist eine Datenstruktur?
+			</questiontext>
+
+			<answer
+				onChoose="Das ist leider falsch. Der Keller bezeichnet eine Datenstruktur."> Dach </answer>
+
+			<answer
+				onChoose="Das ist leider falsch. Der Keller bezeichnet eine Datenstruktur."> Erdgeschoß </answer>
+
+			<answer correct="1" onChoose="Super, die Antwort ist richtig. "> Keller </answer>
+
+		</question>
+
+		<question>
+
+			<questiontext> Welche der folgenden Bezeichnungen ist ein berühmtes
+				Problem der Spieltheorie? </questiontext>
+
+			<answer correct="1" onChoose="Super, das ist die richtige Antwort!">
+				Eisverkäufer-am-Strand-Problem
+			</answer>
+
+			<answer onChoose="Das ist leider falsch. Eisverkäufer-am-Strand-Problem.">
+				Paradoxon des Haufens
+			</answer>
+
+			<answer onChoose="Das ist leider falsch. Eisverkäufer-am-Strand-Problem.">
+				Münchhausen-Trilemma
+			</answer>
+
+		</question>
+
+		<onSuccess>
+			<comAttribute name="Succ_4" value="true" />
+			<comStartMission id="Info_4" />
+		</onSuccess>
+
+		<onFail>
+			<comAttribute name="Succ_4" value="false" />
+			<comStartMission id="Info_4" />
+		</onFail>
+
+	</mission>
+
+	<!-- =========== INFOS 4 =========== -->
+	<mission type="NPCTalk" id="Info_4" nextdialogbuttontext="Weiter ..."
+		charimage="drawable/Iceseller.jpg" endbuttontext="Ralley fortfahren ..."
+		name="Infos">
+
+		<dialogitem>
+			Der Keller wird im Englischen als Stack (Stapel)
+			bezeichnet. Auf einem Stack kann immer nur		
+		</dialogitem>
+
+		<dialogitem>
+			das oberste Objekt bearbeitet und gelöscht werden.
+			Neue Objekte werden immer oben auf den Stack gelegt.
+		</dialogitem>
+
+		<dialogitem>
+			Beim Eisverkäufer-am-Strand-Problem geht es um zwei
+			Eisverkäufer, die sich eine Strandpromenade teilen.
+			Sie verkaufen das
+			gleiche Eis zum gleichen Preis. 
+		</dialogitem>
+
+		<dialogitem>
+			Das Ziel ist es, für beide die beste
+			Position auf der Promenade zu
+			finden, so daß beide maximale Einnahmen
+			haben.
+		</dialogitem>
+
+		<onEnd>
+			<reqAttribute name="Succ_4" value="true" />
+			<comStartMission id="QR-Tag_4_Succ" />
+		</onEnd>
+
+		<onEnd>
+			<reqAttribute name="Succ_4" value="false" />
+			<comStartMission id="QR-Tag_4_Fail" />
+		</onEnd>
+
+	</mission>
+
+	<!-- =========== QR-TAG 4 =========== -->
+	<mission type="QRTagReading" id="QR-Tag_4_Succ" buttontext="QR-Tag gefunden!"
+		initial_image="drawable/QR-Tag-Hint-4-suc.jpg"
+		taskdescription="Finde dieses Schild. Der QR-Tag mit dem vierten Decodierungs-Block befindet sich auf der Rückseite."
+		mode="treasure" cancel="no" feedbacktext="@result@">
+
+		<onEnd>
+			<comStartMission id="Question_5" />
+		</onEnd>
+
+	</mission>
+
+	<mission type="QRTagReading" id="QR-Tag_4_Fail" buttontext="QR-Tag gefunden!"
+		initial_image="drawable/QR-Tag-Hint-4-fail.jpg"
+		taskdescription="Finde dieses Schild. Der QR-Tag mit dem vierten Decodierungs-Block befindet sich auf der Rückseite."
+		mode="treasure" cancel="no" feedbacktext="@result@">
+
+		<onEnd>
+			<comStartMission id="Question_5" />
+		</onEnd>
+
+	</mission>
+
+	<!-- =========== QUESTION 5 =========== -->
+	<mission type="QuestionAndAnswer" id="Question_5"
+		name="Allgemeine Fragen zur Informatik" questions="2"
+		correctAnswersNeeded="2" shuffle="true" cancel="fail">
+
+		<intro> Zu guter Letzt noch 2 allgemeine Fragen ... </intro>
+
+		<question>
+
+			<questiontext> Was war das erste Datenträger? </questiontext>
+
+			<answer
+				onChoose="Das ist leider falsch. Lochstreifen war die richtige Antwort.">
+				Lochpapier
+			</answer>
+
+			<answer correct="1" onChoose="Super, die Antwort ist richtig. ">
+				Lochstreifen
+			</answer>
+
+			<answer correct="1"
+				onChoose="Das ist leider falsch. Lochstreifen war die richtige Antwort.">
+				Lochkarten
+			</answer>
+
+		</question>
+
+		<question>
+
+			<questiontext> Was ist ein Zombie? </questiontext>
+
+			<answer
+				onChoose="Das ist leider falsch. Ein Zombie ist ein Prozess, der beendet ist, aber noch in der Prozesstabelle auftaucht.">
+				Ein Kindprozess, der seinen Elternprozess überlastet und
+				später beendet.
+			</answer>
+
+			<answer correct="1" onChoose="Super, das ist die richtige Antwort!">
+				Ein Prozess, der beendet ist,
+				aber noch in der Prozesstabelle auftaucht.
+			</answer>
+
+			<answer
+				onChoose="Das ist leider falsch. Ein Zombie ist ein Prozess, der beendet ist, aber noch in der Prozesstabelle auftaucht.">
+				Ein Unterprozess, der unerlaubt im Hintergrund gestartet
+				wurde.
+			</answer>
+
+		</question>
+
+		<onSuccess>
+			<comAttribute name="Succ_5" value="true" />
+			<comStartMission id="Info_5" />
+		</onSuccess>
+
+		<onFail>
+			<comAttribute name="Succ_5" value="false" />
+			<comStartMission id="Info_5" />
+		</onFail>
+
+	</mission>
+
+	<!-- =========== INFOS 5 =========== -->
+	<mission type="NPCTalk" id="Info_5" nextdialogbuttontext="Weiter lesen ..."
+		charimage="drawable/lochstreifen.jpg" endbuttontext="Ralley fortfahren ..."
+		name="Infos">
+
+		<dialogitem>
+			Lochstreifen wurden im Jahr 1725 von Basile Bouchon
+			erfunden. Sie dienten der maschinellen Steuerung von Webstühlen.
+		</dialogitem>
+
+		<dialogitem>
+			Ein Zombie beansprucht nur wenige Systemressourcen und
+			richtet selbst keinen Schaden an. Er kann aber auf einen Fehler
+			hinweisen.
+		</dialogitem>
+
+		<onEnd>
+			<reqAttribute name="Succ_5" value="true" />
+			<comStartMission id="QR-Tag_5_Succ" />
+		</onEnd>
+
+		<onEnd>
+			<reqAttribute name="Succ_5" value="false" />
+			<comStartMission id="QR-Tag_5_Fail" />
+		</onEnd>
+
+	</mission>
+
+	<!-- =========== QR-TAG 5 =========== -->
+	<mission type="QRTagReading" id="QR-Tag_5_Succ" buttontext="QR-Tag gefunden!"
+		taskdescription="Begebe Dich wieder in die Einganghalle. Von dort aus sieht man diese Skulptur. 
+		Der QR-Tag mit dem fünften Decodierungs-Block befindet sich auf ihr."
+		mode="treasure" cancel="no" feedbacktext="@result@" initial_image="drawable/QR-Tag-Hint-5.jpg">
+
+		<onEnd>
+			<comStartMission id="Take_Picture_1" />
+		</onEnd>
+
+	</mission>
+
+	<mission type="QRTagReading" id="QR-Tag_5_Fail" buttontext="QR-Tag gefunden!"
+		taskdescription="Finde diese Skulptur. den QR-Tag, der dem fünften Decodierungs-Block entspricht ..."
+		mode="treasure" cancel="no" feedbacktext="@result@" initial_image="drawable/QR-Tag-Hint-5.jpg">
+
+		<onEnd>
+			<comStartMission id="Take_Picture_1" />
+		</onEnd>
+
+	</mission>
+
+	<mission type="ImageCapture" id="Take_Picture_1" buttontext="Mach mal ein schönes Foto ..."
+		taskdescription="Bevor die Rallye nun zu Ende geht, könnt ihr noch ein Foto von Euch machen ..."
+		mode="treasure" initial_image="drawable/foto-machen.jpg" cancel="fail">
+		<onEnd>
+			<comStartMission id="End_Screen" />
+		</onEnd>
+	</mission>
+
+
+	<!-- =========== END =========== -->
+	<mission type="NPCTalk" id="End_Screen" nextdialogbuttontext="Weiter ..."
+		charimage="drawable/Hochschultag-Logo.png" endbuttontext="Ralley beenden!"
+		name="QR-Tag Hinweise">
+
+		<dialogitem>
+			Die Ralley ist nun beendet und Du kannst den Satz jetzt
+			komplett entschlüsseln.
+		</dialogitem>
+
+		<dialogitem>
+			Bevor du dich aber ans Entschlüsseln machst, bringe bitte
+			das Handy wieder an unseren Stand zurück.
+		</dialogitem>
+
+		<dialogitem>
+			Wir hoffen, dass es Dir gefallen hat. Viel Spaß noch beim
+			Hochschultag im B-IT!
+		</dialogitem>
+
+	</mission>
+</game>

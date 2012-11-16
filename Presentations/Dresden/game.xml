@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="Dresden Theater" xmlformat="5"> 
+	 	
+	<mission type="StartAndExitScreen" id="Start_Screen" image="drawable/start_screen.jpg" duration="3000">
+		<onEnd>        
+		    <rule>
+                <action type="StartMission" id="Intro"/>
+            </rule>	
+		</onEnd>
+	</mission> 
+
+    <mission type="NPCTalk" id="Intro" name="Intro" cancel="success" charimage="drawable/theater_eingang.jpg"> 
+    
+       	<onStart>
+        	<rule>
+        		<action type="PlayAudio" file="sound/magic_bells.mp3"/>
+        	</rule>
+        </onStart>    
+      	<onEnd>
+			<rule>
+        		<action type="StartMission" id="Map_Mission"/>
+      		</rule>	    
+      	</onEnd>
+      
+      	<dialogitem>Willkommen bei der GeoQuest Präsentation im Theater "wechselbad der Gefühle"!</dialogitem>
+      	<dialogitem>Sie soll Euch einen kleinen Einblick in die Funktionalität von GeoQuest geben.</dialogitem>
+      	<dialogitem>Unser kleines Spiel handelt über bekannte Theaterstücke.</dialogitem>
+      	<dialogitem>Die zu erfüllenden Aufgaben, werden Euch während dem Ablauf auf dem Gerät erklärt.</dialogitem>
+		<dialogitem>Bitte begebt Euch vor das Theater. Dort startet das Spiel.</dialogitem>    
+    </mission>
+		 
+	<mission type="MapOverview" id="Map_Mission" cancel="no" mapkind="satellite" zoomlevel="20"> 
+
+      	<mission type="NPCTalk" id="Theater_Start_Mission" name="Theater" cancel="success" charimage="drawable/Char_Red.png"> 
+      		<dialogitem>Folgt dem roten Männchen auf der Karte.</dialogitem>
+        	<dialogitem>Es wird Euch zu der ersten Aufgabe führen.</dialogitem> 	
+        	<dialogitem>Falls Ihr das Mänchen auf dem Bildschirm nicht sehen könnt, zoomt etwas aus der Karte heraus.</dialogitem>       			
+      	</mission>  
+      	
+      	<mission type="NPCTalk" id="Faust_1_Mission" name="Annenkirche" cancel="success" charimage="drawable/goethe.jpg"> 
+      		<onStart>
+        		<rule>
+        			<action type="PlayAudio" file="sound/Church_Bells.mp3"/>
+        		</rule>
+        	</onStart>
+        	<onEnd>
+      	    	<rule>
+                	<action type="StartMission" id="Faust_QA_Mission_1"/>
+            	</rule>
+        	</onEnd>
+        	<dialogitem>Eure Aufgabe ist es, ein Thaterstück zu erraten.</dialogitem> 
+        	<dialogitem>Dazu bekommt Ihr Hinweise angezeigt und habt mehrere Lösungsmöglichkeiten zur Auswahl.</dialogitem>	
+      	</mission>
+  
+        <mission type="QuestionAndAnswer" name="1. Hinweis" id="Faust_QA_Mission_1"
+			correctAnswersNeeded="1" shuffle="false" cancel="success">
+
+			<onEnd>
+      	    	<rule>
+      	    		<if>
+						<missionState id="Faust_QA_Mission_1" state="failed"/>
+					</if>
+                	<action type="StartMission" id="Faust_QA_Mission_2"/>
+            	</rule>
+        	</onEnd>
+
+			<question>
+				<questiontext>
+					Das Gebäude vor dem Ihr euch befindet ist ein Hinweis auf das Theaterstück. 
+					Schon eine Idee welches gesucht ist?
+				</questiontext>
+				<answer correct="1" onChoose="Richtig! Faust wurde von Johann Wolfgang Goethe geschrieben. Die Kirche und Religion sind Aspekte des Stückes.">
+					Faust
+				</answer>
+				<answer onChoose="Das ist leider falsch! Dieses Stück ist von Aischylos und hat nichts mit Kirche oder Religion zu tun.">
+					Sieben gegen Theben
+				</answer>
+				<answer onChoose="Das ist leider falsch! Dieses Stück von George Tabori hat nichts mit Kirche oder Religion zu tun.">
+					Jubiläum
+				</answer>
+			</question>
+		</mission>
+		
+		 <mission type="QuestionAndAnswer" name="2. Hinweis" id="Faust_QA_Mission_2"
+			correctAnswersNeeded="1" shuffle="false" cancel="success">	
+
+			<onEnd>
+      	    	<rule>
+      	    		<if>
+						<missionState id="Faust_QA_Mission_2" state="failed"/>
+					</if>
+                	<action type="StartMission" id="Faust_QA_Mission_3"/>
+            	</rule>
+        	</onEnd>
+
+			<question>
+				<questiontext>Eine Figur stellt die folgende Frage. "Nun sag, wie hast du’s mit der Religion?"</questiontext>
+				<answer correct="1" onChoose="Richtig! Das ist die sogenannte Gretchenfrage, welche im Stück von Johann Wolfgang Goethe vorkommt.">
+					Faust
+				</answer>
+				<answer onChoose="Das ist leider falsch! Dieses Stück ist von Aischylos und enthällt diese Frage nicht.">
+					Sieben gegen Theben
+				</answer>
+				<answer onChoose="Das ist leider falsch! Dieses Stück ist von George Tabori und enthällt diese Fragen nicht.">
+					Jubiläum
+				</answer>
+			</question>
+		</mission>	
+		
+		<mission type="QuestionAndAnswer" name="3. Hinweis" id="Faust_QA_Mission_3"
+			correctAnswersNeeded="1" shuffle="false" cancel="success">	
+			<question>
+				<questiontext>Das Thaterstück ist nach einer der Figuren, im Stück, benannt.</questiontext>
+				<answer correct="1" onChoose="Richtig! Faust ist ebenfalls der Name einer Figur im Stück von Johann Wolfgang Goethe.">
+					Faust
+				</answer>
+				<answer onChoose="Das ist leider falsch! Dieses Stück ist von Aischylos und der Titel entspricht keinem Namen. Faust war das gesuchte Stück.">
+					Sieben gegen Theben
+				</answer>
+				<answer onChoose="Das ist leider falsch! Dieses Stück, von George Tabori, ist nicht nach einer Figur des Stücks benannt. Faust war das gesuchte Stück.">
+					Jubiläum
+				</answer>
+			</question>
+		</mission>
+         
+      	<hotspots> 
+
+        	<hotspot id="Theater_Start_Hotspot" latitude="51.048891" longitude="13.723633" radius="20">
+         		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqMissionStatus id="Theater_Start_Mission" new="1" success="0" fail="0" running="0" />
+          			<comPlaySound file="sound/magic_bells.mp3" />
+            		<comStartMission id="Theater_Start_Mission" />
+          		</onEnter>
+          		<visible>
+          			<reqMissionStatus id="Theater_Start_Mission" new="1" success="0" fail="0" running="0" />
+          		</visible>
+        	</hotspot> 
+
+         	<hotspot id="Faust_1_Hotspot" latitude="51.04863" longitude="13.723926" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Red_Follow_Val" value="NOT_SET" />
+          			<comPlaySound file="sound/magic_bells.mp3" />
+            		<comAttribute name="Red_Follow_Val" value="0" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Red_Follow_Val" value="NOT_SET" />
+          		</visible>
+        	</hotspot> 	
+			
+        	<hotspot id="Faust_2_Hotspot" latitude="51.04877" longitude="13.72471" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Red_Follow_Val" value="0" />
+          			<comPlaySound file="sound/magic_bells.mp3" />
+          			<comAttribute name="Red_Follow_Val" value="1" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Red_Follow_Val" value="0" />
+          		</visible>
+        	</hotspot>  
+        	
+            <hotspot id="Faust_3_Hotspot" latitude="51.048776" longitude="13.725483" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Red_Follow_Val" value="1" />
+          			<comPlaySound file="sound/magic_bells.mp3" />
+          			<comAttribute name="Red_Follow_Val" value="2" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Red_Follow_Val" value="1" />
+          		</visible>
+        	</hotspot>  	       
+
+            <hotspot id="Faust_4_Hotspot" latitude="51.049109" longitude="13.726512" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Red_Follow_Val" value="2" />
+          			<comPlaySound file="sound/magic_bells.mp3" />
+          			<comAttribute name="Red_Follow_Val" value="3" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Red_Follow_Val" value="2" />
+          		</visible>
+        	</hotspot>  
+        	
+        	<hotspot id="Faust_5_Hotspot" latitude="51.049195" longitude="13.727045" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Red_Follow_Val" value="3" />
+          			<comPlaySound file="sound/magic_bells.mp3" />
+          			<comAttribute name="Red_Follow_Val" value="4" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Red_Follow_Val" value="3" />
+          		</visible>
+        	</hotspot> 
+
+         	<hotspot id="Kirche_Hotspot" latitude="51.048999" longitude="13.727717" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Red_Follow_Val" value="4" />
+          			<comPlaySound file="sound/Church_Bells.mp3" />
+          			<comStartMission id="Faust_1_Mission" />
+          			<comAttribute name="Red_Follow_Val" value="5" />
+          		</onEnter>
+          		<visible>
+          			<reqMissionStatus id="Faust_1_Mission" new="1" success="0" fail="0" running="0" />
+          			<reqAttribute name="Red_Follow_Val" value="4" /> 
+          		</visible>
+        	</hotspot> 
+        	
+         	<hotspot id="Return_1_Hotspot" latitude="51.048412" longitude="13.727273" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Red_Follow_Val" value="5" />
+          			<comPlaySound file="sound/magic_bells.mp3" />
+          			<comAttribute name="Red_Follow_Val" value="6" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Red_Follow_Val" value="5" />
+          		</visible>
+        	</hotspot>  
+
+           	<hotspot id="Return_2_Hotspot" latitude="51.047663" longitude="13.726946" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Red_Follow_Val" value="6" />
+          			<comPlaySound file="sound/magic_bells.mp3" />
+          			<comAttribute name="Red_Follow_Val" value="7" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Red_Follow_Val" value="6" />
+          		</visible>
+        	</hotspot> 
+        	
+        	<hotspot id="Return_3_Hotspot" latitude="51.046925" longitude="13.725948" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Red_Follow_Val" value="7" />
+          			<comPlaySound file="sound/magic_bells.mp3" />
+          			<comAttribute name="Red_Follow_Val" value="8" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Red_Follow_Val" value="7" />
+          		</visible>
+        	</hotspot> 
+        	
+        	<hotspot id="Return_4_Hotspot" latitude="51.047219" longitude="13.724798" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Red_Follow_Val" value="8" />
+          			<comPlaySound file="sound/magic_bells.mp3" />
+          			<comAttribute name="Red_Follow_Val" value="9" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Red_Follow_Val" value="8" />
+          		</visible>
+        	</hotspot>   
+        	
+        	<hotspot id="Return_5_Hotspot" latitude="51.047919" longitude="13.724264" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Red_Follow_Val" value="9" />
+          			<comPlaySound file="sound/magic_bells.mp3" />
+          			<comAttribute name="Red_Follow_Val" value="10" />
+          		</onEnter>
+          		<visible>
+          			<reqAttribute name="Red_Follow_Val" value="9" />
+          		</visible>
+        	</hotspot> 
+        	   
+        	<hotspot id="Theater_End_Hotspot" latitude="51.048917" longitude="13.723613" radius="20">
+          		<img src="drawable/Char_Red.png"/>
+          		<onEnter>
+          			<reqAttribute name="Red_Follow_Val" value="10" />
+          			<comPlaySound file="sound/magic_bells.mp3" />
+          			<comStartMission id="Theater_End_Mission" />
+          			<comAttribute name="Red_Follow_Val" value="11" />
+          		</onEnter>
+          		<visible>
+          			<reqMissionStatus id="Theater_End_Mission" new="1" success="0" fail="0" running="0" />
+          			<reqAttribute name="Red_Follow_Val" value="10" />
+          		</visible>
+        	</hotspot>       	      	   	        	        	      	   	      
+      </hotspots> 
+       
+    </mission> 
+	
+     
+    <mission type="NPCTalk" id="Theater_End_Mission" name="Theater" cancel="success" charimage="drawable/theater_eingang.jpg"> 
+        
+    	<onStart>
+			<rule>
+        		<action type="PlayAudio" file="sound/magic_bells.mp3"/>  		
+        	</rule>
+        </onStart>
+        <onEnd>
+        	<rule>
+        		<action type="StartMission" id="Romeo_u_Julia_Foto_Mission"/>
+        	</rule>
+        </onEnd>
+        	
+      	<dialogitem>
+      		Begebt Euch in das Treppenhaus des Theaters. Dort findet die nächste Aufgabe statt.
+      		Drückt den Button unten, wenn Ihr im Treppenhaus seid.
+      	</dialogitem>
+   	</mission>
+    
+    <mission type="NPCTalk" id="Romeo_u_Julia_Foto_Mission" name="Romeo und Julia" cancel="success" charimage="drawable/shakespear.jpg"> 
+   		<onEnd>
+   	    	<rule>
+               	<action type="StartMission" id="Romeo_u_Julia_Foto"/>
+           	</rule>	      		
+		</onEnd>
+		<dialogitem>Die Aufgabe basiert auf dem Stück Romeo und Julia von William Shakespeare.</dialogitem>
+    	<dialogitem>Die Tragödie schildert die Geschichte zweier junger Liebender, die verfeindeten Familien angehören.</dialogitem>
+    	<dialogitem>Eure Aufgabe ist es die berühmte Balkonszene von Romeo und Julia nachzustellen.</dialogitem>
+    	<dialogitem>Tipp: Nutz dafür die Treppe mit den Geländern.</dialogitem>
+    </mission>		
+      		    		
+	<mission type="ImageCapture" id="Romeo_u_Julia_Foto" buttontext="Macht ein Foto!"
+		taskdescription="Stellt Euch in Position und macht ein Foto... "
+		initial_image="drawable/vorhang.jpg" cancel="fail">
+		<onEnd>
+        	<rule>
+               	<action type="StartMission" id="Wilhelm_Tell_Mission"/>
+           	</rule>					
+		</onEnd>
+	</mission>
+	
+	<mission type="NPCTalk" id="Wilhelm_Tell_Mission" name="Wilhelm Tell" cancel="success" charimage="drawable/schiller.jpg"> 
+   		<onEnd>
+   	    	<rule>
+               	<action type="StartMission" id="Wilhelm_Tell_QR-Tag"/>
+           	</rule>	      		
+		</onEnd>
+		<dialogitem>Begebt euch auf die Terasse. Dort haben wir 3 QR-Tags für Euch versteckt.</dialogitem>
+		<dialogitem>Wenn Ihr die QR-Tags gefunden habt, drückt auf den Weiter-Button.</dialogitem>
+		<dialogitem>In dieser Aufgabe geht es um das Drama Wilhelm Tell von Friedrich von Schiller.</dialogitem>
+    	<dialogitem>Das Schauspiel nimmt den Stoff des Schweizer Nationalmythos um Wilhelm Tell und den Rütlischwur auf.</dialogitem>
+    	<dialogitem>In dem Stück schießt Wilhelm Tell einem Knaben eine Frucht vom Kopf.</dialogitem>
+    </mission>	
+       
+ 	<mission type="QRTagReading" id="Wilhelm_Tell_QR-Tag" buttontext="Starte QR-Tag-Scanner!"
+		initial_image="drawable/vorhang.jpg"
+		taskdescription="Um welche Frucht handelt es sich dabei? Scannt den QR-Tag ein, der zu der gesuchten Frucht gehört."
+		expected_content="Apfel" if_wrong="Das ist leider die falsche Frucht. Versuch es noch einmal!"
+		if_right="Richtig, der Apfel ist die gesuchte Frucht!"
+		mode="product" cancel="no">
+		
+		<onEnd>
+   	    	<rule>
+               	<action type="StartMission" id="Hamlet_Mission"/>
+           	</rule>	      		
+		</onEnd>
+    </mission>				
+    
+	<mission type="NPCTalk" id="Hamlet_Mission" name="Hamlet" cancel="success" charimage="drawable/shakespear.jpg"> 
+   		<onEnd>
+   	    	<rule>
+               	<action type="StartMission" id="Hamlet_Aufnahme"/>
+           	</rule>	      		
+		</onEnd>
+		<dialogitem>
+			Begebt euch zurück in den Seminarraum. Dort erhaltet ihr Informationen zu der letzten Aufgabe.
+			Drückt den Button unten, wenn Ihr da seid.
+		</dialogitem>
+		<dialogitem>In der letzten Aufgabe geht es um die Tragödie von Hamlet, Prinz von Dänemark von William Shakespeare.</dialogitem>
+		<dialogitem>Viele Zitate aus diesem Stück sind weltberühmt geworden, wie z. B. das folgende."Sein oder Nichtsein, das ist hier die Frage"</dialogitem>
+    	<dialogitem>Sucht Euch nun eine ruhige Ecke und schaut euch dort das Blatt an, welches Ihr bekommen habt.</dialogitem>
+    	<dialogitem>Eure Aufgabe ist diesen bekannten Monolog mit dem Handy aufzunehmen.</dialogitem>
+    </mission>	
+    
+    <mission type="AudioRecord" id="Hamlet_Aufnahme" name="Hamlet"
+		taskdescription="Dann lasst mal hören, ob ihr gute Schauspieler seid!"
+		cancel="success">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="End_Screen"></action>
+			</rule>
+		</onEnd>
+	</mission>	
+	
+	<mission type="NPCTalk" id="End_Screen" name="Ende" cancel="success" endbuttontext="Spiel beenden" charimage="drawable/start_screen.jpg"> 
+		<onStart>
+			<rule>
+        		<action type="PlayAudio" file="sound/Applause.mp3"/>  		
+        	</rule>
+        </onStart>
+		<onEnd>
+			<rule>
+			   <action type="EndGame"></action>
+			</rule>
+		</onEnd>
+		<dialogitem>
+			Vielen Dank, dass Ihr an unserem Spiel teilgenommen. Wir hoffen es hat Euch Spaß gemacht. :)
+		</dialogitem>
+		<dialogitem>Kehrt jetzt bitte wieder in den Seminarraum zurück. Dort werden dann Eure Fotos und Audioaufnahmen vorgeführt.</dialogitem>
+    </mission>
+         
+</game>

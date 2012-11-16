@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="External Mission Demo" xmlformat="5">
+
+	<mission type="StartAndExitScreen" id="screen_1"
+		image="drawable/StartScreen1.jpg">
+		<onEnd>
+			<rule>
+				<action type="StartExternalMission" id="em_1">
+					<parameters>
+						<argument name="A_2" value="$_location.long" />
+						<argument name="A_6" value="defined in Action" />
+						<result name="R_2" default="default overwritten in Action" />
+						<result name="R_4" default="default set in Action" />
+					</parameters>
+				</action>
+			</rule>
+		</onEnd>
+	</mission>
+
+	<mission type="ExternalMission" id="em_1"
+		app_package="edu.ubonn.tests.ext_app_sample" cancel="success">
+		<onEnd>
+			<rule>
+				<action type="EndGame" />
+			</rule>
+		</onEnd>
+		<parameters>
+			<argument name="A_1" value="one M" />
+			<argument name="A_2" value="two M" />
+			<argument name="A_3" value="three M" />
+			<argument name="A_4" value="four M" />
+			<argument name="A_5" value="five M" />
+			<result name="R_1" default="default_one M" />
+			<result name="R_2" default="default_two M" />
+			<result name="R_3" />
+		</parameters>
+	</mission>
+
+</game>

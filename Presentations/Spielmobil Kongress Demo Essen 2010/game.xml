@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<game name="Demo beim Spielmobilkongress" xmlformat="5">
+	<mission type="StartAndExitScreen" id="0"
+		image="drawable/StartScreen.png" cancel="no">
+		<mission type="NPCTalk" id="M_Start" charimage="drawable/Start.png"
+			endbuttontext="Mit der Demo fortfahren ..." name="Intro" cancel="fail">
+			 
+			<dialogitem speaker="Erzähler">Willkommen zu einer kleinen Demo von
+				GeoQuest auf dem Spielmobilkongress 2010.</dialogitem>
+			 
+			<dialogitem speaker="-" shouldStop="1" displayText="0">Mehr
+				...</dialogitem>
+			 
+			<dialogitem>Auf dem Bild oben siehst du das
+				Gebäude an dem unsere
+				kleine Tour startet.</dialogitem>
+			 
+			<onEnd>
+				<comStartMission id="M_IntroFrage" />
+				 
+				<comPlaySound file="sound/beep.mp3" />
+				 
+			</onEnd>
+		</mission>
+
+		<mission type="QuestionAndAnswer" name="IntroFrage" id="M_IntroFrage"
+			questions="1" correctAnswersNeeded="1" shuffle="false" cancel="fail">
+			<question>
+				<questiontext>Wie hoch schätzt Du den Frauenanteil unter den
+					StudentInnen an der Uni Duisburg-Essen?</questiontext>
+				<answer correct="0"
+					onChoose="Oh, das war zu niedrig gegriffen. Es sind aktuell 51% Frauen an der Uni Duisburg-Essen eingeschrieben.">Etwa ein Drittel.</answer>
+				<answer correct="1"
+					onChoose="Ja so ist es, 51% der studentInnen an der Uni Duisburg-Essen sind Frauen">Etwas mehr als die Hälfte</answer>
+				<answer correct="0"
+					onChoose="Soviele sind es nicht. Der Anteil der Frauen unter den StudentInnen an der Uni Duisburg-Essen liegt zur Zeit bei 51%.">Fast zwei Drittel.</answer>
+			</question>
+			<outroFail>Egal, das kann nur besser werden ...</outroFail>
+			<outroSuccess>Na prima, das war ja ein guter Start ...</outroSuccess>
+			<onEnd>
+				<comStartMission id="M_Start2" />
+			</onEnd>
+		</mission>
+
+		<mission type="NPCTalk" id="M_Start2" charimage="drawable/Bibliothek.png"
+			endbuttontext="Zur Karte ..." name="Intro" cancel="success">
+			 
+			<dialogitem speaker="Erzähler">Als nächstes suche doch mal die
+				Bibliothek hier auf dem Campus.</dialogitem>
+			 
+			<dialogitem speaker="-" shouldStop="1" displayText="0">Mehr
+				...</dialogitem>
+			 
+			<dialogitem>Auch wenn sie nicht so berühmt ist wie
+				die oben
+				abgebildete Bibliotek aus dem Benediktinerstift Admont in
+				der
+				Steiermark in Österreich so stellt sie dennoch einen wichtigen
+				Baustein im Studentischen Leben hier dar.</dialogitem>
+
+			<dialogitem speaker="-" shouldStop="1" displayText="0">Mehr
+				...</dialogitem>
+			 
+			<dialogitem>Deine Aufgabe ist nun natürlich, die
+				Bibliothek zu finden.
+				Vor deren Eingang geht's hier weiter.
+			</dialogitem>
+			 
+			<onEnd>
+				<comStartMission id="Map" />
+				<comPlaySound file="sound/beep.mp3" />
+			</onEnd>
+		</mission>
+
+		<mission type="MapOverview" id="Map" cancel="no" mapkind="map"
+			zoomlevel="14">
+
+			<mission type="NPCTalk" id="M_Bibliothek" charimage="drawable/BibliothekEssen.png"
+				endbuttontext="Zur Webseite der Uni Bibliothek ..." name="Intro"
+				cancel="success">
+				 
+				<dialogitem speaker="Erzähler">Ah, prima, du hast die Bibliothek
+					gefunden.</dialogitem>
+				 
+				<dialogitem speaker="-" shouldStop="1" displayText="0">Mehr
+					...</dialogitem>
+				 
+				<dialogitem>Als nächstes kannst du mal einen
+					Blick auf die Webseite
+					der Uni Bibliothek werfen.</dialogitem>
+
+				<dialogitem speaker="-" shouldStop="1" displayText="0">Mehr
+					...</dialogitem>
+				 
+				<dialogitem>(Bitte klicke nicht auf die Links, da
+					du sonst die App
+					GeoQuest verlässt, es sei denn du kennst dich mit
+					Android Geräten
+					gut aus.)</dialogitem>
+				 
+				<onEnd>
+					<comStartMission id="M_BibWebPage" />
+					<comPlaySound file="sound/beep.mp3" />
+				</onEnd>
+			</mission>
+
+			<mission type="WebPage" id="M_BibWebPage"
+				url="http://www.uni-due.de/ub/orientierung.shtml" name="Bibliotek Web Page"
+				cancel="success">
+				<onEnd>
+					<comStartMission id="M_BibWeiter" />
+					<comPlaySound file="sound/beep.mp3" />
+				</onEnd>
+			</mission>
+
+			<mission type="NPCTalk" id="M_BibWeiter" charimage="drawable/Lageplan.png"
+				endbuttontext="Zur Karte ..." name="Intro" cancel="success">
+				 
+				<dialogitem speaker="Erzähler">Gehe jetzt bitte über den
+					Innenbereich des Campus ...</dialogitem>
+				 
+				<dialogitem speaker="-" shouldStop="1" displayText="0">Mehr
+					...</dialogitem>
+				 
+				<dialogitem>am Hörsaalzentrum vorbei ...
+				</dialogitem>
+
+				<dialogitem speaker="-" shouldStop="1" displayText="0">Mehr
+					...</dialogitem>
+				 
+				<dialogitem>bis zur Mensa. Der Lageplan oben
+					zeigt die Gebäude auf
+					und auf der Karte sind sie gleich ebenfalls
+					eingezeichnet.
+				</dialogitem>
+
+				<dialogitem speaker="-" shouldStop="1" displayText="0">Mehr
+					...</dialogitem>
+				 
+				<dialogitem>Wenn du mal den Augmented Reality
+					Browser ausprobieren
+					willst, ist jetzt ein guter Zeitpunkt dafür.
+				</dialogitem>
+
+				<dialogitem speaker="-" shouldStop="1" displayText="0">Mehr
+					...</dialogitem>
+				 
+				<dialogitem>Wenn gleich die Karte wieder
+					erscheint, kannst du im Menu
+					(Taste "Menu") ARView auswählen und
+					Wikitude startet.</dialogitem>
+
+				<dialogitem speaker="-" shouldStop="1" displayText="0">Mehr
+					...</dialogitem>
+				 
+				<dialogitem>Dann kannst du alle Missionsorte
+					dieser Tour durch die
+					Kamera sehen, wenn du sie in die Richtung
+					schwenkst.</dialogitem>
+			</mission>
+
+
+			<mission type="NPCTalk" id="M_HoersaalZentrum" charimage="drawable/HoersaalZentrum.png"
+				endbuttontext="Zur Karte ..." name="Intro" cancel="success">
+				 
+				<dialogitem speaker="Erzähler">Du hast das Hörsaalzentrum erreicht.
+					Und so sah es hier am 7. Mai aus.</dialogitem>
+			</mission>
+
+			<mission type="NPCTalk" id="M_Mensa" charimage="drawable/Mensa.png"
+				endbuttontext="Zum Speiseplan der Mensa ..." name="Intro" cancel="success">
+				 
+				<dialogitem speaker="Erzähler">Jetzt hast du die letzte Station
+					unserer kleinen GeoQuest-Demo gefunden: Die Mensa am Campus Essen.
+				</dialogitem>
+				 
+				<dialogitem speaker="-" shouldStop="1" displayText="0">Mehr
+					...</dialogitem>
+
+				<dialogitem>Als nächstes kannst du mal einen
+					Blick auf den aktuellen
+					Speiseplan werfen ...
+                </dialogitem>
+				 
+				 
+				<onEnd>
+					<comStartMission id="M_MensaWebPage" />
+					<comPlaySound file="sound/beep.mp3" />
+				</onEnd>
+			</mission>
+
+			<mission type="WebPage" id="M_MensaWebPage"
+				url="http://studentenwerk.essen-duisburg.de/speiseplaene/hm_2709-0110.htm"
+				name="Mensa Web Page" cancel="success">
+				<onEnd>
+					<comStartMission id="M_Ende" />
+					<comPlaySound file="sound/beep.mp3" />
+				</onEnd>
+			</mission>
+
+			<mission type="NPCTalk" id="M_Ende" charimage="drawable/Kaffee.png"
+				endbuttontext="Zur Karte ..." name="Intro" cancel="success">
+				 
+				<dialogitem>Vielleicht magst du hier noch eine
+					Kaffee trinken, oder
+					aber doch lieber rasch zurück zum Workshop
+					gehen und mit den anderen
+					diskutieren.</dialogitem>
+
+				<dialogitem speaker="-" shouldStop="1" displayText="0">Mehr
+					...</dialogitem>
+				 
+				<dialogitem>Auf der folgenden Karte siehts du den
+					Anfangs- und
+					endpunkt der Tour.</dialogitem>
+			</mission>
+
+
+			<hotspots>
+				<hotspot id="H_Bibliothek" latitude="51.464168" longitude="7.007094"
+					radius="40">
+					<img src="drawable/BuchIcon.png" />
+					<onEnter>
+						<reqMissionStatus id="M_Bibliothek" new="1"
+							success="0" fail="1" running="0" />
+						<reqMissionStatus id="M_Start2" new="0" success="1"
+							fail="1" running="1" />
+						<comStartMission id="M_Bibliothek" />
+						<comPlaySound file="sound/beep.mp3" />
+					</onEnter>
+					<visible>
+						<reqMissionStatus id="M_Bibliothek" new="1"
+							success="0" fail="0" running="0" />
+						<reqMissionStatus id="M_Start2" new="0" success="1"
+							fail="1" running="1" />
+						<reqMissionStatus id="M_Ende" new="1" success="0"
+							fail="0" running="0" />
+					</visible>
+				</hotspot>
+
+				<hotspot id="H_HoersaalZentrum" latitude="51.463905"
+					longitude="7.005724" radius="40">
+					<img src="drawable/OhrIcon.png" />
+					<onEnter>
+						<reqMissionStatus id="M_HoersaalZentrum" new="1"
+							success="1" fail="1" running="1" />
+						<reqMissionStatus id="M_Bibliothek" new="0"
+							success="1" fail="1" running="1" />
+						<comStartMission id="M_HoersaalZentrum" />
+						<comPlaySound file="sound/beep.mp3" />
+					</onEnter>
+					<visible>
+						<reqMissionStatus id="M_HoersaalZentrum" new="1"
+							success="1" fail="1" running="1" />
+						<reqMissionStatus id="M_Bibliothek" new="0"
+							success="1" fail="1" running="1" />
+						<reqMissionStatus id="M_Ende" new="1" success="0"
+							fail="0" running="0" />
+					</visible>
+				</hotspot>
+
+				<hotspot id="H_Mensa" name="Mensa Mission" description="Die Mensa der Uni Essen"
+					latitude="51.46297" longitude="7.003986" radius="40">
+					<img src="drawable/MundIcon.png" />
+					<onEnter>
+						<reqMissionStatus id="M_Mensa" new="1" success="1"
+							fail="1" running="1" />
+						<reqMissionStatus id="M_Bibliothek" new="0"
+							success="1" fail="1" running="1" />
+						<reqMissionStatus id="M_Ende" new="1" success="0"
+							fail="0" running="0" />
+						<comStartMission id="M_Mensa" />
+						<comPlaySound file="sound/beep.mp3" />
+					</onEnter>
+					<visible>
+						<reqMissionStatus id="M_Mensa" new="1" success="1"
+							fail="1" running="1" />
+						<reqMissionStatus id="M_Bibliothek" new="0"
+							success="1" fail="1" running="1" />
+						<reqMissionStatus id="M_Ende" new="1" success="0"
+							fail="0" running="0" />
+					</visible>
+				</hotspot>
+
+				<hotspot id="H_Ziel" latitude="51.463946" longitude="7.009104"
+					radius="40">
+					<img src="drawable/ZielIcon.png" />
+					<visible>
+						<reqMissionStatus id="M_MensaWebPage" new="0"
+							success="1" fail="1" running="1" />
+					</visible>
+				</hotspot>
+
+			</hotspots>
+
+		</mission>
+	</mission>
+</game>

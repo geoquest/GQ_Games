@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game
+	name="RadioRanzen Station 4"
+	xmlformat="5"
+>
+	<mission
+		id="M_S4_localization"
+		endbutton="Angekommen ..."
+		image="drawable/logo_02_roboter.png"
+		type="NPCTalk"
+	>
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+				<action
+					file="sound/radiobot_angekommen.mp3"
+					type="PlayAudio" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action
+					id="M_S4_qr_pannen"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem> Wenn ihr an der nächsten Station angekommen seid, könnt
+			ihr die Mission starten indem ihr unten auf den Knopf drückt.
+		</dialogitem>
+	</mission>
+	<mission
+		id="M_S4_qr_pannen"
+		expected_content="http://www.audiokombinat.de/ranzen/ranzen/index.htm#S3_Pannen"
+		if_right="Hört was alles passieren kann  ..."
+		if_wrong="Hmmm, das ist nicht der richtige Code."
+		initial_image="drawable/logo_02_roboter.png"
+		mode="product"
+		taskdescription="Scannt auch hier den Code ..."
+		type="QRTagReading"
+	>
+		<onStart>
+			<rule>
+				<action
+					file="sound/radiobot_station4_qr.mp3"
+					type="PlayAudio" />
+			</rule>
+		</onStart>
+		<onSuccess>
+			<rule>
+				<action
+					file="sound/pannen.mp3"
+					type="PlayAudio" />
+			</rule>
+		</onSuccess>
+		<onFail>
+			<rule>
+				<action
+					file="sound/radiobot_falsch_nein.mp3"
+					type="PlayAudio" />
+			</rule>
+		</onFail>
+		<onEnd>
+			<rule>
+				<action
+					id="M_S4_outro"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+	</mission>
+	<mission
+		id="M_S4_outro"
+		endbuttontext="In der UKW Ausstellung ..."
+		image="drawable/logo_02_roboter.png"
+		type="NPCTalk"
+	>
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<dialogitem sound="sound/radiobot_weg_4_5_teil_1.mp3"> Ups
+			da ist wohl was schief gegangen. Naja auch richtige Radioprofis
+			machen mal Fehler.</dialogitem>
+		<dialogitem sound="sound/radiobot_weg_4_5_teil_2.mp3">Geht lieber schnell zur Ebene 3 in die UKW
+			Ausstellung.
+		</dialogitem>
+	</mission>
+</game>

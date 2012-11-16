@@ -1,0 +1,14 @@
+- QRTags ausdrucken und vorbereiten (sp)
+- MapMission für draussen hinzufügen (hm)
+- Infoblatt zum verteilen über das Spiel mit Code-Rätsel (sp)
+- Netzverbindung? (thomas thiel schickt infos an hm)
+- Geräte organisieren (hm mit pi)
+- Plakat für Spielmarkt hier verwenden/anpassen? (hm, drucken auf A3 in Römerstrasse)
+- Testen (hm am Montag, sp vorher (ohne Map))
+- Equipment am Montag ins B-It transportieren (hm)
+- Foto upload einbauen? Wenn dann nur optional. (hm und sp)
+
+
+Aktuell:
+
+- Bild für Intro?

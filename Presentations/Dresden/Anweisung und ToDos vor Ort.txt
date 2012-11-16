@@ -1,0 +1,11 @@
+Die QR-Tags werden in der 3. Mission (Wilhelm Tell) benötigt. Laut Anleitung im Spiel sind sie auf der Terasse versteckt. 
+Am besten hängt ihr sie direkt neben einander. Die Leute sollen aus den dreien das richtige auswählen.
+
+Das Arbeitsblatt enthällt einen Monolog aus Hamlet, den die Leute mit dem Handy aufnehmen sollen.
+Es wird für die letzte (vierte) Mission benötigt. Laut Anleitung im Spiel sollen die Leute in den 
+Seminarraum zurückkommen, um dort Informationen (das Arbeitsblatt) zur nächsten Aufgabe zu erhalten.
+
+ToDos:
+
+- die 3 QR-Tags drucken und gemeinsam an einem Ort auf der Terasse verstecken
+- das Arbeitsblatt mehrfach drucken (eins pro Gruppe)  

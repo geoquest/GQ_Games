@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game xmlns="http://geoquest.qeevee.org/gqml"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://geoquest.qeevee.org/gqml http:/geoquest.qeevee.org/schema/gqml.xsd"
+ name="Rules Demo"
+ xmlformat="5">
+    
+    <!-- First StartScreen Mission does NOT have specified a duration attribute.
+    Hence, the default value of 5000ms is used. -->
+    <mission type="StartAndExitScreen" id="screen_1"
+     image="drawable/StartScreen1.jpg">
+        <onStart>
+            <rule>
+                <action type="ShowMessage" message="This is a test"/>
+                <action type="Vibrate"/>
+            </rule>
+        </onStart>
+        <onEnd>
+            <rule>
+                <action type="StartMission" id="npc_talk_with_audio"/>
+                <action type="ShowMessage"
+                 message="This message is shown after the Screen mission is completed."/>
+                <action type="PlayAudio" file="sound/beep.mp3"/>
+            </rule>
+        </onEnd>
+    </mission>
+    
+    <mission type="NPCTalk" id="npc_talk_with_audio" charimage="drawable/NPCTalk_Dialog.jpg"
+     nextdialogbuttontext="Mehr Text ..." endbuttontext="Weiter bitte ..."
+     textsize="25" cancel="fail">
+        
+        <dialogitem speaker="Schwarzer Kreuzritter"
+         nextDialogButtonText="Was sagt der weisse dazu?" sound="sound/npc1_di1.mp3">
+            Unser Bischof
+            spricht mit Gott selbst.
+        </dialogitem>
+        <dialogitem speaker="Weisser Kreuzritter"
+         nextDialogButtonText="und der schwarze?" sound="sound/npc1_di2.mp3">
+            Das ist doch nicht
+            wahr!
+        </dialogitem>
+        <dialogitem speaker="Schwarzer ..." sound="sound/npc1_di3.mp3">
+            Doch. Würde Gott etwa mit einem Lügner sprechen?
+        </dialogitem>
+    </mission>
+</game>

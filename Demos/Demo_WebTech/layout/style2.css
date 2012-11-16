@@ -1,0 +1,20 @@
+body { 
+	background-color:black;
+	width:100%;
+	height:100% 
+} 
+
+#DivTop {
+	width:100%;
+	height:40%
+}
+
+#DivMid {
+	width:100%;
+	height:50%
+}
+
+#DivBot {
+	width:100%;
+	height:10%
+}
