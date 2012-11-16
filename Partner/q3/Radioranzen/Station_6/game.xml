@@ -189,8 +189,8 @@
 		</dialogitem>
 		<dialogitem sound="sound/radiobot_station6_outro_teil_2.mp3">Die letzte Kanalzahl lautet: 7
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station6_outro_teil_3.mp3">Nun schnell zurück zum Radioranzen
-			(Startpunkt) und die Frequenz eingeben.
+		<dialogitem sound="sound/radiobot_station6_outro_teil_3.mp3">Nun schnell zurück zum Radioranzen beim
+			Edunauten-Stand und die Frequenz eingeben.
 		</dialogitem>
 	</mission>
 </game>

@@ -21,17 +21,16 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_start_1.mp3"> Hallo ich
-			bin der Radiobot! Herzlich Willkommen in der Mission „Rettet die
-			Frequenz des Schulradioranzens“!
+		<dialogitem sound="sound/radiobot_start_1.mp3"> Hallo ich bin der Radiobot! Herzlich
+			Willkommen in der Mission „Rettet die Frequenz des
+			Schulradioranzens“!
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_start_2.mp3"> Bevor ihr
-			loslegen könnt…. Wisst ihr eigentlich was UKW bedeutet?
+		<dialogitem sound="sound/radiobot_start_2.mp3"> Bevor ihr loslegen könnt…. Wisst ihr
+			eigentlich was UKW bedeutet?
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_start_3.mp3"> UKW
-			bedeutet Ultrakurzwelle und ist der wichtigste Frequenzbereich für
-			Radiowellen. In Europa liegt der Frequenzbereich von UKW zwischen
-			87,5 und 108 MHz.
+		<dialogitem sound="sound/radiobot_start_3.mp3"> UKW bedeutet Ultrakurzwelle und ist der
+			wichtigste Frequenzbereich für Radiowellen. In Europa liegt der
+			Frequenzbereich von UKW zwischen 87,5 und 108 MHz.
 		</dialogitem>
 	</mission>
 	<mission
@@ -79,19 +78,19 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_start_4.mp3"> Nun wollen
-			wir die Mission starten, verschiedene Radios helfen uns die Frequenz
-			des Schulradioranzens zurückzuerobern.
+		<dialogitem sound="sound/radiobot_start_4.mp3"> Nun wollen wir die Mission starten,
+			verschiedene Radios helfen uns die Frequenz des Schulradioranzens
+			zurückzuerobern.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_start_5.mp3"> Findet ihr
-			ein Radiogerät mit einem QR Code, dann müsst ihr diesen Code scannen.
+		<dialogitem sound="sound/radiobot_start_5.mp3"> Findet ihr ein Radiogerät mit einem QR
+			Code, dann müsst ihr diesen Code scannen.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_start_6.mp3"> Hinter
-			jedem Code steckt eine Aufgabe. Löst ihr die Aufgabe bekommt ihr eine
-			Kanalzahl der Frequenz des Schulradioranzens.
+		<dialogitem sound="sound/radiobot_start_6.mp3"> Hinter jedem Code steckt eine Aufgabe.
+			Löst ihr die Aufgabe bekommt ihr eine Kanalzahl der Frequenz des
+			Schulradioranzens.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_start_7.mp3"> Los geht’s.
-			Das erste Radio findet ihr in der Nähe des Haupteingangs.
+		<dialogitem sound="sound/radiobot_start_7.mp3"> Los geht’s. Das erste Radio findet ihr
+			in der Nähe des Haupteingangs.
 		</dialogitem>
 	</mission>
 	<mission
@@ -112,8 +111,9 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_angekommen.mp3"> Wenn ihr an der nächsten Station angekommen seid, könnt
-			ihr die Mission starten indem ihr unten auf den Knopf drückt.
+		<dialogitem sound="sound/radiobot_angekommen.mp3"> Wenn ihr an der nächsten Station
+			angekommen seid, könnt ihr die Mission starten indem ihr unten auf
+			den Knopf drückt.
 		</dialogitem>
 	</mission>
 	<mission
@@ -128,10 +128,9 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_station_1_radio_1.mp3">
-			Radio gibt es schon ziemlich lange, länger als Fernsehen oder den
-			Computer. Findet heraus wann die erste Radiosendung in Deutschland
-			ausgestrahlt wurde!
+		<dialogitem sound="sound/radiobot_station_1_radio_1.mp3"> Radio gibt es schon ziemlich lange,
+			länger als Fernsehen oder den Computer. Findet heraus wann die erste
+			Radiosendung in Deutschland ausgestrahlt wurde!
 		</dialogitem>
 	</mission>
 	<mission
@@ -263,24 +262,21 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_station_1_radio_2_teil_1.mp3">
-			Aber ich habe an dieser Station noch eine Aufgabe für euch. Neben dem
-			alten Radiogerät findet ihr ein ganz neues Modell, ein Digitalradio.
+		<dialogitem sound="sound/radiobot_station_1_radio_2_teil_1.mp3"> Aber ich habe an dieser Station noch
+			eine Aufgabe für euch. Neben dem alten Radiogerät findet ihr ein ganz
+			neues Modell, ein Digitalradio.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station_1_radio_2_teil_2.mp3">
-			Hört euch die Radiosender auf den Programmplätzen 1 – 2 und 3 an!
+		<dialogitem sound="sound/radiobot_station_1_radio_2_teil_2.mp3"> Hört euch die Radiosender auf den
+			Programmplätzen 1 – 2 und 3 an!
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station1_programm1.mp3">
-			Ihr hört auf dem Programmplatz 1 einen öffentlich-rechtlichen
-			Radiosender, den Bayerischen Rundfunk.
+		<dialogitem sound="sound/radiobot_station1_programm1.mp3"> Ihr hört auf dem Programmplatz 1 einen
+			öffentlich-rechtlichen Radiosender, den Bayerischen Rundfunk.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station1_programm2.mp3">
-			Auf dem Programmplatz 2 hört ihr den privaten Radiosender Antenne
-			Bayern.
+		<dialogitem sound="sound/radiobot_station1_programm2.mp3"> Auf dem Programmplatz 2 hört ihr den
+			privaten Radiosender Antenne Bayern.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station1_programm3.mp3">
-			Den lokalen Privatradiosender der Region hört ihr auf Programmplatz
-			3.
+		<dialogitem sound="sound/radiobot_station1_programm3.mp3"> Den lokalen Privatradiosender der Region
+			hört ihr auf Programmplatz 3.
 		</dialogitem>
 	</mission>
 	<mission
@@ -353,12 +349,10 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_weg_1_2_teil_1.mp3"> Die
-			erste Kanalzahl lautet 1.
+		<dialogitem sound="sound/radiobot_weg_1_2_teil_1.mp3"> Die erste Kanalzahl lautet 1.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_weg_1_2_teil_2.mp3"> Das
-			nächste Radiogerät das uns weiterhilft findet ihr ein Stockwerk
-			tiefer. Also los!
+		<dialogitem sound="sound/radiobot_weg_1_2_teil_2.mp3"> Das nächste Radiogerät das uns
+			weiterhilft findet ihr in der Kassenhalle. Also los!
 		</dialogitem>
 	</mission>
 	<!-- ################################################################ -->
@@ -401,17 +395,15 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_station2_teil1.mp3"> Im
-			Programm von Radioranzen gibt es verschiedene journalistische
-			Elemente. Aber welche?
+		<dialogitem sound="sound/radiobot_station2_teil1.mp3"> Im Programm von Radioranzen gibt es
+			verschiedene journalistische Elemente. Aber welche?
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station2_teil2.mp3"> Zu
-			einem guten Radio gehören journalistische Elemente wie: Umfrage,
-			Interview, Kommentar, Feature, gebauter Beitrag und Reportage.
+		<dialogitem sound="sound/radiobot_station2_teil2.mp3"> Zu einem guten Radio gehören
+			journalistische Elemente wie: Umfrage, Interview, Kommentar, Feature,
+			gebauter Beitrag und Reportage.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station2_teil3.mp3"> Aber
-			was ist was? Scannt den QR Code ein und ordnet die Hörbeispiele
-			richtig zu.
+		<dialogitem sound="sound/radiobot_station2_teil3.mp3"> Aber was ist was? Scannt den QR Code ein
+			und ordnet die Hörbeispiele richtig zu.
 		</dialogitem>
 	</mission>
 	<mission
@@ -671,12 +663,12 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_station2_gut.mp3"> Gut
-			gemacht, damit bekommt ihr die Kanalzahl 0.
+		<dialogitem sound="sound/radiobot_station2_gut.mp3"> Gut gemacht, damit bekommt ihr die
+			Kanalzahl 0.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station2_weg.mp3"> Zwei
-			Zahlen der Frequenz habt nun ihr schon. Die nächste Aufgabe findet
-			ihr bei der Verwaltung. Viel Erfolg!
+		<dialogitem sound="sound/radiobot_station2_weg.mp3">Zwei Zahlen der Frequenz habt nun ihr
+			schon. Die nächste Aufgabe findet ihr im Erfrischungsfoyer beim
+			Visinale Cafe. Viel Erfolg!
 		</dialogitem>
 	</mission>
 	<!-- ################################################################ -->
@@ -780,18 +772,16 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_station3_frage1_teil1.mp3">
-			Bei jedem Hörspiel sind neben der Stimme auch Klänge und Geräusche
-			extrem wichtig um das „Bild im Kopf“ entstehen zu lassen.
+		<dialogitem sound="sound/radiobot_station3_frage1_teil1.mp3"> Bei jedem Hörspiel sind neben der Stimme
+			auch Klänge und Geräusche extrem wichtig um das „Bild im Kopf“
+			entstehen zu lassen.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station3_frage1_teil2.mp3">
-			Bei Hörspielproduktionen kommen manchmal komische Gegenstände zum
-			Einsatz, um Geräusche herzustellen.
+		<dialogitem sound="sound/radiobot_station3_frage1_teil2.mp3"> Bei Hörspielproduktionen kommen manchmal
+			komische Gegenstände zum Einsatz, um Geräusche herzustellen.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station3_frage1_teil3.mp3">
-			Vor euch liegen verschiedene Gegenstände, mit denen man Geräusche
-			machen kann. Probiert sie aus und sagt mir wie folgendes Geräusch
-			hergestellt wird.
+		<dialogitem sound="sound/radiobot_station3_frage1_teil3.mp3"> Vor euch liegen verschiedene
+			Gegenstände, mit denen man Geräusche machen kann. Probiert sie aus
+			und sagt mir wie folgendes Geräusch hergestellt wird.
 		</dialogitem>
 	</mission>
 	<mission
@@ -923,15 +913,14 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_weg_3_4_teil_1.mp3"> Ihr
-			wart super Geräuschemacher und habt das Rätsel gelöst!
+		<dialogitem sound="sound/radiobot_weg_3_4_teil_1.mp3"> Ihr wart super Geräuschemacher und habt
+			das Rätsel gelöst!
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_weg_3_4_teil_2.mp3"> Die
-			richtige Kanalzahl für die Frequenz des Radioranzens lautet 3.
+		<dialogitem sound="sound/radiobot_weg_3_4_teil_2.mp3"> Die richtige Kanalzahl für die Frequenz
+			des Radioranzens lautet 3.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_weg_3_4_teil_3.mp3"> Auch
-			Radiomoderatoren müssen mal auf die Toilette. Vielleicht lohnt sich
-			der Weg?
+		<dialogitem sound="sound/radiobot_weg_3_4_teil_3.mp3"> Auch Radiomoderatoren müssen mal auf die
+			Toilette. Vielleicht lohnt sich der Weg?
 		</dialogitem>
 	</mission>
 	<!-- ################################################################ -->
@@ -1018,12 +1007,11 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_weg_4_5_teil_1.mp3"> Ups
-			da ist wohl was schief gegangen. Naja auch richtige Radioprofis
-			machen mal Fehler.
+		<dialogitem sound="sound/radiobot_weg_4_5_teil_1.mp3"> Ups da ist wohl was schief gegangen.
+			Naja auch richtige Radioprofis machen mal Fehler.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_weg_4_5_teil_2.mp3"> Geht
-			lieber schnell zur Ebene 3 in die UKW Ausstellung.
+		<dialogitem sound="sound/radiobot_weg_4_5_teil_2.mp3"> Sucht lieber schnell im Treppenhaus die
+			nächste Aufgabe.
 		</dialogitem>
 	</mission>
 	<!-- ################################################################ -->
@@ -1120,17 +1108,15 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_station5_ploppschutz_npc_teil1.mp3">
-			Hört euch jetzt die Aufnahme an und sagt mir dann, was das Bild
-			zeigt.
+		<dialogitem sound="sound/radiobot_station5_ploppschutz_npc_teil1.mp3"> Hört euch jetzt die Aufnahme an und sagt
+			mir dann, was das Bild zeigt.
 		</dialogitem>
 		<dialogitem
 			nextbuttontext="Noch einmal"
 			sound="sound/radiobot_station5_ploppschutz_npc_teil2.mp3"
 		> „Die Pusteblume pfiff laut Papperlapapp“
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station5_ploppschutz_npc_teil2.mp3">
-			„Die Pusteblume pfiff laut Papperlapapp“
+		<dialogitem sound="sound/radiobot_station5_ploppschutz_npc_teil2.mp3"> „Die Pusteblume pfiff laut Papperlapapp“
 		</dialogitem>
 	</mission>
 	<mission
@@ -1197,16 +1183,15 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_station5_outro_teil_1.mp3">
-			Das Bild zeigt einen Ploppschutz. Ein Ploppschutz verhindert das der
-			Wind oder Zisch- und Plopplaute die Aufnahme unbrauchbar machen.
+		<dialogitem sound="sound/radiobot_station5_outro_teil_1.mp3"> Das Bild zeigt einen Ploppschutz. Ein
+			Ploppschutz verhindert das der Wind oder Zisch- und Plopplaute die
+			Aufnahme unbrauchbar machen.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station5_outro_teil_2.mp3">
-			Und schon habt ihr die nächste Kanalzahl für die Frequenz des
-			Radioranzens: Sie lautet: 0.
+		<dialogitem sound="sound/radiobot_station5_outro_teil_2.mp3"> Und schon habt ihr die nächste Kanalzahl
+			für die Frequenz des Radioranzens: Sie lautet: 0.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station5_outro_teil_3.mp3">
-			Sucht nun im Treppenhaus das nächste Radio, das euch weiter hilft.
+		<dialogitem sound="sound/radiobot_station5_outro_teil_3.mp3"> Auch Radio Blau hilft euch weiter. Auf
+			zum Sendestudio!
 		</dialogitem>
 	</mission>
 	<!-- ################################################################ -->
@@ -1250,19 +1235,18 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_station6_frage_teil_1.mp3">
-			Du hörst Töne aus dem Radio, aber wie funktioniert das eigentlich?
+		<dialogitem sound="sound/radiobot_station6_frage_teil_1.mp3"> Du hörst Töne aus dem Radio, aber wie
+			funktioniert das eigentlich?
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station6_frage_teil_2.mp3">
-			Die Tonaufzeichnung hat sich in den letzten Jahren sehr verändert.
-			Vor euch seht ihr drei verschiedene Aufnahmegeräte.
+		<dialogitem sound="sound/radiobot_station6_frage_teil_2.mp3"> Die Tonaufzeichnung hat sich in den
+			letzten Jahren sehr verändert. Vor euch seht ihr drei verschiedene
+			Aufnahmegeräte.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station6_frage_teil_3.mp3">
-			Eure letzte Aufgabe ist, die Aufnahmegeräte in die richtige zeitliche
-			Reihenfolge zu bringen.
+		<dialogitem sound="sound/radiobot_station6_frage_teil_3.mp3"> Eure letzte Aufgabe ist, die
+			Aufnahmegeräte in die richtige zeitliche Reihenfolge zu bringen.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station6_frage_teil_4.mp3">
-			Scannt die Geräte in der richtigen zeitlichen Reihenfolge ein.
+		<dialogitem sound="sound/radiobot_station6_frage_teil_4.mp3"> Scannt die Geräte in der richtigen
+			zeitlichen Reihenfolge ein.
 		</dialogitem>
 	</mission>
 	<mission
@@ -1400,16 +1384,13 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_station6_outro_teil_1.mp3">
-			Glückwunsch!! Ihr habt es geschafft und alle Zahlen für die Frequenz
-			des Radioranzens zurückerobert.
+		<dialogitem sound="sound/radiobot_station6_outro_teil_1.mp3"> Glückwunsch!! Ihr habt es geschafft und
+			alle Zahlen für die Frequenz des Radioranzens zurückerobert.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station6_outro_teil_2.mp3">
-			Die letzte Kanalzahl lautet: 7
+		<dialogitem sound="sound/radiobot_station6_outro_teil_2.mp3"> Die letzte Kanalzahl lautet: 7
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station6_outro_teil_3.mp3">
-			Nun schnell zurück zum Radioranzen (Startpunkt) und die Frequenz
-			eingeben.
+		<dialogitem sound="sound/radiobot_station6_outro_teil_3.mp3">Nun schnell zurück zum Radioranzen beim
+			Edunauten-Stand und die Frequenz eingeben.
 		</dialogitem>
 	</mission>
 	<!-- ################################################################ -->
@@ -1451,21 +1432,19 @@
 				<action type="EndGame" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_station7_teil_1.mp3"> Ihr
-			habt es fast geschafft und die Mission „Rettet die Frequenz des
-			Radioranzens“ erfüllt.
+		<dialogitem sound="sound/radiobot_station7_teil_1.mp3"> Ihr habt es fast geschafft und die
+			Mission „Rettet die Frequenz des Radioranzens“ erfüllt.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station7_teil_2.mp3">
-			Jetzt müsst ihr nur noch die Kanalzahlen in die richtige Reihenfolge
-			bringen.
+		<dialogitem sound="sound/radiobot_station7_teil_2.mp3"> Jetzt müsst ihr nur noch die Kanalzahlen
+			in die richtige Reihenfolge bringen.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station7_teil_3.mp3">
-			Denkt an das was ihr über den UKW – Bereich gelernt habt. Die
-			Frequenz liegt zwischen 87,5 – 108 MHZ. Los geht’s.
+		<dialogitem sound="sound/radiobot_station7_teil_3.mp3"> Denkt an das was ihr über den UKW –
+			Bereich gelernt habt. Die Frequenz liegt zwischen 87,5 – 108 MHZ. Los
+			geht’s.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station7_teil_4.mp3">
-			Tippt die Frequenz in den Radioranzen ein. Ich hoffe, dass ich euch
-			helfen konnte und sag schon mal tschüss.
+		<dialogitem sound="sound/radiobot_station7_teil_4.mp3"> Tippt die Frequenz in den Radioranzen
+			ein. Ich hoffe, dass ich euch helfen konnte und sag schon mal
+			tschüss.
 		</dialogitem>
 	</mission>
 </game>

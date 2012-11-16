@@ -170,8 +170,8 @@
 		<dialogitem sound="sound/radiobot_station5_outro_teil_2.mp3">Und schon habt ihr die nächste Kanalzahl
 			für die Frequenz des Radioranzens: Sie lautet: 0.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_station5_outro_teil_3.mp3">Sucht nun im Treppenhaus das nächste
-			Radio, das euch weiter hilft.
+		<dialogitem sound="sound/radiobot_station5_outro_teil_3.mp3">Auch Radio Blau hilft euch weiter. Auf
+			zum Sendestudio!
 		</dialogitem>
 	</mission>
 </game>

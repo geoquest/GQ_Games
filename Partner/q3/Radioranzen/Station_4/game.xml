@@ -81,8 +81,7 @@
 		<dialogitem sound="sound/radiobot_weg_4_5_teil_1.mp3"> Ups
 			da ist wohl was schief gegangen. Naja auch richtige Radioprofis
 			machen mal Fehler.</dialogitem>
-		<dialogitem sound="sound/radiobot_weg_4_5_teil_2.mp3">Geht lieber schnell zur Ebene 3 in die UKW
-			Ausstellung.
-		</dialogitem>
+		<dialogitem sound="sound/radiobot_weg_4_5_teil_2.mp3">
+	Sucht lieber schnell im Treppenhaus die nächste Aufgabe.</dialogitem>
 	</mission>
 </game>

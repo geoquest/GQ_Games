@@ -111,8 +111,9 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/radiobot_angekommen.mp3"> Wenn ihr an der nächsten Station angekommen seid, könnt
-			ihr die Mission starten indem ihr unten auf den Knopf drückt.
+		<dialogitem sound="sound/radiobot_angekommen.mp3"> Wenn ihr an der nächsten Station
+			angekommen seid, könnt ihr die Mission starten indem ihr unten auf
+			den Knopf drückt.
 		</dialogitem>
 	</mission>
 	<mission
@@ -340,7 +341,7 @@
 		<dialogitem sound="sound/radiobot_weg_1_2_teil_1.mp3">Die erste Kanalzahl lautet 1.
 		</dialogitem>
 		<dialogitem sound="sound/radiobot_weg_1_2_teil_2.mp3">Das nächste Radiogerät das uns
-			weiterhilft findet ihr ein Stockwerk tiefer. Also los!
+			weiterhilft findet ihr in der Kassenhalle. Also los!
 		</dialogitem>
 	</mission>
 </game>
