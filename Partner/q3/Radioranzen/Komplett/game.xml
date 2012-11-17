@@ -1084,6 +1084,8 @@
 				<answer>ultrakurzwelle
 				</answer>
 			</accept>
+			<replyOnCorrect>Richtig!</replyOnCorrect>
+			<replyOnWrong>Leider nicht. Versuche es noch einmal.</replyOnWrong>
 		</question>
 	</mission>
 	<mission
