@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<game name="AudioRecord Demo" layout="html" xmlformat="5">
-	<mission type="AudioRecord" id="testMission1" layout="native" cancel="success">
+<game
+	name="AudioRecord Demo"
+	xmlformat="5"
+>
+	<mission
+		type="AudioRecord"
+		id="testMission1"
+		file="audio_test_file.3gp"
+	>
 		<onEnd>
 			<rule>
-				<action type="StartMission" id="testMission1"></action>
+				<action
+					type="StartMission"
+					id="use_audio" />
 			</rule>
 		</onEnd>
+	</mission>
+	<mission
+		type="NPCTalk"
+		id="use_audio"
+		image="drawable/ploppschutz.png"
+	>
+		<onStart>
+			<rule>
+				<action
+					type="PlayAudio"
+					runtimefile="audio_test_file.3gp" />
+			</rule>
+		</onStart>
+		<dialogitem>Und jetzt hörst du deine vorhin gemachte Aufnahme.
+		</dialogitem>
 	</mission>
 </game>
