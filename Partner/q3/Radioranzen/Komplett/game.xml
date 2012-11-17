@@ -1044,7 +1044,7 @@
 	<mission
 		id="M_S5_qa_ukw"
 		loopUntilSuccess="true"
-		type="MultipleChoiceQuestion"
+		type="TextQuestion"
 	>
 		<onStart>
 			<rule>
@@ -1057,15 +1057,15 @@
 		<onSuccess>
 			<rule>
 				<action
-					file="sound/radiobot_station5_ploppschutz_npc_intro.mp3"
-					type="PlayAudio" />
+					type="PlayAudio"
+					file="sound/radiobot_station5_ploppschutz_npc_intro.mp3" />
 			</rule>
 		</onSuccess>
 		<onFail>
 			<rule>
 				<action
-					file="sound/radiobot_falsch_nein.mp3"
-					type="PlayAudio" />
+					type="PlayAudio"
+					file="sound/radiobot_falsch_nein.mp3" />
 			</rule>
 		</onFail>
 		<onEnd>
@@ -1078,21 +1078,12 @@
 		<question>
 			<questiontext> Na, wisst ihr noch was UKW bedeutet?
 			</questiontext>
-			<answer
-				correct="1"
-				onChoose="Ja, genau."
-			> Ultrakurzwelle
-			</answer>
-			<answer
-				correct="0"
-				onChoose="Nein, nicht ganz."
-			> Unterkurzwelle
-			</answer>
-			<answer
-				correct="0"
-				onChoose="Ach, woher das denn?"
-			> Unterkielwelle
-			</answer>
+			<accept>
+				<answer>Ultrakurzwelle
+				</answer>
+				<answer>ultrakurzwelle
+				</answer>
+			</accept>
 		</question>
 	</mission>
 	<mission
