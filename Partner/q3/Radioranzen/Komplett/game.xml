@@ -338,7 +338,7 @@
 	</mission>
 	<mission
 		id="M_S1_outro"
-		endbuttontext="Im Keller ..."
+		endbuttontext="Zur Kassenhalle ..."
 		image="drawable/logo_02_roboter.png"
 		type="NPCTalk"
 	>
@@ -644,7 +644,7 @@
 	</mission>
 	<mission
 		id="M_S2_outro"
-		endbuttontext="Bei der Verwaltung ..."
+		endbuttontext="Zum Erfrischungsfoyer ..."
 		image="drawable/logo_02_roboter.png"
 		type="NPCTalk"
 	>
@@ -991,7 +991,7 @@
 	</mission>
 	<mission
 		id="M_S4_outro"
-		endbuttontext="In der UKW Ausstellung ..."
+		endbuttontext="Im Treppenhaus ..."
 		image="drawable/logo_02_roboter.png"
 		type="NPCTalk"
 	>
@@ -1160,7 +1160,7 @@
 	</mission>
 	<mission
 		id="M_S5_outro"
-		endbuttontext="Im Treppenhaus ..."
+		endbuttontext="RadioBlau Sendestudio ..."
 		image="drawable/logo_02_roboter.png"
 		type="NPCTalk"
 	>

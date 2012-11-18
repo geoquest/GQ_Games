@@ -69,7 +69,7 @@
 	</mission>
 	<mission
 		id="M_S4_outro"
-		endbuttontext="In der UKW Ausstellung ..."
+		endbuttontext="Im Treppenhaus ..."
 		image="drawable/logo_02_roboter.png"
 		type="NPCTalk"
 	>

@@ -334,7 +334,7 @@
 	</mission>
 	<mission
 		id="M_S1_outro"
-		endbuttontext="Im Keller ..."
+		endbuttontext="Zur Kassenhalle ..."
 		image="drawable/logo_02_roboter.png"
 		type="NPCTalk"
 	>
