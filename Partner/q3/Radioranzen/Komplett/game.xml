@@ -270,10 +270,10 @@
 			Programmplätzen 1 – 2 und 3 an!
 		</dialogitem>
 		<dialogitem sound="sound/radiobot_station1_programm1.mp3"> Ihr hört auf dem Programmplatz 1 einen
-			öffentlich-rechtlichen Radiosender, den Bayerischen Rundfunk.
+			öffentlich-rechtlichen Radiosender, MDR Jump.
 		</dialogitem>
 		<dialogitem sound="sound/radiobot_station1_programm2.mp3"> Auf dem Programmplatz 2 hört ihr den
-			privaten Radiosender Antenne Bayern.
+			privaten Radiosender Energy Sachsen.
 		</dialogitem>
 		<dialogitem sound="sound/radiobot_station1_programm3.mp3"> Den lokalen Privatradiosender der Region
 			hört ihr auf Programmplatz 3.
