@@ -1,24 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game
-	name="AudioRecord Demo"
+	name="AudioRecordTest"
 	xmlformat="5"
 >
 	<mission
 		type="AudioRecord"
-		id="testMission1"
-		file="audio_test_file.3gp"
+		id="With_Defaults"
+		task="Special text to ask the player to record some audio."
+		file="test_recording.3gp"
 	>
+		<onStart>
+			<rule>
+				<action
+					type="SetVariable"
+					var="onStart"
+				>
+					<value>
+						<num>1</num>
+					</value>
+				</action>
+			</rule>
+		</onStart>
+		<onSuccess>
+			<rule>
+				<action
+					type="SetVariable"
+					var="onSuccess"
+				>
+					<value>
+						<num>1</num>
+					</value>
+				</action>
+			</rule>
+		</onSuccess>
 		<onEnd>
 			<rule>
 				<action
+					type="SetVariable"
+					var="onEnd"
+				>
+					<value>
+						<num>1</num>
+					</value>
+				</action>
+				<action
 					type="StartMission"
-					id="use_audio" />
+					id="Use_audio" />
 			</rule>
 		</onEnd>
 	</mission>
 	<mission
 		type="NPCTalk"
-		id="use_audio"
+		id="Use_audio"
 		image="drawable/ploppschutz.png"
 	>
 		<onStart>
@@ -28,7 +61,7 @@
 					runtimefile="audio_test_file.3gp" />
 			</rule>
 		</onStart>
-		<dialogitem>Und jetzt hörst du deine vorhin gemachte Aufnahme.
+		<dialogitem>Now you should hear your recent recording.
 		</dialogitem>
 	</mission>
 </game>
