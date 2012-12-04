@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- TEST GAME SPEC for AudioRecord Mission Type -->
 <game
 	name="AudioRecordTest"
 	xmlformat="5"

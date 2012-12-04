@@ -32,6 +32,9 @@
 		id="M_S5_qa_ukw"
 		loopUntilSuccess="true"
 		type="TextQuestion"
+		question="Na, wisst ihr noch was UKW bedeutet?"
+		replyOnCorrect="Richtig!"
+		replyOnWrong="Leider nicht. Versuche es noch einmal."
 	>
 		<onStart>
 			<rule>
@@ -62,18 +65,12 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<question>
-			<questiontext> Na, wisst ihr noch was UKW bedeutet?
-			</questiontext>
-			<accept>
-				<answer>Ultrakurzwelle
-				</answer>
-				<answer>ultrakurzwelle
-				</answer>
-			</accept>
-			<replyOnCorrect>Richtig!</replyOnCorrect>
-			<replyOnWrong>Leider nicht. Versuche es noch einmal.</replyOnWrong>
-		</question>
+		<answers>
+			<answer>Ultrakurzwelle
+			</answer>
+			<answer>ultrakurzwelle
+			</answer>
+		</answers>
 	</mission>
 	<mission
 		id="M_S5_intro_ploppschutz"
