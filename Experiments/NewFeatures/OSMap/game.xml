@@ -11,11 +11,27 @@
 	>
 		<hotspots>
 			<hotspot
-				id="HS_Drache_Blau"
-				latlong="47.69164,11.889138"
+				id="HS_Drache_Blau_1"
+				latlong="50.719979,7.121369"
 				radius="30"
 				initialVisibility="true"
 				img="drawable/Dragon-Blue-Icon.png"
+			>
+			</hotspot>
+			<hotspot
+				id="HS_Drache_Blau_2"
+				latlong="50.72074,7.123471"
+				radius="30"
+				initialVisibility="true"
+				img="drawable/Dragon-Blue-Icon.png"
+			>
+			</hotspot>
+			<hotspot
+				id="HS_Gold_Key"
+				latlong="50.721392,7.125682"
+				radius="30"
+				initialVisibility="true"
+				img="drawable/Gold-Key-Icon.png"
 			>
 			</hotspot>
 		</hotspots>
