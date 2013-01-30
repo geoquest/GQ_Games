@@ -1,492 +1,627 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<game name="Der Schatz des Goblin (Outdoor)" xmlformat="5">
-
-	<mission type="StartAndExitScreen" id="Intro_1"
-		image="drawable/start_screen.jpg" duration="interactive">
-		<onEnd>
-			<rule>
-				<action type="StartMission" id="Intro_2" />
-			</rule>
-		</onEnd>
-	</mission>
-	
-	<mission type="NPCTalk" id="Intro_2" image="drawable/logo.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Einleitung..."
-		cancel="fail" name="Intro">
-		<onEnd>
-			<rule>
-				<action type="StartMission" id="Intro_3" />
-			</rule>
-		</onEnd>
-		<dialogitem>
-			Hallo und ein herzliches Willkommen!
-		</dialogitem>	
-		<dialogitem>
-			Es freut uns, dass Ihr an unserem Demo-Quest teilnehmen wollt.
-		</dialogitem>
-	</mission>
-	
-	<mission type="NPCTalk" id="Intro_3" image="drawable/QRCode.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Quest beginnen..."
-		cancel="fail" name="Einleitung">
-		<onEnd>
-			<rule>
-				<action type="StartMission" id="Goblin_1" />
-			</rule>
-		</onEnd>
-		<dialogitem>
-			In dieser Demo sollt Ihr QRCodes inner- und außerhalb des Gebäudes finden.
-		</dialogitem>	
-		<dialogitem>
-			Falls Ihr noch keine Erfahrung mit QRCodes habt, fragt uns bitte nach Hilfe.
-		</dialogitem>
-		<dialogitem>
-			Der freundliche Goblin Thognus wird Euch durch das Quest leiten.
-		</dialogitem>	
-		<dialogitem>
-			Wir wünschen Euch viel Spaß und ein erfolgreiches Quest! :)
-		</dialogitem>	
-	</mission>
-	
-	<mission type="NPCTalk" id="Goblin_1" image="drawable/Goblin-Sad.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Suche den roten Drachen..."
-		cancel="fail" name="Quest">	
-		<onEnd>
-			<rule>
-				<action type="StartMission" id="QR-Drache-Gruen" />
-			</rule>
-		</onEnd>
-		<dialogitem speaker="Thognus">	
-			Zum Glück seid Ihr da!
-		</dialogitem>
-		<dialogitem>
-			Drei fiese Drachen haben mich überfallen und den Schlüssel zu meiner Schatztruhe gestohlen.
-		</dialogitem>
-		<dialogitem>
-			Ihr müsst mir helfen den Schlüssel wieder zu finden.
-		</dialogitem>		
-		<dialogitem>
-			Einer der Drachen war grün und ist zum Haupteingang geflohen.
-		</dialogitem>				
-		<dialogitem>
-			Lasst uns nachsehen, ob er noch da ist und den Schlüssel hat.
-		</dialogitem>	
-	</mission>
-	
+<game
+	name="Der Schatz des Goblin (Outdoor)"
+	xmlformat="5"
+>
 	<mission
-		type="QRTagReading" id="QR-Drache-Gruen" buttontext="QRCode scannen ..."
+		type="StartAndExitScreen"
+		id="Intro_1"
+		image="drawable/start_screen.jpg"
+		duration="interactive"
+	>
+		<onEnd>
+			<rule>
+				<action
+					type="StartMission"
+					id="Intro_2" />
+			</rule>
+		</onEnd>
+	</mission>
+	<mission
+		type="NPCTalk"
+		id="Intro_2"
+		image="drawable/logo.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Einleitung..."
+		cancel="fail"
+		name="Intro"
+	>
+		<onEnd>
+			<rule>
+				<action
+					type="StartMission"
+					id="Intro_3" />
+			</rule>
+		</onEnd>
+		<dialogitem> Hallo und ein herzliches Willkommen!
+		</dialogitem>
+		<dialogitem> Es freut uns, dass Ihr an unserem Demo-Quest teilnehmen
+			wollt.
+		</dialogitem>
+	</mission>
+	<mission
+		type="NPCTalk"
+		id="Intro_3"
+		image="drawable/QRCode.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Quest beginnen..."
+		cancel="fail"
+		name="Einleitung"
+	>
+		<onEnd>
+			<rule>
+				<action
+					type="StartMission"
+					id="Goblin_1" />
+			</rule>
+		</onEnd>
+		<dialogitem> In dieser Demo sollt Ihr QRCodes inner- und außerhalb des
+			Gebäudes finden.
+		</dialogitem>
+		<dialogitem> Falls Ihr noch keine Erfahrung mit QRCodes habt, fragt
+			uns bitte nach Hilfe.
+		</dialogitem>
+		<dialogitem> Der freundliche Goblin Thognus wird Euch durch das Quest
+			leiten.
+		</dialogitem>
+		<dialogitem> Wir wünschen Euch viel Spaß und ein erfolgreiches Quest!
+			:)
+		</dialogitem>
+	</mission>
+	<mission
+		type="NPCTalk"
+		id="Goblin_1"
+		image="drawable/Goblin-Sad.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Suche den roten Drachen..."
+		cancel="fail"
+		name="Quest"
+	>
+		<onEnd>
+			<rule>
+				<action
+					type="StartMission"
+					id="QR-Drache-Gruen" />
+			</rule>
+		</onEnd>
+		<dialogitem speaker="Thognus"> Zum Glück seid Ihr da!
+		</dialogitem>
+		<dialogitem> Drei fiese Drachen haben mich überfallen und den
+			Schlüssel zu meiner Schatztruhe gestohlen.
+		</dialogitem>
+		<dialogitem> Ihr müsst mir helfen den Schlüssel wieder zu finden.
+		</dialogitem>
+		<dialogitem> Einer der Drachen war grün und ist zum Haupteingang
+			geflohen.
+		</dialogitem>
+		<dialogitem> Lasst uns nachsehen, ob er noch da ist und den Schlüssel
+			hat.
+		</dialogitem>
+	</mission>
+	<mission
+		type="QRTagReading"
+		id="QR-Drache-Gruen"
+		buttontext="QRCode scannen ..."
 		taskdescription="Suche den gruenen Drachen ..."
-		mode="product" initial_image="drawable/QRCode-gruen.png" cancel="fail"
-		expected_content="gruen" if_wrong="Das ist nicht der gruene Drache!"
+		mode="product"
+		initial_image="drawable/QRCode-gruen.png"
+		cancel="fail"
+		expected_content="gruen"
+		if_wrong="Das ist nicht der gruene Drache!"
 		if_right="Ja, das ist der Drache! Los, schnappen wir ihn uns!"
-		>
+	>
 		<onEnd>
 			<rule>
-				<action type="StartMission" id="NPC-Drache-Gruen-1" />
+				<action
+					type="StartMission"
+					id="NPC-Drache-Gruen-1" />
 			</rule>
 		</onEnd>
 	</mission>
-	
-	<mission type="NPCTalk" id="NPC-Drache-Gruen-1" image="drawable/Dragon-Green.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Mero">
+	<mission
+		type="NPCTalk"
+		id="NPC-Drache-Gruen-1"
+		image="drawable/Dragon-Green.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Weiter..."
+		cancel="fail"
+		name="Mero"
+	>
 		<onEnd>
 			<rule>
-				<action type="StartMission" id="NPC-Drache-Gruen-2" />
+				<action
+					type="StartMission"
+					id="NPC-Drache-Gruen-2" />
 			</rule>
 		</onEnd>
-		<dialogitem speaker="Mero">
-			Hallo mein Name ist Mero! Was wollt ihr von mir?
-		</dialogitem>		
-	</mission>
-	
-	<mission type="NPCTalk" id="NPC-Drache-Gruen-2" image="drawable/Goblin-Drache-Gruen.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Mero">
-		<onEnd>
-			<rule>
-				<action type="StartMission" id="QA-Drache-Gruen" />
-			</rule>
-		</onEnd>
-		<dialogitem speaker="Thognus">
-			Gib mir sofort meinen Schlüssel wieder!
-		</dialogitem>		
-		<dialogitem speaker="Mero">
-			Den bekommt Ihr erst, wenn Ihr mir eine Frage richtig beantwortet.
-		</dialogitem>
-		<dialogitem speaker="Thognus">
-			Na gut, was willst du wissen?
+		<dialogitem speaker="Mero"> Hallo mein Name ist Mero! Was wollt
+			ihr von mir?
 		</dialogitem>
 	</mission>
-	
-	<mission type="QuestionAndAnswer" id="QA-Drache-Gruen" name="Grüner Drache"
-			correctAnswersNeeded="1" shuffle="answers" cancel="fail">
+	<mission
+		type="NPCTalk"
+		id="NPC-Drache-Gruen-2"
+		image="drawable/Goblin-Drache-Gruen.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Weiter..."
+		cancel="fail"
+		name="Mero"
+	>
 		<onEnd>
 			<rule>
-				<if>
-					<missionState id="QA-Drache-Gruen" state="success" />
-				</if>
-				<action type="StartMission" id="NPC-Drache-Gruen-3" />
+				<action
+					type="StartMission"
+					id="QA-Drache-Gruen" />
 			</rule>
+		</onEnd>
+		<dialogitem speaker="Thognus"> Gib mir sofort meinen Schlüssel
+			wieder!
+		</dialogitem>
+		<dialogitem speaker="Mero"> Den bekommt Ihr erst, wenn Ihr mir
+			eine Frage richtig beantwortet.
+		</dialogitem>
+		<dialogitem speaker="Thognus"> Na gut, was willst du wissen?
+		</dialogitem>
+	</mission>
+	<mission
+		loopUntilSuccess="true"
+		type="MultipleChoiceQuestion"
+		id="QA-Drache-Gruen"
+		name="Grüner Drache"
+	>
+		<onEnd>
 			<rule>
-				<if>
-					<not> <missionState id="QA-Drache-Gruen" state="success" /> </not>
-				</if>
-				<action type="StartMission" id="QA-Drache-Gruen" />				
+				<action
+					type="StartMission"
+					id="NPC-Drache-Gruen-3" />
 			</rule>
 		</onEnd>
 		<question>
-			<questiontext>
-				Meine Schuppenfarbe ist grün. Aus welchen zwei Grundfarben kann sie gemischt werden?
-            </questiontext>
-			<answer correct="0"
-				onChoose="Nö, lila bin ich nicht!">
-				Rot, Blau
-            </answer>
-			<answer correct="1"
-				onChoose="Genau! Gelb und Blau ergeben Grün.">
-				Gelb, Blau
-            </answer>
-			<answer correct="0" onChoose="Also orange bin ich nun wirklich nicht!">
-				Gelb, Rot
-            </answer>
+			<questiontext> Meine Schuppenfarbe ist grün. Aus welchen zwei
+				Grundfarben kann sie gemischt werden?
+			</questiontext>
+			<answer
+				correct="0"
+				onChoose="Nö, lila bin ich nicht!"
+			> Rot, Blau
+			</answer>
+			<answer
+				correct="1"
+				onChoose="Genau! Gelb und Blau ergeben Grün."
+			> Gelb, Blau
+			</answer>
+			<answer
+				correct="0"
+				onChoose="Also orange bin ich nun wirklich nicht!"
+			> Gelb, Rot
+			</answer>
 		</question>
 	</mission>
-	
-	<mission type="NPCTalk" id="NPC-Drache-Gruen-3" image="drawable/Dragon-Green.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Mero">
+	<mission
+		type="NPCTalk"
+		id="NPC-Drache-Gruen-3"
+		image="drawable/Dragon-Green.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Weiter..."
+		cancel="fail"
+		name="Mero"
+	>
 		<onEnd>
 			<rule>
-				<action type="StartMission" id="NPC-Drache-Blau-1" />
+				<action
+					type="StartMission"
+					id="NPC-Drache-Blau-1" />
 			</rule>
 		</onEnd>
-		<dialogitem speaker="Mero">
-			Leider habe ich den Schlüssel nicht mehr!
-		</dialogitem>		
-		<dialogitem>
-			Mein gefräßiger Bruder hat mich umgerannt und mir den Schlüssel weggenommen.
+		<dialogitem speaker="Mero"> Leider habe ich den Schlüssel nicht
+			mehr!
 		</dialogitem>
-		<dialogitem>
-			Wenn Ihr Glück habt, dann hat er ihn noch nicht gegessen.
-		</dialogitem>		
-		<dialogitem>
-			Er ist blau und er liebt es zu Grillen. Falls es hier einen Ort gibt, 
-			an dem genug Holz für ein Lagerfeuer existiert, dann 
+		<dialogitem> Mein gefräßiger Bruder hat mich umgerannt und mir den
+			Schlüssel weggenommen.
+		</dialogitem>
+		<dialogitem> Wenn Ihr Glück habt, dann hat er ihn noch nicht gegessen.
+		</dialogitem>
+		<dialogitem> Er ist blau und er liebt es zu Grillen. Falls es hier
+			einen Ort gibt, an dem genug Holz für ein Lagerfeuer existiert, dann
 			findet Ihr ihn dort.
 		</dialogitem>
-		<dialogitem>
-			Viel Glück bei der Suche!
+		<dialogitem> Viel Glück bei der Suche!
 		</dialogitem>
 	</mission>
-	
-	<mission type="NPCTalk" id="NPC-Drache-Blau-1" image="drawable/Goblin-Sad.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Mero">
+	<mission
+		type="NPCTalk"
+		id="NPC-Drache-Blau-1"
+		image="drawable/Goblin-Sad.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Weiter..."
+		cancel="fail"
+		name="Mero"
+	>
 		<onEnd>
 			<rule>
-				<action type="StartMission" id="Map_Mission" />
+				<action
+					type="StartMission"
+					id="Map_Mission" />
 			</rule>
 		</onEnd>
-		<dialogitem speaker="Thognus">
-			Oh nein! Ich habe mich schon so auf den Schlüssel gefreut!
+		<dialogitem speaker="Thognus"> Oh nein! Ich habe mich schon so auf
+			den Schlüssel gefreut!
 		</dialogitem>
-		<dialogitem>
-			Draußen gibt es Bäume. Lasst uns nachsehen, ob er dort ist.
-		</dialogitem>		
+		<dialogitem> Draußen gibt es Bäume. Lasst uns nachsehen, ob er dort
+			ist.
+		</dialogitem>
 	</mission>
-	
 	<mission
-		type="QRTagReading" id="QR-Drache-Blau" buttontext="QRCode scannen ..."
+		type="QRTagReading"
+		id="QR-Drache-Blau"
+		buttontext="QRCode scannen ..."
 		taskdescription="Suche den blauen Drachen ..."
-		mode="product" initial_image="drawable/QRCode-blau.png" cancel="fail"
-		expected_content="blau" if_wrong="Das ist nicht der blaue Drache!"
+		mode="product"
+		initial_image="drawable/QRCode-blau.png"
+		cancel="fail"
+		expected_content="blau"
+		if_wrong="Das ist nicht der blaue Drache!"
 		if_right="Ja, wir haben ihn! Schnappen wir ihn uns bevor er wegläuft!"
-		>
+	>
 		<onEnd>
 			<rule>
-				<action type="StartMission" id="NPC-Drache-Blau-2" />
+				<action
+					type="StartMission"
+					id="NPC-Drache-Blau-2" />
 			</rule>
 		</onEnd>
 	</mission>
-	
-	<mission type="NPCTalk" id="NPC-Drache-Blau-2" image="drawable/Dragon-Blue.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Egloc">
+	<mission
+		type="NPCTalk"
+		id="NPC-Drache-Blau-2"
+		image="drawable/Dragon-Blue.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Weiter..."
+		cancel="fail"
+		name="Egloc"
+	>
 		<onEnd>
 			<rule>
-				<action type="StartMission" id="NPC-Drache-Blau-3" />
+				<action
+					type="StartMission"
+					id="NPC-Drache-Blau-3" />
 			</rule>
 		</onEnd>
-		<dialogitem speaker="Egloc">
-			Hallo, ich bin Egloc! Müsst Ihr mich unbedingt beim Grillen stören?
-		</dialogitem>		
+		<dialogitem speaker="Egloc"> Hallo, ich bin Egloc! Müsst Ihr mich
+			unbedingt beim Grillen stören?
+		</dialogitem>
 	</mission>
-	
-	<mission type="NPCTalk" id="NPC-Drache-Blau-3" image="drawable/Goblin-Drache-Blau.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Egloc">
+	<mission
+		type="NPCTalk"
+		id="NPC-Drache-Blau-3"
+		image="drawable/Goblin-Drache-Blau.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Weiter..."
+		cancel="fail"
+		name="Egloc"
+	>
 		<onEnd>
 			<rule>
-				<action type="StartMission" id="QA-Drache-Blau" />
+				<action
+					type="StartMission"
+					id="QA-Drache-Blau" />
 			</rule>
 		</onEnd>
-		<dialogitem speaker="Thognus">
-			Her mit meinem Schlüssel!
-		</dialogitem>		
-		<dialogitem speaker="Egloc">
-			So einfach gebe ich deinen Schlüssel nicht her!
+		<dialogitem speaker="Thognus"> Her mit meinem Schlüssel!
 		</dialogitem>
-		<dialogitem speaker="Thognus">
-			Oh nein! Wieso denn nicht?
+		<dialogitem speaker="Egloc"> So einfach gebe ich deinen Schlüssel
+			nicht her!
 		</dialogitem>
-		<dialogitem speaker="Egloc">
-			Du bekommst ihn erst dann, wenn du die folgende Frage richtig beantwortest!
+		<dialogitem speaker="Thognus"> Oh nein! Wieso denn nicht?
 		</dialogitem>
-	</mission>	
-	
-	<mission type="QuestionAndAnswer" id="QA-Drache-Blau" name="Grüner Drache"
-			correctAnswersNeeded="1" shuffle="answers" cancel="fail">
+		<dialogitem speaker="Egloc"> Du bekommst ihn erst dann, wenn du die
+			folgende Frage richtig beantwortest!
+		</dialogitem>
+	</mission>
+	<mission
+		loopUntilSuccess="true"
+		type="MultipleChoiceQuestion"
+		id="QA-Drache-Blau"
+		name="Grüner Drache"
+	>
 		<onEnd>
 			<rule>
-				<if>
-					<missionState id="QA-Drache-Blau" state="success" />
-				</if>
-				<action type="StartMission" id="NPC-Drache-Blau-4" />
-			</rule>
-			<rule>
-				<if>
-					<not> <missionState id="QA-Drache-Blau" state="success" /> </not>
-				</if>
-				<action type="StartMission" id="QA-Drache-Blau" />				
+				<action
+					type="StartMission"
+					id="NPC-Drache-Blau-4" />
 			</rule>
 		</onEnd>
 		<question>
-			<questiontext>
-				Was ist meine Leibspeise?
-            </questiontext>
-			<answer correct="0"
-				onChoose="Nö, Schokoriegel esse ich nur wenn es nichts anderes gibt.">
-				Schokoriegel
-            </answer>
-			<answer correct="1"
-				onChoose="Genau! Die esse ich am liebsten!">
-				Würstchen
-            </answer>
-			<answer correct="0" onChoose="Die mag ich nicht!">
-				Äpfel
-            </answer>
+			<questiontext> Was ist meine Leibspeise?
+			</questiontext>
+			<answer
+				correct="0"
+				onChoose="Nö, Schokoriegel esse ich nur wenn es nichts anderes gibt."
+			> Schokoriegel
+			</answer>
+			<answer
+				correct="1"
+				onChoose="Genau! Die esse ich am liebsten!"
+			> Würstchen
+			</answer>
+			<answer
+				correct="0"
+				onChoose="Die mag ich nicht!"
+			> Äpfel
+			</answer>
 		</question>
 	</mission>
-	
-	<mission type="NPCTalk" id="NPC-Drache-Blau-4" image="drawable/Dragon-Blue.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Egloc">
-		<onEnd>
-			<rule>
-				<action type="StartMission" id="NPC-Drache-Rot-1" />
-			</rule>
-		</onEnd>
-		<dialogitem speaker="Egloc">
-			Blöderweise habe ich den Schlüssel nicht mehr.
-		</dialogitem>	
-		<dialogitem>
-			Mein kleiner Bruder hat ihn stibitzt.
-		</dialogitem>	
-		<dialogitem>
-			Aus Wut habe ich seine Schwanzspitze verbrannt. 
-		</dialogitem>	
-		<dialogitem>
-			Er ist eben zurück in das Gebäude gerannt, um etwas Wasser zum Löschen zu finden.
-		</dialogitem>		
-		<dialogitem>
-			Viel Erfolg bei Eurer Suche!
-		</dialogitem>		
-	</mission>
-	
-	<mission type="NPCTalk" id="NPC-Drache-Rot-1" image="drawable/Goblin-Sad.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Squlu">
-		<onEnd>
-			<rule>
-				<action type="StartMission" id="QR-Drache-Rot" />
-			</rule>
-		</onEnd>
-		<dialogitem speaker="Thognus">
-			Das ist nicht fair! Ich hab Euch ja schon gesagt, dass die Drachen fies sind.
-		</dialogitem>
-		<dialogitem>
-			Nun müssen wir auch noch den grünen Drachen finden.
-		</dialogitem>		
-		<dialogitem>
-			Wir sollten einen Wasserhahn suchen.
-		</dialogitem>
-	</mission>
-	
 	<mission
-		type="QRTagReading" id="QR-Drache-Rot" buttontext="QRCode scannen ..."
+		type="NPCTalk"
+		id="NPC-Drache-Blau-4"
+		image="drawable/Dragon-Blue.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Weiter..."
+		cancel="fail"
+		name="Egloc"
+	>
+		<onEnd>
+			<rule>
+				<action
+					type="StartMission"
+					id="NPC-Drache-Rot-1" />
+			</rule>
+		</onEnd>
+		<dialogitem speaker="Egloc"> Blöderweise habe ich den Schlüssel
+			nicht mehr.
+		</dialogitem>
+		<dialogitem> Mein kleiner Bruder hat ihn stibitzt.
+		</dialogitem>
+		<dialogitem> Aus Wut habe ich seine Schwanzspitze verbrannt.
+		</dialogitem>
+		<dialogitem> Er ist eben zurück in das Gebäude gerannt, um etwas
+			Wasser zum Löschen zu finden.
+		</dialogitem>
+		<dialogitem> Viel Erfolg bei Eurer Suche!
+		</dialogitem>
+	</mission>
+	<mission
+		type="NPCTalk"
+		id="NPC-Drache-Rot-1"
+		image="drawable/Goblin-Sad.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Weiter..."
+		cancel="fail"
+		name="Squlu"
+	>
+		<onEnd>
+			<rule>
+				<action
+					type="StartMission"
+					id="QR-Drache-Rot" />
+			</rule>
+		</onEnd>
+		<dialogitem speaker="Thognus"> Das ist nicht fair! Ich hab Euch ja
+			schon gesagt, dass die Drachen fies sind.
+		</dialogitem>
+		<dialogitem> Nun müssen wir auch noch den grünen Drachen finden.
+		</dialogitem>
+		<dialogitem> Wir sollten einen Wasserhahn suchen.
+		</dialogitem>
+	</mission>
+	<mission
+		type="QRTagReading"
+		id="QR-Drache-Rot"
+		buttontext="QRCode scannen ..."
 		taskdescription="Suche den roten Drachen ..."
-		mode="product" initial_image="drawable/QRCode-rot.png" cancel="fail"
-		expected_content="rot" if_wrong="Das ist nicht der rote Drache!"
+		mode="product"
+		initial_image="drawable/QRCode-rot.png"
+		cancel="fail"
+		expected_content="rot"
+		if_wrong="Das ist nicht der rote Drache!"
 		if_right="Wir haben ihn gefunden! Auf ihn mit Gebrüll!"
-		>
+	>
 		<onEnd>
 			<rule>
-				<action type="StartMission" id="NPC-Drache-Rot-2" />
+				<action
+					type="StartMission"
+					id="NPC-Drache-Rot-2" />
 			</rule>
 		</onEnd>
 	</mission>
-	
-	<mission type="NPCTalk" id="NPC-Drache-Rot-2" image="drawable/Dragon-Red.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Squlu">
+	<mission
+		type="NPCTalk"
+		id="NPC-Drache-Rot-2"
+		image="drawable/Dragon-Red.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Weiter..."
+		cancel="fail"
+		name="Squlu"
+	>
 		<onEnd>
 			<rule>
-				<action type="StartMission" id="NPC-Drache-Rot-3" />
+				<action
+					type="StartMission"
+					id="NPC-Drache-Rot-3" />
 			</rule>
 		</onEnd>
-		<dialogitem speaker="Squlu">
-			Hallo, mein Name ist Squlu! Wieso stört Ihr mich hier?
-		</dialogitem>		
+		<dialogitem speaker="Squlu"> Hallo, mein Name ist Squlu! Wieso
+			stört Ihr mich hier?
+		</dialogitem>
 	</mission>
-	
-	<mission type="NPCTalk" id="NPC-Drache-Rot-3" image="drawable/Goblin-Drache-Rot.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Squlu">
+	<mission
+		type="NPCTalk"
+		id="NPC-Drache-Rot-3"
+		image="drawable/Goblin-Drache-Rot.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Weiter..."
+		cancel="fail"
+		name="Squlu"
+	>
 		<onEnd>
 			<rule>
-				<action type="StartMission" id="QA-Drache-Rot" />
+				<action
+					type="StartMission"
+					id="QA-Drache-Rot" />
 			</rule>
 		</onEnd>
-		<dialogitem speaker="Thognus">
-			Die anderen Drachen hatten meinen Schlüssel nicht, also musst du ihn haben. Her damit!
-		</dialogitem>		
-		<dialogitem speaker="Squlu">
-			Ja, ich habe deinen Schlüssel. Den bekommst du aber erst, wenn du mir eine Frage beantwortest.
+		<dialogitem speaker="Thognus"> Die anderen Drachen hatten meinen
+			Schlüssel nicht, also musst du ihn haben. Her damit!
 		</dialogitem>
-		<dialogitem speaker="Thognus">
-			Na los, frag schon!
+		<dialogitem speaker="Squlu"> Ja, ich habe deinen Schlüssel. Den
+			bekommst du aber erst, wenn du mir eine Frage beantwortest.
 		</dialogitem>
-	</mission>	
-
-	<mission type="QuestionAndAnswer" id="QA-Drache-Rot" name="Roter Drache"
-			correctAnswersNeeded="1" shuffle="answers" cancel="fail">
+		<dialogitem speaker="Thognus"> Na los, frag schon!
+		</dialogitem>
+	</mission>
+	<mission
+		loopUntilSuccess="true"
+		type="MultipleChoiceQuestion"
+		id="QA-Drache-Rot"
+		name="Roter Drache"
+	>
 		<onEnd>
 			<rule>
-				<if>
-					<missionState id="QA-Drache-Rot" state="success" />
-				</if>
-				<action type="StartMission" id="NPC-Drache-Rot-4" />
-			</rule>
-			<rule>
-				<if>
-					<not> <missionState id="QA-Drache-Rot" state="success" /> </not>
-				</if>
-				<action type="StartMission" id="QA-Drache-Rot" />				
+				<action
+					type="StartMission"
+					id="NPC-Drache-Rot-4" />
 			</rule>
 		</onEnd>
 		<question>
-			<questiontext>
-				Ein Drache kann 333 Meter groß werden und ich hab schon 2/3 davon geschafft. Wie groß bin ich?
-            </questiontext>
-			<answer correct="0"
-				onChoose="So klein war ich als Teendrache.">
-				111 Meter
-            </answer>
-			<answer correct="1"
-				onChoose="Super, das ist richtig! Ich hab es hier wohl mit Drachenprofis zu tun!">
-				222 Meter
-            </answer>
-			<answer correct="0" onChoose="Ich glaube Ihr braucht eine Brille! Ich bin doch keine Maus!">
-				5 Zentimeter
-            </answer>
+			<questiontext> Ein Drache kann 333 Meter groß werden und ich hab
+				schon 2/3 davon geschafft. Wie groß bin ich?
+			</questiontext>
+			<answer
+				correct="0"
+				onChoose="So klein war ich als Teendrache."
+			> 111 Meter
+			</answer>
+			<answer
+				correct="1"
+				onChoose="Super, das ist richtig! Ich hab es hier wohl mit Drachenprofis zu tun!"
+			> 222 Meter
+			</answer>
+			<answer
+				correct="0"
+				onChoose="Ich glaube Ihr braucht eine Brille! Ich bin doch keine Maus!"
+			> 5 Zentimeter
+			</answer>
 		</question>
 	</mission>
-	
-	<mission type="NPCTalk" id="NPC-Drache-Rot-4" image="drawable/Dragon-Red.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Squlu">
-		<onEnd>
-			<rule>
-				<action type="StartMission" id="NPC-Schluessel-1" />
-			</rule>
-		</onEnd>
-		<dialogitem speaker="Squlu">
-			Hier hast du deinen Schlüssel!
-		</dialogitem>		
-		<dialogitem>
-			Damit kann man sowieso nicht Spielen. Der ist total langweilig!
-		</dialogitem>
-	</mission>
-
-	<mission type="NPCTalk" id="NPC-Schluessel-1" image="drawable/Gold-Key.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Squlu">
-		<onEnd>
-			<rule>
-				<action type="StartMission" id="QR-Schatztruhe" />
-			</rule>
-		</onEnd>
-		<dialogitem speaker="Thognus">
-			Endlich, ich habe meinen Schlüssel wieder!
-		</dialogitem>
-		<dialogitem>
-			Kommt mit zum Startpunkt, da ist meine Schatztruhe.		
-		</dialogitem>
-		
-	</mission>
-	
 	<mission
-		type="QRTagReading" id="QR-Schatztruhe" buttontext="QRCode scannen ..."
-		taskdescription="Suche die Schatztruhe!"
-		mode="product" initial_image="drawable/QRCode.png" cancel="fail"
-		expected_content="schatztruhe" if_wrong="Das ist keine Schatztruhe!"
-		if_right="Ja, das ist sie!"
-		>
+		type="NPCTalk"
+		id="NPC-Drache-Rot-4"
+		image="drawable/Dragon-Red.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Weiter..."
+		cancel="fail"
+		name="Squlu"
+	>
 		<onEnd>
 			<rule>
-				<action type="StartMission" id="NPC-Schatz" />
+				<action
+					type="StartMission"
+					id="NPC-Schluessel-1" />
+			</rule>
+		</onEnd>
+		<dialogitem speaker="Squlu"> Hier hast du deinen Schlüssel!
+		</dialogitem>
+		<dialogitem> Damit kann man sowieso nicht Spielen. Der ist total
+			langweilig!
+		</dialogitem>
+	</mission>
+	<mission
+		type="NPCTalk"
+		id="NPC-Schluessel-1"
+		image="drawable/Gold-Key.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Weiter..."
+		cancel="fail"
+		name="Squlu"
+	>
+		<onEnd>
+			<rule>
+				<action
+					type="StartMission"
+					id="QR-Schatztruhe" />
+			</rule>
+		</onEnd>
+		<dialogitem speaker="Thognus"> Endlich, ich habe meinen Schlüssel
+			wieder!
+		</dialogitem>
+		<dialogitem> Kommt mit zum Startpunkt, da ist meine Schatztruhe.
+		</dialogitem>
+	</mission>
+	<mission
+		type="QRTagReading"
+		id="QR-Schatztruhe"
+		buttontext="QRCode scannen ..."
+		taskdescription="Suche die Schatztruhe!"
+		mode="product"
+		initial_image="drawable/QRCode.png"
+		cancel="fail"
+		expected_content="schatztruhe"
+		if_wrong="Das ist keine Schatztruhe!"
+		if_right="Ja, das ist sie!"
+	>
+		<onEnd>
+			<rule>
+				<action
+					type="StartMission"
+					id="NPC-Schatz" />
 			</rule>
 		</onEnd>
 	</mission>
-		
-	<mission type="NPCTalk" id="NPC-Schatz" image="drawable/Schatztruhe.png"
-		nextdialogbuttontext="Weiter ..." endbuttontext="Ende..."
-		cancel="fail" name="Ende">
+	<mission
+		type="NPCTalk"
+		id="NPC-Schatz"
+		image="drawable/Schatztruhe.png"
+		nextdialogbuttontext="Weiter ..."
+		endbuttontext="Ende..."
+		cancel="fail"
+		name="Ende"
+	>
 		<onEnd>
 			<rule>
 				<action type="EndGame" />
 			</rule>
 		</onEnd>
-		<dialogitem speaker="Thognus">
-			Vielen Dank, dass Ihr mir geholfen habt! Ohne Euch hätte ich die Fragen nicht beantworten können.
+		<dialogitem speaker="Thognus"> Vielen Dank, dass Ihr mir geholfen
+			habt! Ohne Euch hätte ich die Fragen nicht beantworten können.
 		</dialogitem>
-		<dialogitem>
-			Mit dem Code 232 könnt Ihr die Schatztruhe öffnen und Euch ein kleine Überraschung herausnehmen.
-		</dialogitem>		
+		<dialogitem> Mit dem Code 232 könnt Ihr die Schatztruhe öffnen und
+			Euch ein kleine Überraschung herausnehmen.
+		</dialogitem>
 	</mission>
-	
-	<mission type="MapOverview" id="Map_Mission" mapkind="satellite" zoomlevel="18">
-
+	<mission
+		type="MapOverview"
+		id="Map_Mission"
+		mapkind="satellite"
+		zoomlevel="18"
+	>
 		<hotspots>
-	
-				<hotspot id="HS_Drache_Blau" latlong="47.69164,11.889138"
-				radius="30" initialVisibility="true" img="drawable/Dragon-Blue-Icon.png">
+			<hotspot
+				id="HS_Drache_Blau"
+				latlong="47.69164,11.889138"
+				radius="30"
+				initialVisibility="true"
+				img="drawable/Dragon-Blue-Icon.png"
+			>
 				<onEnter>
 					<rule>
 						<if>
 							<and>
-								<not><missionState id="NPC-Drache-Blau-1" state="new" /></not>
-								<missionState id="QR-Drache-Blau" state="new" />
+								<not>
+									<missionState
+										id="NPC-Drache-Blau-1"
+										state="new" />
+								</not>
+								<missionState
+									id="QR-Drache-Blau"
+									state="new" />
 							</and>
 						</if>
-						<action type="StartMission" id="QR-Drache-Blau" />
+						<action
+							type="StartMission"
+							id="QR-Drache-Blau" />
 					</rule>
 				</onEnter>
 			</hotspot>
-	
 		</hotspots>
 	</mission>
-	
 </game>
