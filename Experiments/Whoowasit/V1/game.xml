@@ -8,7 +8,7 @@
 	<!-- GAME INTRODUCTION -->
 	<mission
 		id="Game_Intro"
-		image="drawable/welcome.png"
+		image="drawable/Game_Intro.jpg"
 		type="NPCTalk"
 	>
 		<onStart>
@@ -36,7 +36,7 @@
 	<!-- SUSPECTS PRESENTATION -->
 	<mission
 		id="Suspects_Presentation"
-		image="drawable/suspects_presentation.png"
+		image="drawable/Suspects_Presentation.jpg"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -53,7 +53,7 @@
 	</mission>
 	<mission
 		id="Suspect_1"
-		image="drawable/suspect_1.png"
+		image="drawable/Suspect_1.jpg"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -68,7 +68,7 @@
 	</mission>
 	<mission
 		id="Suspect_2"
-		image="drawable/suspect_2.png"
+		image="drawable/Suspect_2.jpg"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -86,7 +86,7 @@
 	<!-- ROOMS PRESENTATION -->
 	<mission
 		id="Rooms_Presentation"
-		image="drawable/rooms_presentation.png"
+		image="drawable/Rooms_Presentation.jpg"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -106,7 +106,7 @@
 	<!-- GAME ACTION (might be used for rounds) -->
 	<mission
 		id="Game_Action"
-		image="drawable/game_start.png"
+		image="drawable/Game_Action.jpg"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -116,7 +116,7 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem>Du kannst im Siel eine der folgenden Aktionen durchführen
+		<dialogitem>Du kannst im Spiel eine der folgenden Aktionen durchführen
 			...
 		</dialogitem>
 		<dialogitem>1. Zu einem der Räume gehen und dort den QR Code scannen
@@ -137,10 +137,191 @@
 	>
 		<onEnd>
 			<rule>
+				<if>
+					<eq>
+						<var>$_Game_Action_Scanner.result</var>
+						<string>Room_A</string>
+					</eq>
+				</if>
 				<action
 					type="StartMission"
-					id="QR_Treasure_2" />
+					id="Room_A" />
+			</rule>
+			<rule>
+				<if>
+					<eq>
+						<var>$_Game_Action_Scanner.result</var>
+						<string>Room_B</string>
+					</eq>
+				</if>
+				<action
+					type="StartMission"
+					id="Room_B" />
+			</rule>
+			<rule>
+				<if>
+					<eq>
+						<var>$_Game_Action_Scanner.result</var>
+						<string>Animal_A</string>
+					</eq>
+				</if>
+				<action
+					type="StartMission"
+					id="Animal_A" />
+			</rule>
+			<rule>
+				<if>
+					<eq>
+						<var>$_Game_Action_Scanner.result</var>
+						<string>Animal_B</string>
+					</eq>
+				</if>
+				<action
+					type="StartMission"
+					id="Animal_B" />
+			</rule>
+			<rule>
+				<if>
+					<eq>
+						<var>$_Game_Action_Scanner.result</var>
+						<string>Chest_A</string>
+					</eq>
+				</if>
+				<action
+					type="StartMission"
+					id="Chest_A" />
+			</rule>
+			<rule>
+				<if>
+					<eq>
+						<var>$_Game_Action_Scanner.result</var>
+						<string>Chest_B</string>
+					</eq>
+				</if>
+				<action
+					type="StartMission"
+					id="Chest_B" />
 			</rule>
 		</onEnd>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- ROOM A -->
+	<mission
+		id="Room_A"
+		image="drawable/Room_A.jpg"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Du bist in Raum A ... 
+		</dialogitem>
+		<dialogitem>TODO
+		</dialogitem>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- ROOM B -->
+	<mission
+		id="Room_B"
+		image="drawable/Room_B.jpg"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Du bist in Raum B ... 
+		</dialogitem>
+		<dialogitem>TODO
+		</dialogitem>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- ANIMAL A -->
+	<mission
+		id="Animal_A"
+		image="drawable/Animal_A.jpg"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Ich bin Tier A ...
+		</dialogitem>
+		<dialogitem>TODO
+		</dialogitem>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- ANIMAL B -->
+	<mission
+		id="Animal_B"
+		image="drawable/Animal_B.jpg"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Ich bin Tier B ...
+		</dialogitem>
+		<dialogitem>TODO
+		</dialogitem>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- CHEST A -->
+	<mission
+		id="Chest_A"
+		image="drawable/Chest_A.jpg"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Du versuchst die Truhe A zu öffnen ...
+		</dialogitem>
+		<dialogitem>TODO
+		</dialogitem>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- CHEST B -->
+	<mission
+		id="Chest_B"
+		image="drawable/Chest_B.jpg"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Du versuchst die Truhe B zu öffnen ...
+		</dialogitem>
+		<dialogitem>TODO
+		</dialogitem>
 	</mission>
 </game>
