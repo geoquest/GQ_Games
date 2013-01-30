@@ -28,6 +28,8 @@
 		<dialogitem>Hier erklären wir dir in Kürze die Spielidee und deine
 			Aufgabe ...
 		</dialogitem>
+		<dialogitem>TODO
+		</dialogitem>
 	</mission>
 	<!-- -->
 	<!-- ################################################################ -->
@@ -46,6 +48,8 @@
 		</onEnd>
 		<dialogitem>Die folgenden Personen sind verdächtig:
 		</dialogitem>
+		<dialogitem>TODO
+		</dialogitem>
 	</mission>
 	<mission
 		id="Suspect_1"
@@ -59,7 +63,7 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem>Verdächtiger EINS ...
+		<dialogitem>Verdächtiger EINS ... TODO
 		</dialogitem>
 	</mission>
 	<mission
@@ -70,11 +74,73 @@
 		<onEnd>
 			<rule>
 				<action
-					id="M_1_introduce_suspects"
+					id="Rooms_Presentation"
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem>Verdächtiger EINS ...
+		<dialogitem>Verdächtiger ZWEI ... TODO
 		</dialogitem>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- ROOMS PRESENTATION -->
+	<mission
+		id="Rooms_Presentation"
+		image="drawable/rooms_presentation.png"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>In den folgenden Räumen findet das Spiel statt ...
+		</dialogitem>
+		<dialogitem>TODO
+		</dialogitem>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- GAME ACTION (might be used for rounds) -->
+	<mission
+		id="Game_Action"
+		image="drawable/game_start.png"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Du kannst im Siel eine der folgenden Aktionen durchführen
+			...
+		</dialogitem>
+		<dialogitem>1. Zu einem der Räume gehen und dort den QR Code scannen
+		</dialogitem>
+		<dialogitem>2. Zu einem der Tiere gehen und mit ihnen sprechen (QR
+			Code scannen)
+		</dialogitem>
+		<dialogitem>3. Zu einer der Truhen gehen und versuchen sie zu öffnen
+			(QR Code scannen)
+		</dialogitem>
+	</mission>
+	<mission
+		type="QRTagReading"
+		id="Game_Action_Scanner"
+		taskdescription="Gehe zu einem Raum, einem Tier oder einer Truhe ..."
+		mode="treasure"
+		initial_image="drawable/Game_Action_Scanner.jpg"
+	>
+		<onEnd>
+			<rule>
+				<action
+					type="StartMission"
+					id="QR_Treasure_2" />
+			</rule>
+		</onEnd>
 	</mission>
 </game>
