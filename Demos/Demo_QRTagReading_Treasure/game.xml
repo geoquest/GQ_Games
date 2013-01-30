@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<game name="QRTag Treasure Demo" xmlformat="5">
+<game name="QRTag Demo Treasure Mode" xmlformat="5">
 
 	<mission type="QRTagReading" id="QR_Treasure_1" buttontext="Finde den Schatz ..."
 		taskdescription="Demo eines 'Schatzes', den du durch den QR-Tag oder Bar-Code finden kannst ..."
