@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game
+	name="WW V_1"
+	xmlformat="5"
+>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- GAME INTRODUCTION -->
+	<mission
+		id="Game_Intro"
+		image="drawable/welcome.png"
+		type="NPCTalk"
+	>
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action
+					id="Suspects_Presentation"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Willkommen zu "Wer War's?" ...
+		</dialogitem>
+		<dialogitem>Hier erklären wir dir in Kürze die Spielidee und deine
+			Aufgabe ...
+		</dialogitem>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- SUSPECTS PRESENTATION -->
+	<mission
+		id="Suspects_Presentation"
+		image="drawable/suspects_presentation.png"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="Suspect_1"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Die folgenden Personen sind verdächtig:
+		</dialogitem>
+	</mission>
+	<mission
+		id="Suspect_1"
+		image="drawable/suspect_1.png"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="Suspect_2"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Verdächtiger EINS ...
+		</dialogitem>
+	</mission>
+	<mission
+		id="Suspect_2"
+		image="drawable/suspect_2.png"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="M_1_introduce_suspects"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Verdächtiger EINS ...
+		</dialogitem>
+	</mission>
+</game>
