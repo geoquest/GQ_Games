@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TEST GAME SPEC for AudioRecord Mission Type -->
 <game
 	name="AudioRecordTest"
 	xmlformat="5"
@@ -59,10 +58,14 @@
 			<rule>
 				<action
 					type="PlayAudio"
-					runtimefile="audio_test_file.3gp" />
+					file="@_test_recording.3gp" />
 			</rule>
 		</onStart>
-		<dialogitem>Now you should hear your recent recording.
+		<dialogitem nextbuttontext="Again">Now you should hear your recent
+			recording.
+		</dialogitem>
+		<dialogitem sound="@_test_recording.3gp">You can use this recording now anywhere
+			later in your quests.
 		</dialogitem>
 	</mission>
 </game>
