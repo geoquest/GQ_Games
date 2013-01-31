@@ -209,40 +209,170 @@
 	<!-- ROOM A -->
 	<mission
 		id="Room_A"
-		image="drawable/Room_A.jpg"
-		type="NPCTalk"
+		loopUntilSuccess="false"
+		type="MultipleChoiceQuestion"
 	>
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
 		<onEnd>
 			<rule>
+				<!-- Back to Action Scanner to interact with animal or chest: -->
+				<if>
+					<missionState
+						id="Room_A"
+						state="failed" />
+				</if>
 				<action
 					id="Game_Action_Scanner"
 					type="StartMission" />
 			</rule>
+			<!-- Look around: -->
+			<rule>
+				<if>
+					<and>
+						<!-- Success means Player looks: -->
+						<missionState
+							id="Room_A"
+							state="succeeded" />
+						<eq>
+							<!-- 0 means its still there, i.e. initial state -->
+							<var>Food_A</var>
+							<num>0</num>
+						</eq>
+					</and>
+				</if>
+				<action
+					id="Find_Food_A"
+					type="StartMission" />
+			</rule>
+			<rule>
+				<if>
+					<and>
+						<!-- Success means Player looks: -->
+						<missionState
+							id="Room_A"
+							state="succeeded" />
+						<eq>
+							<!-- 1 means its gone, i.e. already taken -->
+							<var>Food_A</var>
+							<num>1</num>
+						</eq>
+					</and>
+				</if>
+				<action
+					id="Find_Nothing"
+					type="StartMission" />
+				<!-- DO WE COME BACK TO HERE? THEN call the game action scanner here
+					at end. TODO -->
+			</rule>
 		</onEnd>
-		<dialogitem>Du bist in Raum A ... 
-		</dialogitem>
-		<dialogitem>TODO
-		</dialogitem>
+		<question>
+			<questiontext> Du bist in Raum A. Was möchtest du tun?
+			</questiontext>
+			<answer
+				correct="0"
+				onChoose="Dazu scanne bitte den zugehörigen QR Code"
+			> Mit Tier A sprechen
+			</answer>
+			<answer
+				correct="0"
+				onChoose="Dazu scanne bitte den zugehörigen QR Code"
+			> Die Truhe hier in Raum A untersuchen
+			</answer>
+			<answer
+				correct="1"
+				onChoose="OK. Mal sehen, ob du etwas findest ..."
+			> Dich umschauen
+			</answer>
+		</question>
 	</mission>
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- ROOM B -->
 	<mission
 		id="Room_B"
-		image="drawable/Room_B.jpg"
-		type="NPCTalk"
+		loopUntilSuccess="false"
+		type="MultipleChoiceQuestion"
 	>
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
 		<onEnd>
 			<rule>
+				<!-- Back to Action Scanner to interact with animal or chest: -->
+				<if>
+					<missionState
+						id="Room_B"
+						state="failed" />
+				</if>
 				<action
 					id="Game_Action_Scanner"
 					type="StartMission" />
 			</rule>
+			<!-- Look around: -->
+			<rule>
+				<if>
+					<and>
+						<!-- Success means Player looks: -->
+						<missionState
+							id="Room_B"
+							state="succeeded" />
+						<eq>
+							<!-- 0 means its still there, i.e. initial state -->
+							<var>Food_B</var>
+							<num>0</num>
+						</eq>
+					</and>
+				</if>
+				<action
+					id="Find_Food_B"
+					type="StartMission" />
+			</rule>
+			<rule>
+				<if>
+					<and>
+						<!-- Success means Player looks: -->
+						<missionState
+							id="Room_B"
+							state="succeeded" />
+						<eq>
+							<!-- 1 means its gone, i.e. already taken -->
+							<var>Food_B</var>
+							<num>1</num>
+						</eq>
+					</and>
+				</if>
+				<action
+					id="Find_Nothing"
+					type="StartMission" />
+				<!-- DO WE COME BACK TO HERE? THEN call the game action scanner here
+					at end. TODO -->
+			</rule>
 		</onEnd>
-		<dialogitem>Du bist in Raum B ... 
-		</dialogitem>
-		<dialogitem>TODO
-		</dialogitem>
+		<question>
+			<questiontext> Du bist in Raum B. Was möchtest du tun?
+			</questiontext>
+			<answer
+				correct="0"
+				onChoose="Dazu scanne bitte den zugehörigen QR Code"
+			> Mit Tier B sprechen
+			</answer>
+			<answer
+				correct="0"
+				onChoose="Dazu scanne bitte den zugehörigen QR Code"
+			> Die Truhe hier in Raum B untersuchen
+			</answer>
+			<answer
+				correct="1"
+				onChoose="OK. Mal sehen, ob du etwas findest ..."
+			> Dich umschauen
+			</answer>
+		</question>
 	</mission>
 	<!-- -->
 	<!-- ################################################################ -->
@@ -322,6 +452,99 @@
 		<dialogitem>Du versuchst die Truhe B zu öffnen ...
 		</dialogitem>
 		<dialogitem>TODO
+		</dialogitem>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- FIND FOOD A -->
+	<mission
+		id="Find_Food_A"
+		image="drawable/Food_A.jpg"
+		type="NPCTalk"
+	>
+		<onStart>
+			<rule>
+				<action
+					var="Food_A"
+					type="SetVariable"
+				>
+					<!-- 1 means its already taken, i.e. we move it in our "inventory" -->
+					<value>
+						<num>1</num>
+					</value>
+				</action>
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<!-- We SHOULD not do anything onEnd and instead come back to the calling
+			mission ... TODO -->
+		<dialogitem>Du findest Essen A!
+		</dialogitem>
+		<dialogitem>Benutze es weise, um den magischen Ring wieder zu finden.
+		</dialogitem>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- FIND FOOD B -->
+	<mission
+		id="Find_Food_B"
+		image="drawable/Food_B.jpg"
+		type="NPCTalk"
+	>
+		<onStart>
+			<rule>
+				<action
+					var="Food_B"
+					type="SetVariable"
+				>
+					<!-- 1 means its already taken, i.e. we move it in our "inventory" -->
+					<value>
+						<num>1</num>
+					</value>
+				</action>
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<!-- We SHOULD not do anything onEnd and instead come back to the calling
+			mission ... TODO -->
+		<dialogitem>Du findest Essen B!
+		</dialogitem>
+		<dialogitem>Benutze es weise, um den magischen Ring wieder zu finden.
+		</dialogitem>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- FIND NOTHING -->
+	<mission
+		id="Find_Nothing"
+		image="drawable/Nothing.jpg"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<!-- We SHOULD not do anything onEnd and instead come back to the calling
+			mission ... TODO -->
+		<dialogitem>Hier ist nichts.
+		</dialogitem>
+		<dialogitem>Vielleicht musst du woanders suchen oder mit Tieren
+			sprechen?
 		</dialogitem>
 	</mission>
 </game>
