@@ -158,49 +158,188 @@
 					type="StartMission"
 					id="Room_B" />
 			</rule>
+			<!-- -->
+			<!-- RULES LEADING TO: ANIMAL A -->
 			<rule>
 				<if>
-					<eq>
-						<var>$_Game_Action_Scanner.result</var>
-						<string>Animal_A</string>
-					</eq>
+					<and>
+						<eq>
+							<var>$_Game_Action_Scanner.result</var>
+							<string>Animal_A</string>
+						</eq>
+						<eq>
+							<var>Animal_A_Full</var>
+							<num>0</num>
+						</eq>
+						<eq>
+							<var>Food_B</var>
+							<num>1</num>
+						</eq>
+					</and>
 				</if>
 				<action
 					type="StartMission"
-					id="Animal_A" />
+					id="Animal_A_Hungry__I_Have_Food" />
 			</rule>
 			<rule>
 				<if>
-					<eq>
-						<var>$_Game_Action_Scanner.result</var>
-						<string>Animal_B</string>
-					</eq>
+					<and>
+						<eq>
+							<var>$_Game_Action_Scanner.result</var>
+							<string>Animal_A</string>
+						</eq>
+						<eq>
+							<var>Animal_A_Full</var>
+							<num>0</num>
+						</eq>
+						<not>
+							<eq>
+								<var>Food_B</var>
+								<num>1</num>
+							</eq>
+						</not>
+					</and>
 				</if>
 				<action
 					type="StartMission"
-					id="Animal_B" />
+					id="Animal_A_Hungry__I_Have_NO_Food" />
 			</rule>
 			<rule>
 				<if>
-					<eq>
-						<var>$_Game_Action_Scanner.result</var>
-						<string>Chest_A</string>
-					</eq>
+					<and>
+						<eq>
+							<var>$_Game_Action_Scanner.result</var>
+							<string>Animal_A</string>
+						</eq>
+						<eq>
+							<var>Animal_A_Full</var>
+							<num>1</num>
+						</eq>
+					</and>
 				</if>
 				<action
 					type="StartMission"
-					id="Chest_A" />
+					id="Animal_A_Full" />
+			</rule>
+			<!-- -->
+			<!-- RULES LEADING TO: ANIMAL B -->
+			<rule>
+				<if>
+					<and>
+						<eq>
+							<var>$_Game_Action_Scanner.result</var>
+							<string>Animal_B</string>
+						</eq>
+						<eq>
+							<var>Animal_B_Full</var>
+							<num>0</num>
+						</eq>
+						<eq>
+							<var>Food_A</var>
+							<num>1</num>
+						</eq>
+					</and>
+				</if>
+				<action
+					type="StartMission"
+					id="Animal_B_Hungry__I_Have_Food" />
 			</rule>
 			<rule>
 				<if>
-					<eq>
-						<var>$_Game_Action_Scanner.result</var>
-						<string>Chest_B</string>
-					</eq>
+					<and>
+						<eq>
+							<var>$_Game_Action_Scanner.result</var>
+							<string>Animal_B</string>
+						</eq>
+						<eq>
+							<var>Animal_B_Full</var>
+							<num>0</num>
+						</eq>
+						<not>
+							<eq>
+								<var>Food_A</var>
+								<num>1</num>
+							</eq>
+						</not>
+					</and>
 				</if>
 				<action
 					type="StartMission"
-					id="Chest_B" />
+					id="Animal_A_Hungry__I_Have_NO_Food" />
+			</rule>
+			<rule>
+				<if>
+					<and>
+						<eq>
+							<var>$_Game_Action_Scanner.result</var>
+							<string>Animal_B</string>
+						</eq>
+						<eq>
+							<var>Animal_B_Full</var>
+							<num>1</num>
+						</eq>
+					</and>
+				</if>
+				<action
+					type="StartMission"
+					id="Animal_B_Full" />
+			</rule>
+			<!-- -->
+			<!-- RULE LEADING TO: CHEST A With Key -->
+			<rule>
+				<if>
+					<and>
+						<eq>
+							<var>$_Game_Action_Scanner.result</var>
+							<string>Chest_A</string>
+						</eq>
+						<geq>
+							<var>NumberOfKeys</var>
+							<num>1</num>
+						</geq>
+					</and>
+				</if>
+				<action
+					type="StartMission"
+					id="Chest_A__With_Key" />
+			</rule>
+			<!-- -->
+			<!-- RULES LEADING TO: CHEST B With Key -->
+			<rule>
+				<if>
+					<and>
+						<eq>
+							<var>$_Game_Action_Scanner.result</var>
+							<string>Chest_B</string>
+						</eq>
+						<geq>
+							<var>NumberOfKeys</var>
+							<num>1</num>
+						</geq>
+					</and>
+				</if>
+				<action
+					type="StartMission"
+					id="Chest_B__With_Key" />
+			</rule>
+			<!-- -->
+			<!-- RULE LEADING TO: some CHEST without any Key -->
+			<rule>
+				<if>
+					<and>
+						<eq>
+							<var>$_Game_Action_Scanner.result</var>
+							<string>Chest_A</string>
+						</eq>
+						<eq>
+							<var>NumberOfKeys</var>
+							<num>0</num>
+						</eq>
+					</and>
+				</if>
+				<action
+					type="StartMission"
+					id="Chest__No_Key" />
 			</rule>
 		</onEnd>
 	</mission>
@@ -255,11 +394,11 @@
 						<missionState
 							id="Room_A"
 							state="succeeded" />
-						<eq>
-							<!-- 1 means its gone, i.e. already taken -->
+						<gt>
+							<!-- 1 means its gone, i.e. already taken; 2 means taken and fed -->
 							<var>Food_A</var>
-							<num>1</num>
-						</eq>
+							<num>0</num>
+						</gt>
 					</and>
 				</if>
 				<action
@@ -340,11 +479,11 @@
 						<missionState
 							id="Room_B"
 							state="succeeded" />
-						<eq>
-							<!-- 1 means its gone, i.e. already taken -->
+						<gt>
+							<!-- 1 means its gone, i.e. already taken; 2 means taken and fed -->
 							<var>Food_B</var>
-							<num>1</num>
-						</eq>
+							<num>0</num>
+						</gt>
 					</and>
 				</if>
 				<action
@@ -378,8 +517,71 @@
 	<!-- ################################################################ -->
 	<!-- ANIMAL A -->
 	<mission
-		id="Animal_A"
-		image="drawable/Animal_A.jpg"
+		id="Animal_A_Hungry__I_Have_Food"
+		loopUntilSuccess="false"
+		type="MultipleChoiceQuestion"
+	>
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<onSuccess>
+			<rule>
+				<!-- TODO: Mampf Sound abspielen -->
+				<action
+					var="Food_B"
+					type="SetVariable"
+				>
+					<!-- 2 means it is taken and given to the animal -->
+					<value>
+						<num>2</num>
+					</value>
+				</action>
+				<action
+					var="Animal_A_Full"
+					type="SetVariable"
+				>
+					<!-- 1 means animal is full;
+						THIS IS REDUNDANT: ONE COULD USE FOOD_B
+						INSTEAD, BUT IT IS CLEARER AND MORE RESUSABLE -->
+					<value>
+						<num>1</num>
+					</value>
+				</action>
+				<!-- GET a key: -->
+				<action
+					type="IncrementVariable"
+					var="NumberOfKeys" />
+			</rule>
+		</onSuccess>
+		<!-- TODO: onFail Sound abspielen der Unbehagen ausdrückt -->
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<question>
+			<questiontext>Ich bin so hungrig! Gibst du mir Essen B?
+			</questiontext>
+			<answer
+				correct="1"
+				onChoose="Oh Danke. Hier hast du einen Schlüssel!"
+			> Ja, hier ist Essen B.
+			</answer>
+			<answer
+				correct="0"
+				onChoose="Das ist aber nicht nett von dir! Dann helfe ich dir auch nicht."
+			> Nein, das behalte ich lieber.
+			</answer>
+		</question>
+	</mission>
+	<!-- -->
+	<mission
+		id="Animal_A_Hungry__I_Have_NO_Food"
+		image="drawable/Animal_A_Hungry.jpg"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -389,17 +591,92 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem>Ich bin Tier A ...
+		<dialogitem>Ich bin Tier A und habe Hunger.</dialogitem>
+		<dialogitem>Besorg mir Essen B, dann kann ich dir helfen!
 		</dialogitem>
-		<dialogitem>TODO
+	</mission>
+	<!-- -->
+	<mission
+		id="Animal_A_Full"
+		image="drawable/Animal_A_Full.jpg"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Ich bin Tier A und bin satt.</dialogitem>
+		<dialogitem>Ich habe nichts weiter zu sagen.
 		</dialogitem>
 	</mission>
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- ANIMAL B -->
 	<mission
-		id="Animal_B"
-		image="drawable/Animal_B.jpg"
+		id="Animal_B_Hungry__I_Have_Food"
+		loopUntilSuccess="false"
+		type="MultipleChoiceQuestion"
+	>
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<onSuccess>
+			<rule>
+				<!-- TODO: Mampf Sound abspielen -->
+				<action
+					var="Food_A"
+					type="SetVariable"
+				>
+					<!-- 2 means it is taken and given to the animal -->
+					<value>
+						<num>2</num>
+					</value>
+				</action>
+				<action
+					var="Animal_B_Full"
+					type="SetVariable"
+				>
+					<!-- 1 means animal is full;
+						THIS IS REDUNDANT: ONE COULD USE FOOD_B
+						INSTEAD, BUT IT IS CLEARER AND MORE RESUSABLE -->
+					<value>
+						<num>1</num>
+					</value>
+				</action>
+			</rule>
+		</onSuccess>
+		<!-- TODO: onFail Sound abspielen der Unbehagen ausdrückt -->
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<question>
+			<questiontext>Ich bin so hungrig! Gibst du mir Essen A?
+			</questiontext>
+			<answer
+				correct="1"
+				onChoose="Oh Danke. Ich habe gesehen, dass der Dieb humpelt!"
+			> Ja, hier ist Essen A.
+			</answer>
+			<answer
+				correct="0"
+				onChoose="Das ist aber nicht nett von dir! Dann helfe ich dir auch nicht."
+			> Nein, das behalte ich lieber.
+			</answer>
+		</question>
+	</mission>
+	<!-- -->
+	<mission
+		id="Animal_B_Hungry__I_Have_NO_Food"
+		image="drawable/Animal_B_Hungry.jpg"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -409,37 +686,135 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem>Ich bin Tier B ...
+		<dialogitem>Ich bin Tier B und habe Hunger.</dialogitem>
+		<dialogitem>Besorg mir Essen A, dann kann ich dir helfen!
 		</dialogitem>
-		<dialogitem>TODO
+	</mission>
+	<!-- -->
+	<mission
+		id="Animal_B_Full"
+		image="drawable/Animal_B_Full.jpg"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action
+					id="Game_Action_Scanner"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Ich bin Tier B und bin satt.</dialogitem>
+		<dialogitem>Ich habe nichts weiter zu sagen.
 		</dialogitem>
 	</mission>
 	<!-- -->
 	<!-- ################################################################ -->
-	<!-- CHEST A -->
+	<!-- CHEST A (THE RIGHT ONE) -->
 	<mission
-		id="Chest_A"
-		image="drawable/Chest_A.jpg"
-		type="NPCTalk"
+		id="Chest_A__With_Key"
+		loopUntilSuccess="false"
+		type="MultipleChoiceQuestion"
 	>
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<onSuccess>
+			<rule>
+				<!-- TODO: Truhe Öffnen Sound abspielen -->
+				<action
+					var="NumberOfKeys"
+					type="DecrementVariable" />
+			</rule>
+		</onSuccess>
 		<onEnd>
 			<rule>
+				<!-- IF OPENING: -->
+				<if>
+					<missionState
+						id="Chest_A__With_Key"
+						state="succeeded" />
+				</if>
+				<!-- Sieges-Sound abspielen -->
 				<action
-					id="Game_Action_Scanner"
+					id="Game_Won"
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem>Du versuchst die Truhe A zu öffnen ...
-		</dialogitem>
-		<dialogitem>TODO
-		</dialogitem>
+		<question>
+			<questiontext>Möchtest du diese Truhe öffnen? Du verlierst dadurch
+				aber einen Schlüssel!
+			</questiontext>
+			<answer
+				correct="1"
+				onChoose="OK, Dann schu mal rein. Stell am Schloss die Zahl 456 ein."
+			> Ja, ich gebe dir einen Schlüssel dafür.
+			</answer>
+			<answer
+				correct="0"
+				onChoose="Oh du denkst das ist doch die Falsche Truhe? Na dann noch viel Glück!"
+			> Nein, lieber doch nicht.
+			</answer>
+		</question>
 	</mission>
 	<!-- -->
 	<!-- ################################################################ -->
-	<!-- CHEST B -->
+	<!-- CHEST B (THE WRONG ONE) -->
 	<mission
-		id="Chest_B"
-		image="drawable/Chest_B.jpg"
+		id="Chest_B__With_Key"
+		loopUntilSuccess="false"
+		type="MultipleChoiceQuestion"
+	>
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<onSuccess>
+			<rule>
+				<!-- TODO: Truhe Öffnen Sound abspielen -->
+				<action
+					var="NumberOfKeys"
+					type="DecrementVariable" />
+			</rule>
+		</onSuccess>
+		<onEnd>
+			<rule>
+				<!-- IF OPENING: -->
+				<if>
+					<missionState
+						id="Chest_B__With_Key"
+						state="succeeded" />
+				</if>
+				<!-- Verlierer-Sound abspielen -->
+				<action
+					id="Game_Lost"
+					type="StartMission" />
+			</rule>
+		</onEnd>
+		<question>
+			<questiontext>Möchtest du diese Truhe öffnen? Du verlierst dadurch
+				aber einen Schlüssel!
+			</questiontext>
+			<answer
+				correct="1"
+				onChoose="OK, Dann schu mal rein. Stell am Schloss die Zahl 789 ein."
+			> Ja, ich gebe dir einen Schlüssel dafür.
+			</answer>
+			<answer
+				correct="0"
+				onChoose="Oh du denkst das ist doch die Falsche Truhe? Na dann noch viel Glück!"
+			> Nein, lieber doch nicht.
+			</answer>
+		</question>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- ANY CHEST WITHOUT KEY -->
+	<mission
+		id="Chest__No_Key"
+		image="drawable/Chest_Closed.jpg"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -449,9 +824,9 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem>Du versuchst die Truhe B zu öffnen ...
+		<dialogitem>Du kannst diese Truhe nicht öffnen ...
 		</dialogitem>
-		<dialogitem>TODO
+		<dialogitem>Dazu brauchst du einen Schlüssel!
 		</dialogitem>
 	</mission>
 	<!-- -->
@@ -545,6 +920,60 @@
 		</dialogitem>
 		<dialogitem>Vielleicht musst du woanders suchen oder mit Tieren
 			sprechen?
+		</dialogitem>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- GAME WON -->
+	<mission
+		id="Game_Won"
+		image="drawable/Game_Won.jpg"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action type="EndGame" />
+			</rule>
+		</onEnd>
+		<dialogitem>Glückwunsch! Du hast den Dieb gefunden und den magischen
+			Ring zurückbekommen.
+		</dialogitem>
+		<dialogitem>Du kannst dir zur Belohnung gerne eine Süssigkeit aus der
+			Truhe nehmen.
+		</dialogitem>
+		<dialogitem>Falls ihr mehrere seid, auch für jeden eine.
+		</dialogitem>
+		<dialogitem>Bitte sag Bescheid, wenn nichts mehr in der Truhe ist.
+		</dialogitem>
+		<dialogitem>Schließe bitte die Truhe wieder und gib dein Gerät uns
+			zurück, wenn du es ausgeliehen hast.
+		</dialogitem>
+	</mission>
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- GAME LOST -->
+	<mission
+		id="Game_Lost"
+		image="drawable/Game_Lost.jpg"
+		type="NPCTalk"
+	>
+		<onEnd>
+			<rule>
+				<action type="EndGame" />
+			</rule>
+		</onEnd>
+		<dialogitem>Tut mir leid, aber Du hast den Dieb nicht gefunden und den
+			magischen Ring leider für immer verloren.
+		</dialogitem>
+		<dialogitem>Du kannst dir aber als Trostpreis gerne eine Süssigkeit
+			aus der Truhe nehmen.
+		</dialogitem>
+		<dialogitem>Falls ihr mehrere seid, auch für jeden eine.
+		</dialogitem>
+		<dialogitem>Bitte sag Bescheid, wenn nichts mehr in der Truhe ist.
+		</dialogitem>
+		<dialogitem>Schließe bitte die Truhe wieder und gib dein Gerät uns
+			zurück, wenn du es ausgeliehen hast.
 		</dialogitem>
 	</mission>
 </game>
