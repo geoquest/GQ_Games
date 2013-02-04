@@ -8,7 +8,7 @@
 	<!-- GAME INTRODUCTION -->
 	<mission
 		id="Game_Intro"
-		image="drawable/Game_Intro.jpg"
+		image="drawable/Game_Intro"
 		type="NPCTalk"
 	>
 		<onStart>
@@ -36,7 +36,7 @@
 	<!-- SUSPECTS PRESENTATION -->
 	<mission
 		id="Suspects_Presentation"
-		image="drawable/Suspects_Presentation.jpg"
+		image="drawable/Suspects_Presentation"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -53,7 +53,7 @@
 	</mission>
 	<mission
 		id="Suspect_1"
-		image="drawable/Suspect_1.jpg"
+		image="drawable/Suspect_1"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -68,7 +68,7 @@
 	</mission>
 	<mission
 		id="Suspect_2"
-		image="drawable/Suspect_2.jpg"
+		image="drawable/Suspect_2"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -86,7 +86,7 @@
 	<!-- ROOMS PRESENTATION -->
 	<mission
 		id="Rooms_Presentation"
-		image="drawable/Rooms_Presentation.jpg"
+		image="drawable/Rooms_Presentation"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -106,7 +106,7 @@
 	<!-- GAME ACTION (might be used for rounds) -->
 	<mission
 		id="Game_Action"
-		image="drawable/Game_Action.jpg"
+		image="drawable/Game_Action"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -133,7 +133,7 @@
 		id="Game_Action_Scanner"
 		taskdescription="Gehe zu einem Raum, einem Tier oder einer Truhe ..."
 		mode="treasure"
-		initial_image="drawable/Game_Action_Scanner.jpg"
+		initial_image="drawable/Game_Action_Scanner"
 	>
 		<onEnd>
 			<rule>
@@ -581,7 +581,7 @@
 	<!-- -->
 	<mission
 		id="Animal_A_Hungry__I_Have_NO_Food"
-		image="drawable/Animal_A_Hungry.jpg"
+		image="drawable/Animal_A_Hungry"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -598,7 +598,7 @@
 	<!-- -->
 	<mission
 		id="Animal_A_Full"
-		image="drawable/Animal_A_Full.jpg"
+		image="drawable/Animal_A_Full"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -676,7 +676,7 @@
 	<!-- -->
 	<mission
 		id="Animal_B_Hungry__I_Have_NO_Food"
-		image="drawable/Animal_B_Hungry.jpg"
+		image="drawable/Animal_B_Hungry"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -693,7 +693,7 @@
 	<!-- -->
 	<mission
 		id="Animal_B_Full"
-		image="drawable/Animal_B_Full.jpg"
+		image="drawable/Animal_B_Full"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -814,7 +814,7 @@
 	<!-- ANY CHEST WITHOUT KEY -->
 	<mission
 		id="Chest__No_Key"
-		image="drawable/Chest_Closed.jpg"
+		image="drawable/Chest_Closed"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -834,7 +834,7 @@
 	<!-- FIND FOOD A -->
 	<mission
 		id="Find_Food_A"
-		image="drawable/Food_A.jpg"
+		image="drawable/Food_A"
 		type="NPCTalk"
 	>
 		<onStart>
@@ -869,7 +869,7 @@
 	<!-- FIND FOOD B -->
 	<mission
 		id="Find_Food_B"
-		image="drawable/Food_B.jpg"
+		image="drawable/Food_B"
 		type="NPCTalk"
 	>
 		<onStart>
@@ -904,7 +904,7 @@
 	<!-- FIND NOTHING -->
 	<mission
 		id="Find_Nothing"
-		image="drawable/Nothing.jpg"
+		image="drawable/Nothing"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -927,7 +927,7 @@
 	<!-- GAME WON -->
 	<mission
 		id="Game_Won"
-		image="drawable/Game_Won.jpg"
+		image="drawable/Game_Won"
 		type="NPCTalk"
 	>
 		<onEnd>
@@ -954,7 +954,7 @@
 	<!-- GAME LOST -->
 	<mission
 		id="Game_Lost"
-		image="drawable/Game_Lost.jpg"
+		image="drawable/Game_Lost"
 		type="NPCTalk"
 	>
 		<onEnd>
