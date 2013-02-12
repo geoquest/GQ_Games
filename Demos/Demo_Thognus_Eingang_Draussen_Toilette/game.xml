@@ -23,7 +23,6 @@
 		image="drawable/logo.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Einleitung..."
-		cancel="fail"
 		name="Intro"
 	>
 		<onEnd>
@@ -45,7 +44,6 @@
 		image="drawable/QRCode.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Quest beginnen..."
-		cancel="fail"
 		name="Einleitung"
 	>
 		<onEnd>
@@ -73,8 +71,7 @@
 		id="Goblin_1"
 		image="drawable/Goblin-Sad.png"
 		nextdialogbuttontext="Weiter ..."
-		endbuttontext="Suche den roten Drachen..."
-		cancel="fail"
+		endbuttontext="Suche den grünen Drachen..."
 		name="Quest"
 	>
 		<onEnd>
@@ -105,7 +102,6 @@
 		taskdescription="Suche den gruenen Drachen ..."
 		mode="product"
 		initial_image="drawable/QRCode-gruen.png"
-		cancel="fail"
 		expected_content="gruen"
 		if_wrong="Das ist nicht der gruene Drache!"
 		if_right="Ja, das ist der Drache! Los, schnappen wir ihn uns!"
@@ -124,7 +120,6 @@
 		image="drawable/Dragon-Green.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Weiter..."
-		cancel="fail"
 		name="Mero"
 	>
 		<onEnd>
@@ -144,7 +139,6 @@
 		image="drawable/Goblin-Drache-Gruen.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Weiter..."
-		cancel="fail"
 		name="Mero"
 	>
 		<onEnd>
@@ -203,7 +197,6 @@
 		image="drawable/Dragon-Green.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Weiter..."
-		cancel="fail"
 		name="Mero"
 	>
 		<onEnd>
@@ -234,7 +227,6 @@
 		image="drawable/Goblin-Sad.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Weiter..."
-		cancel="fail"
 		name="Mero"
 	>
 		<onEnd>
@@ -258,7 +250,6 @@
 		taskdescription="Suche den blauen Drachen ..."
 		mode="product"
 		initial_image="drawable/QRCode-blau.png"
-		cancel="fail"
 		expected_content="blau"
 		if_wrong="Das ist nicht der blaue Drache!"
 		if_right="Ja, wir haben ihn! Schnappen wir ihn uns bevor er wegläuft!"
@@ -277,7 +268,6 @@
 		image="drawable/Dragon-Blue.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Weiter..."
-		cancel="fail"
 		name="Egloc"
 	>
 		<onEnd>
@@ -297,7 +287,6 @@
 		image="drawable/Goblin-Drache-Blau.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Weiter..."
-		cancel="fail"
 		name="Egloc"
 	>
 		<onEnd>
@@ -357,7 +346,6 @@
 		image="drawable/Dragon-Blue.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Weiter..."
-		cancel="fail"
 		name="Egloc"
 	>
 		<onEnd>
@@ -386,7 +374,6 @@
 		image="drawable/Goblin-Sad.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Weiter..."
-		cancel="fail"
 		name="Squlu"
 	>
 		<onEnd>
@@ -399,9 +386,10 @@
 		<dialogitem speaker="Thognus"> Das ist nicht fair! Ich hab Euch ja
 			schon gesagt, dass die Drachen fies sind.
 		</dialogitem>
-		<dialogitem> Nun müssen wir auch noch den grünen Drachen finden.
+		<dialogitem> Nun müssen wir auch noch den roten Drachen finden.
 		</dialogitem>
-		<dialogitem> Wir sollten einen Wasserhahn suchen.
+		<dialogitem> Wir sollten einen Wasserhahn suchen, da wird er wohl
+			hingelaufen sein.
 		</dialogitem>
 	</mission>
 	<mission
@@ -411,7 +399,6 @@
 		taskdescription="Suche den roten Drachen ..."
 		mode="product"
 		initial_image="drawable/QRCode-rot.png"
-		cancel="fail"
 		expected_content="rot"
 		if_wrong="Das ist nicht der rote Drache!"
 		if_right="Wir haben ihn gefunden! Auf ihn mit Gebrüll!"
@@ -450,7 +437,6 @@
 		image="drawable/Goblin-Drache-Rot.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Weiter..."
-		cancel="fail"
 		name="Squlu"
 	>
 		<onEnd>
@@ -509,7 +495,6 @@
 		image="drawable/Dragon-Red.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Weiter..."
-		cancel="fail"
 		name="Squlu"
 	>
 		<onEnd>
@@ -531,7 +516,6 @@
 		image="drawable/Gold-Key.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Weiter..."
-		cancel="fail"
 		name="Squlu"
 	>
 		<onEnd>
@@ -554,8 +538,7 @@
 		taskdescription="Suche die Schatztruhe!"
 		mode="product"
 		initial_image="drawable/QRCode.png"
-		cancel="fail"
-		expected_content="schatztruhe"
+		expected_content="schatz"
 		if_wrong="Das ist keine Schatztruhe!"
 		if_right="Ja, das ist sie!"
 	>
@@ -573,7 +556,6 @@
 		image="drawable/Schatztruhe.png"
 		nextdialogbuttontext="Weiter ..."
 		endbuttontext="Ende..."
-		cancel="fail"
 		name="Ende"
 	>
 		<onEnd>
@@ -597,7 +579,7 @@
 		<hotspots>
 			<hotspot
 				id="HS_Drache_Blau"
-				latlong="47.69164,11.889138"
+				latlong="51.154538,7.140318"
 				radius="30"
 				initialVisibility="true"
 				img="drawable/Dragon-Blue-Icon.png"
