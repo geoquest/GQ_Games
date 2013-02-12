@@ -1101,15 +1101,17 @@
 		<dialogitem sound="sound/radiobot_M_S5_intro_ploppschutz_teil_1.mp3"> So, bei der nächsten Aufgabe sollt ihr
 			herausfinden was das auf dem Bild hier ist.
 		</dialogitem>
-		<dialogitem sound="sound/radiobot_M_S5_intro_ploppschutz_teil_2.mp3"> Dazu müsst ihr erstmal eine
+		<dialogitem sound="sound/radiobot_M_S5_intro_ploppschutz_teil_2.mp3"> Aber dazu müsst ihr erstmal eine
 			Audioaufnahme machen.
 		</dialogitem>
 		<dialogitem sound="sound/radiobot_M_S5_intro_ploppschutz_teil_3.mp3"> Sprecht dabei bitte deutlich den Satz
 			'Die Pusteblume pfiff laut Papperlapapp'.
 		</dialogitem>
 		<dialogitem sound="sound/radiobot_M_S5_intro_ploppschutz_teil_4.mp3"> Ihr könnt Eure Aufnahme so oft
-			wiederholen, bis ihr zufrieden seid. Wenn ihr auf den Knopf unten
-			drückt, kommt ihr zum Recorder.
+			wiederholen, bis ihr zufrieden seid.
+		</dialogitem>
+		<dialogitem sound="sound/radiobot_M_S5_intro_ploppschutz_teil_5.mp3">Wenn ihr auf den Knopf unten drückt,
+			kommt ihr zum Recorder.
 		</dialogitem>
 	</mission>
 	<mission
@@ -1153,7 +1155,7 @@
 		<dialogitem
 			nextbuttontext="Anhören"
 			sound="sound/radiobot_M_S5_replay_ploppschutz_teil_2.mp3"
-		> Ein Tipp: Hört euch doch mal eure eigene Aufnahme an.
+		> Ein Tipp: Hört euch mal eure eigene Aufnahme an.
 		</dialogitem>
 		<dialogitem
 			nextbuttontext="Noch mal Hören"

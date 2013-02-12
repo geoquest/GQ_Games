@@ -95,8 +95,10 @@
 			'Die Pusteblume pfiff laut Papperlapapp'.
 		</dialogitem>
 		<dialogitem sound="sound/radiobot_M_S5_intro_ploppschutz_teil_4.mp3"> Ihr könnt Eure Aufnahme so oft
-			wiederholen, bis ihr zufrieden seid. Wenn ihr auf den Knopf unten
-			drückt, kommt ihr zum Recorder.
+			wiederholen, bis ihr zufrieden seid.
+		</dialogitem>
+		<dialogitem sound="sound/radiobot_M_S5_intro_ploppschutz_teil_5.mp3">Wenn ihr auf den Knopf unten drückt,
+			kommt ihr zum Recorder.
 		</dialogitem>
 	</mission>
 	<mission
@@ -140,7 +142,7 @@
 		<dialogitem
 			nextbuttontext="Anhören"
 			sound="sound/radiobot_M_S5_replay_ploppschutz_teil_2.mp3"
-		> Ein Tipp: Hört euch doch mal eure eigene Aufnahme an.
+		> Ein Tipp: Hört euch mal eure eigene Aufnahme an.
 		</dialogitem>
 		<dialogitem
 			nextbuttontext="Noch mal Hören"
