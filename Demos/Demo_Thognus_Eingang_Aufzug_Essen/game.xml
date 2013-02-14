@@ -126,13 +126,13 @@
 		<onEnd>
 			<rule>
 				<if>
-					<missionState id="QA-Drache-Rot" state="success" />
+					<missionState id="QA-Drache-Rot" state="succeeded" />
 				</if>
 				<action type="StartMission" id="NPC-Drache-Rot-3" />
 			</rule>
 			<rule>
 				<if>
-					<not> <missionState id="QA-Drache-Rot" state="success" /> </not>
+					<not> <missionState id="QA-Drache-Rot" state="succeeded" /> </not>
 				</if>
 				<action type="StartMission" id="QA-Drache-Rot" />				
 			</rule>
@@ -247,13 +247,13 @@
 		<onEnd>
 			<rule>
 				<if>
-					<missionState id="QA-Drache-Gruen" state="success" />
+					<missionState id="QA-Drache-Gruen" state="succeeded" />
 				</if>
 				<action type="StartMission" id="NPC-Drache-Gruen-4" />
 			</rule>
 			<rule>
 				<if>
-					<not> <missionState id="QA-Drache-Gruen" state="success" /> </not>
+					<not> <missionState id="QA-Drache-Gruen" state="succeeded" /> </not>
 				</if>
 				<action type="StartMission" id="QA-Drache-Gruen" />				
 			</rule>
@@ -370,13 +370,13 @@
 		<onEnd>
 			<rule>
 				<if>
-					<missionState id="QA-Drache-Blau" state="success" />
+					<missionState id="QA-Drache-Blau" state="succeeded" />
 				</if>
 				<action type="StartMission" id="NPC-Drache-Blau-4" />
 			</rule>
 			<rule>
 				<if>
-					<not> <missionState id="QA-Drache-Blau" state="success" /> </not>
+					<not> <missionState id="QA-Drache-Blau" state="succeeded" /> </not>
 				</if>
 				<action type="StartMission" id="QA-Drache-Blau" />				
 			</rule>
