@@ -121,8 +121,8 @@
 		</dialogitem>
 	</mission>
 	
-	<mission type="QuestionAndAnswer" id="QA-Drache-Rot" name="Roter Drache"
-			correctAnswersNeeded="1" shuffle="answers">
+	<mission type="MultipleChoiceQuestion" id="QA-Drache-Rot" name="Roter Drache"
+			correctAnswersNeeded="1" shuffle="true">
 		<onEnd>
 			<rule>
 				<if>
@@ -242,8 +242,8 @@
 		</dialogitem>
 	</mission>	
 	
-	<mission type="QuestionAndAnswer" id="QA-Drache-Gruen" name="Grüner Drache"
-			correctAnswersNeeded="1" shuffle="answers" >
+	<mission type="MultipleChoiceQuestion" id="QA-Drache-Gruen" name="Grüner Drache"
+			correctAnswersNeeded="1" shuffle="true" >
 		<onEnd>
 			<rule>
 				<if>
@@ -365,8 +365,8 @@
 		</dialogitem>
 	</mission>	
 	
-	<mission type="QuestionAndAnswer" id="QA-Drache-Blau" name="Grüner Drache"
-			correctAnswersNeeded="1" shuffle="answers" >
+	<mission type="MultipleChoiceQuestion" id="QA-Drache-Blau" name="Grüner Drache"
+			shuffle="true" >
 		<onEnd>
 			<rule>
 				<if>
