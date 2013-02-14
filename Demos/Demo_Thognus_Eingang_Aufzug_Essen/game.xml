@@ -14,7 +14,7 @@
 	
 	<mission type="NPCTalk" id="Intro_2" image="drawable/logo.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Einleitung..."
-		cancel="fail" name="Intro">
+		 name="Intro">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="Intro_3" />
@@ -30,7 +30,7 @@
 	
 	<mission type="NPCTalk" id="Intro_3" image="drawable/QRCode.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Quest beginnen..."
-		cancel="fail" name="Einleitung">
+		 name="Einleitung">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="Goblin_1" />
@@ -52,7 +52,7 @@
 	
 	<mission type="NPCTalk" id="Goblin_1" image="drawable/Goblin-Sad.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Suche den roten Drachen..."
-		cancel="fail" name="Quest">	
+		 name="Quest">	
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="QR-Drache-Rot" />
@@ -78,7 +78,7 @@
 	<mission
 		type="QRTagReading" id="QR-Drache-Rot" buttontext="QRCode scannen ..."
 		taskdescription="Suche den roten Drachen ..."
-		mode="product" initial_image="drawable/QRCode-rot.png" cancel="fail"
+		mode="product" initial_image="drawable/QRCode-rot.png" 
 		expected_content="rot" if_wrong="Das ist nicht der rote Drache!"
 		if_right="Ja, das ist der Drache! Los, schnappen wir ihn uns!"
 		>
@@ -91,7 +91,7 @@
 	
 	<mission type="NPCTalk" id="NPC-Drache-Rot-1" image="drawable/Dragon-Red.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Mero">
+		 name="Mero">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="NPC-Drache-Rot-2" />
@@ -104,7 +104,7 @@
 	
 	<mission type="NPCTalk" id="NPC-Drache-Rot-2" image="drawable/Goblin-Drache-Rot.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Mero">
+		 name="Mero">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="QA-Drache-Rot" />
@@ -122,7 +122,7 @@
 	</mission>
 	
 	<mission type="QuestionAndAnswer" id="QA-Drache-Rot" name="Roter Drache"
-			correctAnswersNeeded="1" shuffle="answers" cancel="fail">
+			correctAnswersNeeded="1" shuffle="answers">
 		<onEnd>
 			<rule>
 				<if>
@@ -157,7 +157,7 @@
 	
 	<mission type="NPCTalk" id="NPC-Drache-Rot-3" image="drawable/Dragon-Red.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Mero">
+		 name="Mero">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="NPC-Drache-Gruen-1" />
@@ -179,7 +179,7 @@
 	
 	<mission type="NPCTalk" id="NPC-Drache-Gruen-1" image="drawable/Goblin-Sad.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Mero">
+		 name="Mero">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="QR-Drache-Gruen" />
@@ -196,7 +196,7 @@
 	<mission
 		type="QRTagReading" id="QR-Drache-Gruen" buttontext="QRCode scannen ..."
 		taskdescription="Suche den grünen Drachen ..."
-		mode="product" initial_image="drawable/QRCode-gruen.png" cancel="fail"
+		mode="product" initial_image="drawable/QRCode-gruen.png" 
 		expected_content="gruen" if_wrong="Das ist nicht der grüne Drache!"
 		if_right="Wir haben ihn gefunden! Auf ihn mit Gebrüll!"
 		>
@@ -209,7 +209,7 @@
 	
 	<mission type="NPCTalk" id="NPC-Drache-Gruen-2" image="drawable/Dragon-Green.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Squlu">
+		 name="Squlu">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="NPC-Drache-Gruen-3" />
@@ -222,7 +222,7 @@
 	
 	<mission type="NPCTalk" id="NPC-Drache-Gruen-3" image="drawable/Goblin-Drache-Gruen.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Squlu">
+		 name="Squlu">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="QA-Drache-Gruen" />
@@ -243,7 +243,7 @@
 	</mission>	
 	
 	<mission type="QuestionAndAnswer" id="QA-Drache-Gruen" name="Grüner Drache"
-			correctAnswersNeeded="1" shuffle="answers" cancel="fail">
+			correctAnswersNeeded="1" shuffle="answers" >
 		<onEnd>
 			<rule>
 				<if>
@@ -278,7 +278,7 @@
 	
 	<mission type="NPCTalk" id="NPC-Drache-Gruen-4" image="drawable/Dragon-Green.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Squlu">
+		 name="Squlu">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="NPC-Drache-Blau-1" />
@@ -305,7 +305,7 @@
 	
 	<mission type="NPCTalk" id="NPC-Drache-Blau-1" image="drawable/Goblin-Sad.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Squlu">
+		 name="Squlu">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="QR-Drache-Blau" />
@@ -322,7 +322,7 @@
 	<mission
 		type="QRTagReading" id="QR-Drache-Blau" buttontext="QRCode scannen ..."
 		taskdescription="Suche den blauen Drachen ..."
-		mode="product" initial_image="drawable/QRCode-blau.png" cancel="fail"
+		mode="product" initial_image="drawable/QRCode-blau.png" 
 		expected_content="blau" if_wrong="Das ist nicht der blaue Drache!"
 		if_right="Ja, wir haben ihn! Schnappen wir ihn uns bevor er wegläuft!"
 		>
@@ -335,7 +335,7 @@
 	
 	<mission type="NPCTalk" id="NPC-Drache-Blau-2" image="drawable/Dragon-Blue.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Egloc">
+		 name="Egloc">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="NPC-Drache-Blau-3" />
@@ -348,7 +348,7 @@
 
 	<mission type="NPCTalk" id="NPC-Drache-Blau-3" image="drawable/Goblin-Drache-Blau.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Egloc">
+		 name="Egloc">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="QA-Drache-Blau" />
@@ -366,7 +366,7 @@
 	</mission>	
 	
 	<mission type="QuestionAndAnswer" id="QA-Drache-Blau" name="Grüner Drache"
-			correctAnswersNeeded="1" shuffle="answers" cancel="fail">
+			correctAnswersNeeded="1" shuffle="answers" >
 		<onEnd>
 			<rule>
 				<if>
@@ -401,7 +401,7 @@
 	
 	<mission type="NPCTalk" id="NPC-Drache-Blau-4" image="drawable/Dragon-Blue.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Egloc">
+		 name="Egloc">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="NPC-Schluessel-1" />
@@ -417,7 +417,7 @@
 	
 	<mission type="NPCTalk" id="NPC-Schluessel-1" image="drawable/Gold-Key.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Weiter..."
-		cancel="fail" name="Squlu">
+		 name="Squlu">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="QR-Schatztruhe" />
@@ -435,7 +435,7 @@
 	<mission
 		type="QRTagReading" id="QR-Schatztruhe" buttontext="QRCode scannen ..."
 		taskdescription="Suche die Schatztruhe!"
-		mode="product" initial_image="drawable/QRCode.png" cancel="fail"
+		mode="product" initial_image="drawable/QRCode.png" 
 		expected_content="schatztruhe" if_wrong="Das ist keine Schatztruhe!"
 		if_right="Ja, das ist sie!"
 		>
@@ -448,7 +448,7 @@
 		
 	<mission type="NPCTalk" id="NPC-Schatz" image="drawable/Schatztruhe.png"
 		nextdialogbuttontext="Weiter ..." endbuttontext="Ende..."
-		cancel="fail" name="Ende">
+		 name="Ende">
 		<onEnd>
 			<rule>
 				<action type="EndGame" />
