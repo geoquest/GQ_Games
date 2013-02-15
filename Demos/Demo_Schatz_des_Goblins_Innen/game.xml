@@ -175,6 +175,9 @@
 		</dialogitem>
 		<dialogitem> Dann los! Lasst uns die Drachen suchen und fragen.
 		</dialogitem>
+		<dialogitem> Am besten wir gehen zuerst zu Mero. Der lungert bestimmt
+			am Haupteingang herum.
+		</dialogitem>
 	</mission>
 	<mission
 		type="QRTagReading"
@@ -575,7 +578,8 @@
 		<dialogitem speaker="Thognus"> Ihr drei Drachen habt den Zahlencode
 			zu meiner Schatztruhe verstellt.
 		</dialogitem>
-		<dialogitem speaker="Egloc"> Ja - Hihi! Das hat Spass gemacht.</dialogitem>
+		<dialogitem speaker="Egloc"> Ja - Hihi! Das hat Spass gemacht.
+		</dialogitem>
 		<dialogitem speaker="Thognus">Ich finde das nicht lustig. Los sag
 			schon, wie lautet er?
 		</dialogitem>
