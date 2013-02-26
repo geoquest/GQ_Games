@@ -76,7 +76,7 @@
 	</mission>
 	
 	<mission
-		type="QRTagReading" id="QR-Drache-Rot" buttontext="QRCode scannen ..."
+		type="QRTagReadingProduct" id="QR-Drache-Rot" buttontext="QRCode scannen ..."
 		taskdescription="Suche den roten Drachen ..."
 		mode="product" initial_image="drawable/QRCode-rot.png" cancel="fail"
 		expected_content="rot" if_wrong="Das ist nicht der rote Drache!"
@@ -194,7 +194,7 @@
 	</mission>
 	
 	<mission
-		type="QRTagReading" id="QR-Drache-Gruen" buttontext="QRCode scannen ..."
+		type="QRTagReadingProduct" id="QR-Drache-Gruen" buttontext="QRCode scannen ..."
 		taskdescription="Suche den grünen Drachen ..."
 		mode="product" initial_image="drawable/QRCode-gruen.png" cancel="fail"
 		expected_content="gruen" if_wrong="Das ist nicht der grüne Drache!"
@@ -319,7 +319,7 @@
 	</mission>
 	
 	<mission
-		type="QRTagReading" id="QR-Drache-Blau" buttontext="QRCode scannen ..."
+		type="QRTagReadingProduct" id="QR-Drache-Blau" buttontext="QRCode scannen ..."
 		taskdescription="Suche den blauen Drachen ..."
 		mode="product" initial_image="drawable/QRCode-blau.png" cancel="fail"
 		expected_content="blau" if_wrong="Das ist nicht der blaue Drache!"
@@ -432,7 +432,7 @@
 	</mission>
 	
 	<mission
-		type="QRTagReading" id="QR-Schatztruhe" buttontext="QRCode scannen ..."
+		type="QRTagReadingProduct" id="QR-Schatztruhe" buttontext="QRCode scannen ..."
 		taskdescription="Suche die Schatztruhe!"
 		mode="product" initial_image="drawable/QRCode.png" cancel="fail"
 		expected_content="schatztruhe" if_wrong="Das ist keine Schatztruhe!"

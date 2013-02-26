@@ -14,7 +14,7 @@
 		</dialogitem>
 		<dialogitem>Ein Seminarteilnehmer hat Durst. </dialogitem>
 	</mission>
-	<mission type="QRTagReading" id="Automat_QR_Tag"
+	<mission type="QRTagReadingProduct" id="Automat_QR_Tag"
 		taskdescription="Im Haus gibt es keinen Wasserspender, 
 		wo holt Ihr ihm automatisch was zu trinken? Dort findet Ihr einen QR-Tag."
 		mode="treasure" cancel="no" feedbacktext="@result@">
@@ -35,7 +35,7 @@
 			oben abgebildet
 			sind. </dialogitem>
 	</mission>
-	<mission type="QRTagReading" id="Kneipe_QR_Tag"
+	<mission type="QRTagReadingProduct" id="Kneipe_QR_Tag"
 		taskdescription="Das Ergebnis entspricht einer Hausnummer hier 
 		in Küppelstein. Dort befindet sich der nächste QR-Tag."
 		mode="treasure" cancel="no" feedbacktext="@result@">
@@ -185,7 +185,7 @@
 			<dialogitem>sondern auch für den Ort, wo der unglückliche sich
 				befindet.</dialogitem>
 		</mission>
-		<mission type="QRTagReading" id="Ende_QR_Tag" buttontext="QR-Tag gefunden!"
+		<mission type="QRTagReadingProduct" id="Ende_QR_Tag" buttontext="QR-Tag gefunden!"
 			taskdescription="Findet den durstigen Seminarteilnehmer im Haus. Er ist mit einem QR-Tag markiert."
 			mode="treasure" cancel="no" feedbacktext="@result@" initial_image="drawable/durstigerSemi.jpg">
 			<onEnd>

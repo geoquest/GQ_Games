@@ -35,7 +35,7 @@
 			Entdecken!</dialogitem>
 	</mission>
 
-	<mission type="QRTagReading" id="M_Toter_Baum" buttontext="Start Code Scan"
+	<mission type="QRTagReadingProduct" id="M_Toter_Baum" buttontext="Start Code Scan"
 		taskdescription="Suche den Toten Baum, du bist schon ganz nah ..."
 		initial_image="drawable/chest_closed.jpg" if_wrong_image="drawable/chest_closed.jpg"
 		if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."

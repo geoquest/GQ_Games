@@ -43,7 +43,7 @@
 		initial_image="drawable/logo_05_funkturm.png"
 		mode="product"
 		taskdescription="Schön, dass ihr dem Schulradioranzen helfen wollt. Scannt bitte den QR Code vom Bildschirm. Dann geht&apos;s los!"
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onStart>
 			<rule>
@@ -141,7 +141,7 @@
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
 		taskdescription="Scannt den QR-Code von dem Radio der Marke Phillips ein und hört gut zu."
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onStart>
 			<rule>
@@ -416,7 +416,7 @@
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
 		taskdescription="Scanne den ersten QR Code ..."
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onEnd>
 			<rule>
@@ -495,7 +495,7 @@
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
 		taskdescription="Scanne den zweiten QR Code ..."
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onEnd>
 			<rule>
@@ -574,7 +574,7 @@
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
 		taskdescription="Scanne den dritten QR Code ..."
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onEnd>
 			<rule>
@@ -729,7 +729,7 @@
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
 		taskdescription="Scannt den QR Code ein und lauscht der Hörspielgeschichte."
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onStart>
 			<rule>
@@ -958,7 +958,7 @@
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
 		taskdescription="Scannt auch hier den Code ..."
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onStart>
 			<rule>
@@ -1307,7 +1307,7 @@
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
 		taskdescription="Scannt bitte den QR Code des ältesten Aufnahmegeräts."
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onStart>
 			<rule>
@@ -1346,7 +1346,7 @@
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
 		taskdescription="Scannt bitte den QR Code des nächst jüngeren Aufnahmegeräts."
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onStart>
 			<rule>
@@ -1385,7 +1385,7 @@
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
 		taskdescription="Scannt bitte den QR Code des jüngsten Aufnahmegeräts."
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onStart>
 			<rule>

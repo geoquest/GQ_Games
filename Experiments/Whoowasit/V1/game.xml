@@ -6,8 +6,17 @@
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- GAME INTRODUCTION -->
+	<mission type="StartAndExitScreen" id="Game_Intro_1"
+		image="drawable/goblin-sitting.jpg" duration="interactive">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="Game_Intro_2" />
+			</rule>
+		</onEnd>
+	</mission>
+	
 	<mission
-		id="Game_Intro"
+		id="Game_Intro_2"
 		image="drawable/Game_Intro"
 		type="NPCTalk"
 	>
@@ -23,12 +32,10 @@
 					type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem>Willkommen zu "Wer War's?" ...
+		<dialogitem>Hej! Ich bin Thognus. Kannst du mir helfen? Meine Zauberschokolade ist weg. Die hat einer geklaut. Ich glaube das war einer der gierigen Drachen - bestimmt. Kennst du die?
+		
 		</dialogitem>
-		<dialogitem>Hier erklären wir dir in Kürze die Spielidee und deine
-			Aufgabe ...
-		</dialogitem>
-		<dialogitem>TODO
+		<dialogitem>
 		</dialogitem>
 	</mission>
 	<!-- -->
@@ -129,7 +136,7 @@
 		</dialogitem>
 	</mission>
 	<mission
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 		id="Game_Action_Scanner"
 		taskdescription="Gehe zu einem Raum, einem Tier oder einer Truhe ..."
 		mode="treasure"

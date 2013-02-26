@@ -64,7 +64,7 @@
 		if_wrong="Ne ne, das stimmt nicht."
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onStart>
 			<rule>
@@ -103,7 +103,7 @@
 		if_wrong="Ne ne, das stimmt nicht."
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onStart>
 			<rule>
@@ -142,7 +142,7 @@
 		if_wrong="Ne ne, das stimmt nicht."
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onStart>
 			<rule>

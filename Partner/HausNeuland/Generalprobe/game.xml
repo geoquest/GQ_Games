@@ -77,7 +77,7 @@
 	<mission type="MapOverview" id="MapMission" cancel="no"
 		mapkind="satellite" zoomlevel="17">
 
-		<mission type="QRTagReading" id="M_Holzhuette" buttontext="Start Code Scan"
+		<mission type="QRTagReadingProduct" id="M_Holzhuette" buttontext="Start Code Scan"
 			taskdescription="Sucht nach der Holzhütte, ihr seid schon ganz nah ..."
 			initial_image="drawable/Holzhuette.jpg"
 			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
@@ -121,7 +121,7 @@
             </dialogitem>
 		</mission>
 
-		<mission type="QRTagReading" id="M_Drillinge" buttontext="Start Code Scan"
+		<mission type="QRTagReadingProduct" id="M_Drillinge" buttontext="Start Code Scan"
 			taskdescription="Ihr seid ganz in der Nähe! Sucht jetzt den QR Tag und scant ihn."
 			initial_image="drawable/QRTagAmBaumImSchnee.jpg"
 			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
@@ -218,7 +218,7 @@
 				Wanderhinweis.</dialogitem>
 		</mission>
 
-		<mission type="QRTagReading" id="M_Torbogen" buttontext="Start Code Scan"
+		<mission type="QRTagReadingProduct" id="M_Torbogen" buttontext="Start Code Scan"
 			taskdescription="Habt ihr den Wanderhinweis gefunden? Ganz in der Nähe ist der nächste QR-Tag!"
 			initial_image="drawable/Wanderhinweis.jpg"
 			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
@@ -271,7 +271,7 @@
 				Neuland ganz nahe am Wegesrand. </dialogitem>
 		</mission>
 
-		<mission type="QRTagReading" id="M_Stromkabel" buttontext="Start Code Scan"
+		<mission type="QRTagReadingProduct" id="M_Stromkabel" buttontext="Start Code Scan"
 			taskdescription="Sucht den QR-Tag wo Strom ist, ca. 100m vor dem Parkplatz von Haus Neuland."
 			initial_image="drawable/Stromleitung.jpg"
 			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
@@ -318,7 +318,7 @@
 			</dialogitem>
 		</mission>
 
-		<mission type="QRTagReading" id="M_Bach" buttontext="Start Code Scan"
+		<mission type="QRTagReadingProduct" id="M_Bach" buttontext="Start Code Scan"
 			taskdescription="Ja gut, ihr seid schon nahe dran ..." initial_image="drawable/WeissesHaus.jpg"
 			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
 			if_right="Ok, ihr habt den richtigen Tag gefunden." mode="product"
@@ -363,7 +363,7 @@
 				sticht bei diesem Wetter gut hervor.</dialogitem>
 		</mission>
 
-		<mission type="QRTagReading" id="M_Parkplatz" buttontext="Start Code Scan"
+		<mission type="QRTagReadingProduct" id="M_Parkplatz" buttontext="Start Code Scan"
 			taskdescription="Ja hier in der Nähe seid ihr richtig ..."
 			initial_image="drawable/HausNeulandLogo.jpg"
 			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
@@ -417,7 +417,7 @@
 			</dialogitem>
 		</mission>
 
-		<mission type="QRTagReading" id="M_Innenhof" buttontext="Start Code Scan"
+		<mission type="QRTagReadingProduct" id="M_Innenhof" buttontext="Start Code Scan"
 			taskdescription="Ja hier ganz in der Nähe ..." initial_image="drawable/Tagungshalle.jpg"
 			if_wrong="Du hast leider etwas falsches gescannt. Versuche es doch noch einmal ..."
 			if_right="Super! Ihr habt den Schatz gefunden." mode="product"

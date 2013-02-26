@@ -210,7 +210,7 @@
 				früher einmal aussah.
             </dialogitem>
 		</mission>
-		<mission type="QRTagReading" id="M_QR_Baptisterium"
+		<mission type="QRTagReadingProduct" id="M_QR_Baptisterium"
 			buttontext="QR-Code scannen ..."
 			taskdescription="Finden Sie den QR Code und scannen ihn mit der Kamera ein"
 			mode="product" initial_image="drawable/QRIntro.png" expected_content="QR_Code_Baptisterium"

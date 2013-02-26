@@ -59,7 +59,7 @@
 		if_wrong="Hmmm, das ist nicht der richtige Code."
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onStart>
 			<rule>

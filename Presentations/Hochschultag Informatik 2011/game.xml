@@ -120,7 +120,7 @@
 	</mission>
 
 	<!-- =========== QR-TAG 1 =========== -->
-	<mission type="QRTagReading" id="QR-Tag_1_Succ" buttontext="QR-Tag gefunden!"
+	<mission type="QRTagReadingProduct" id="QR-Tag_1_Succ" buttontext="QR-Tag gefunden!"
 		initial_image="drawable/QR-Tag-Hint-1.jpg"
 		taskdescription="Finde den Bestuhlungsplan im großen Saal. Daneben befindet sich der Qr-Tag mit dem ersten Decodierungsblock."
 		mode="treasure" cancel="no" feedbacktext="@result@">
@@ -131,7 +131,7 @@
 
 	</mission>
 
-	<mission type="QRTagReading" id="QR-Tag_1_Fail" buttontext="QR-Tag gefunden!"
+	<mission type="QRTagReadingProduct" id="QR-Tag_1_Fail" buttontext="QR-Tag gefunden!"
 		initial_image="drawable/QR-Tag-Hint-1.jpg"
 		taskdescription="Finde diesen Bestuhlungsplan. Daneben befindet sich der Qr-Tag mit dem ersten Decodierungsblock."
 		mode="treasure" cancel="no" feedbacktext="@result@">
@@ -250,7 +250,7 @@
 	</mission>
 
 	<!-- =========== QR-TAG 2 =========== -->
-	<mission type="QRTagReading" id="QR-Tag_2_Succ" buttontext="QR-Tag gefunden!"
+	<mission type="QRTagReadingProduct" id="QR-Tag_2_Succ" buttontext="QR-Tag gefunden!"
 		initial_image="drawable/QR-Tag-Hint-2-suc.jpg"
 		taskdescription="Finde diese Pflanze im Erdgeschoß. Der QR-Tag mit dem zweiten Decodierungs-Block befindet sich daneben."
 		mode="treasure" cancel="no" feedbacktext="@result@">
@@ -261,7 +261,7 @@
 
 	</mission>
 
-	<mission type="QRTagReading" id="QR-Tag_2_Fail" buttontext="QR-Tag gefunden!"
+	<mission type="QRTagReadingProduct" id="QR-Tag_2_Fail" buttontext="QR-Tag gefunden!"
 		initial_image="drawable/QR-Tag-Hint-2-fail.jpg"
 		taskdescription="Finde diese Pflanze. Der QR-Tag mit dem zweiten Decodierungs-Block befindet sich daneben."
 		mode="treasure" cancel="no" feedbacktext="@result@">
@@ -367,7 +367,7 @@
 	</mission>
 
 	<!-- =========== QR-TAG 3 =========== -->
-	<mission type="QRTagReading" id="QR-Tag_3_Succ" buttontext="QR-Tag gefunden!"
+	<mission type="QRTagReadingProduct" id="QR-Tag_3_Succ" buttontext="QR-Tag gefunden!"
 		initial_image="drawable/QR-Tag-Hint-3-suc.jpg"
 		taskdescription="Finde dieses Objekt im Untergeschoß. Der QR-Tag mit dem dritten Decodierungs-Block befindet sich in daneben."
 		mode="treasure" cancel="no" feedbacktext="@result@">
@@ -378,7 +378,7 @@
 
 	</mission>
 
-	<mission type="QRTagReading" id="QR-Tag_3_Fail" buttontext="QR-Tag gefunden!"
+	<mission type="QRTagReadingProduct" id="QR-Tag_3_Fail" buttontext="QR-Tag gefunden!"
 		initial_image="drawable/QR-Tag-Hint-3-fail.jpg"
 		taskdescription="Finde dieses Objekt. Der QR-Tag mit dem dritten Decodierungs-Block befindet sich in daneben."
 		mode="treasure" cancel="no" feedbacktext="@result@">
@@ -484,7 +484,7 @@
 	</mission>
 
 	<!-- =========== QR-TAG 4 =========== -->
-	<mission type="QRTagReading" id="QR-Tag_4_Succ" buttontext="QR-Tag gefunden!"
+	<mission type="QRTagReadingProduct" id="QR-Tag_4_Succ" buttontext="QR-Tag gefunden!"
 		initial_image="drawable/QR-Tag-Hint-4-suc.jpg"
 		taskdescription="Finde dieses Schild. Der QR-Tag mit dem vierten Decodierungs-Block befindet sich auf der Rückseite."
 		mode="treasure" cancel="no" feedbacktext="@result@">
@@ -495,7 +495,7 @@
 
 	</mission>
 
-	<mission type="QRTagReading" id="QR-Tag_4_Fail" buttontext="QR-Tag gefunden!"
+	<mission type="QRTagReadingProduct" id="QR-Tag_4_Fail" buttontext="QR-Tag gefunden!"
 		initial_image="drawable/QR-Tag-Hint-4-fail.jpg"
 		taskdescription="Finde dieses Schild. Der QR-Tag mit dem vierten Decodierungs-Block befindet sich auf der Rückseite."
 		mode="treasure" cancel="no" feedbacktext="@result@">
@@ -597,7 +597,7 @@
 	</mission>
 
 	<!-- =========== QR-TAG 5 =========== -->
-	<mission type="QRTagReading" id="QR-Tag_5_Succ" buttontext="QR-Tag gefunden!"
+	<mission type="QRTagReadingProduct" id="QR-Tag_5_Succ" buttontext="QR-Tag gefunden!"
 		taskdescription="Begebe Dich wieder in die Einganghalle. Von dort aus sieht man diese Skulptur. 
 		Der QR-Tag mit dem fünften Decodierungs-Block befindet sich auf ihr."
 		mode="treasure" cancel="no" feedbacktext="@result@" initial_image="drawable/QR-Tag-Hint-5.jpg">
@@ -608,7 +608,7 @@
 
 	</mission>
 
-	<mission type="QRTagReading" id="QR-Tag_5_Fail" buttontext="QR-Tag gefunden!"
+	<mission type="QRTagReadingProduct" id="QR-Tag_5_Fail" buttontext="QR-Tag gefunden!"
 		taskdescription="Finde diese Skulptur. den QR-Tag, der dem fünften Decodierungs-Block entspricht ..."
 		mode="treasure" cancel="no" feedbacktext="@result@" initial_image="drawable/QR-Tag-Hint-5.jpg">
 

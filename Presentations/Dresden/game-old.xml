@@ -293,7 +293,7 @@
     	<dialogitem>In dem Stück schießt Wilhelm Tell einem Knaben eine Frucht vom Kopf.</dialogitem>
     </mission>	
        
- 	<mission type="QRTagReading" id="Wilhelm_Tell_QR-Tag" buttontext="Starte QR-Tag-Scanner!"
+ 	<mission type="QRTagReadingProduct" id="Wilhelm_Tell_QR-Tag" buttontext="Starte QR-Tag-Scanner!"
 		initial_image="drawable/vorhang.jpg"
 		taskdescription="Um welche Frucht handelt es sich dabei? Scannt den QR-Tag ein, der zu der gesuchten Frucht gehört."
 		expected_content="Apfel" if_wrong="Das ist leider die falsche Frucht. Versuch es noch einmal!"

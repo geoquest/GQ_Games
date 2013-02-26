@@ -180,7 +180,7 @@
 		</dialogitem>
 	</mission>
 	<mission
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 		id="QR-Drache-Rot"
 		buttontext="QRCode scannen ..."
 		taskdescription="Suche den roten Drachen ..."
@@ -351,7 +351,7 @@
 		</dialogitem>
 	</mission>
 	<mission
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 		id="QR-Drache-Gruen"
 		buttontext="QRCode scannen ..."
 		taskdescription="Suche den grünen Drachen ..."
@@ -521,7 +521,7 @@
 		</dialogitem>
 	</mission>
 	<mission
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 		id="QR-Drache-Blau"
 		buttontext="QRCode scannen ..."
 		taskdescription="Suche den blauen Drachen ..."
@@ -688,7 +688,7 @@
 		</dialogitem>
 	</mission>
 	<mission
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 		id="QR-Schatztruhe"
 		buttontext="QRCode scannen ..."
 		taskdescription="Suche die Schatztruhe!"

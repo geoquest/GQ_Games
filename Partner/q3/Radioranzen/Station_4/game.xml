@@ -36,7 +36,7 @@
 		initial_image="drawable/logo_02_roboter.png"
 		mode="product"
 		taskdescription="Scannt auch hier den Code ..."
-		type="QRTagReading"
+		type="QRTagReadingProduct"
 	>
 		<onStart>
 			<rule>
