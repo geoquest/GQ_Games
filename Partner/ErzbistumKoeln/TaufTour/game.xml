@@ -7,6 +7,7 @@
 		type="StartAndExitScreen"
 		id="Start"
 		image="drawable/StartScreen.png"
+		duration="interactive"
 	>
 		<onStart>
 			<rule>
@@ -42,15 +43,15 @@
 					id="Map_Mission" />
 			</rule>
 		</onEnd>
-		<dialogitem sound="sound/Tauftext_01_64.MP3"> Wenn Sie mehr über die Bedeutung der
-			Taufe wissen wollen, haben Sie mit dieser Tour die richtige Wahl
-			getroffen. Es gibt was zu entdecken, nachzudenken und – zu gewinnen!
-			Der Startpunkt liegt an der Kreuzblume vor Domforum und Hauptportal
-			Dom. Bevor es losgeht, sollten Sie sich mit Stift und Papier
-			versorgen: Damit können Sie einen Code notieren, der in unseren
-			Spielverlauf eingebaut ist. Mit dem Code können Sie sich für eine
-			Überraschung im Internet einloggen oder sich ein kleines Geschenk von
-			uns zuschicken lassen.
+		<!-- sound="sound/Tauftext_01_64.MP3" -->
+		<dialogitem> Wenn Sie mehr über die Bedeutung der Taufe wissen wollen,
+			haben Sie mit dieser Tour die richtige Wahl getroffen. Es gibt was zu
+			entdecken, nachzudenken und – zu gewinnen! Der Startpunkt liegt an
+			der Kreuzblume vor Domforum und Hauptportal Dom. Bevor es losgeht,
+			sollten Sie sich mit Stift und Papier versorgen: Damit können Sie
+			einen Code notieren, der in unseren Spielverlauf eingebaut ist. Mit
+			dem Code können Sie sich für eine Überraschung im Internet einloggen
+			oder sich ein kleines Geschenk von uns zuschicken lassen.
 		</dialogitem>
 	</mission>
 	<mission
@@ -1159,7 +1160,7 @@
 			</hotspot>
 			<hotspot
 				id="H_Frings_Statue"
-				latilong="50.938503,6.958078"
+				latlong="50.938503,6.958078"
 				radius="40"
 				initialVisibility="true"
 				img="drawable/GeoIcon.png"
