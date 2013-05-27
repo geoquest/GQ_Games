@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game name="Score Example" xmlformat="5">
+	<mission type="NPCTalk" id="Intro">
+		<onEnd>
+			<rule>
+				<action type="Score" value="100" />
+				<action type="StartMission" id="username" />
+			</rule>
+		</onEnd>
+		<dialogitem>Am Ende dieser Mission verdienst du Punkte.
+		</dialogitem>
+		<dialogitem nextdialogbuttontext="Also los!">und zwar 100 Punkte auf
+			deinen Score.
+		</dialogitem>
+	</mission>
+	<mission type="TextQuestion" id="username"
+		storeAcceptedAnswerInVariable="$_user_name" loopUntilSuccess="true"
+		question="Bitte gib jetzt einen Nicknamen ein. Du kannst ihn frei wählen."
+		prompt="Dein Nickname ..."
+		replyOnWrong="Bitte verwende nur normale Buchstaben. Dein Name darf auch aus mehreren Worten bestehen."
+		replyOnCorrect="OK. Unter diesem Namen posten wir deinen Score nachher.">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="m2" />
+			</rule>
+		</onEnd>
+		<answers>
+			<answer>(\w+\s*)+</answer>
+		</answers>
+	</mission>
+	<mission type="NPCTalk" id="m2">
+		<onStart>
+			<rule>
+				<action type="Score" value="200" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="m3" />
+			</rule>
+		</onEnd>
+		<dialogitem>Und jetzt sind noch mal 200 dazugekommen.
+		</dialogitem>
+		<dialogitem>Macht also 300 insgesamt bis hier..
+		</dialogitem>
+	</mission>
+	<mission type="NPCTalk" id="m3">
+		<onStart>
+			<rule>
+				<action type="Score" value="-150" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="m4" />
+			</rule>
+		</onEnd>
+		<dialogitem>Diesmal hast du 150 Punkte verloren..
+		</dialogitem>
+		<dialogitem>Bleiben dir also noch 150.
+		</dialogitem>
+	</mission>
+	<mission type="NPCTalk" id="m4">
+		<onStart>
+			<rule>
+				<action type="Score" value="-400" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="m5" />
+				<action type="Score" value="333" />
+			</rule>
+		</onEnd>
+		<dialogitem>Auch wenn du jetzt eigentlich 400 Punkte verlierst, werden
+			nur die restlichen 150 abgezogen. Mehr hast du ja nicht.
+		</dialogitem>
+		<dialogitem>Also hast du jetzt genau 0 Punkte. Naja.
+		</dialogitem>
+		<dialogitem>Und jetzt gleich - am Ende dieser mission - bekomst du
+			noch mal 333 Punkte, die dnn auch unter deinem Anem auf die Webseite
+			gepostet werden.
+		</dialogitem>
+	</mission>
+	<mission type="NPCTalk" id="m5">
+		<onStart>
+			<rule>
+				<action type="PostScore"
+					script_url="http://www.audiokombinat.de/radioranzen/wp-content/plugins/" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="m6" />
+			</rule>
+		</onEnd>
+		<dialogitem>Und jetzt ist es (hoffentlich) auch gepostet ins Ranking!
+		</dialogitem>
+	</mission>
+	<mission type="NPCTalk" id="m6">
+		<onStart>
+			<rule>
+				<action type="Score" value="222" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action type="PostScore"
+					script_url="http://www.audiokombinat.de/radioranzen/wp-content/plugins/" />
+				<action type="StartMission" id="m7" />
+			</rule>
+		</onEnd>
+		<dialogitem>Jetzt bekommst du noch einmal 222 Punkte dazu und hast nun
+			also 555.
+		</dialogitem>
+		<dialogitem>Und zum Schluss posten wir deinen Score noch einmal. Mal
+			sehen, ob er auch überschrieben wird.
+		</dialogitem>
+	</mission>
+	<mission type="NPCTalk" id="m7">
+		<onEnd>
+			<rule>
+				<action type="PostScore" script_url="http://www.audiokombinat.de/gibtsdochgarnicht" />
+				<action type="EndGame" />
+			</rule>
+		</onEnd>
+		<dialogitem>Jetzt versuchen wir an eine URL zu posten, die es gar
+			nicht gibt.
+		</dialogitem>
+	</mission>
+</game>

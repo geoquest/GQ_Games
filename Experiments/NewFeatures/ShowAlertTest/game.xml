@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game name="ShowAlertTest" xmlformat="5">
+
+	<mission id="Empty" image="drawable/ploppschutz.png" type="NPCTalk">
+
+		<onStart>
+
+			<rule>
+
+				<action message="Test message for an Alert shown in GeoQuest"
+					type="ShowAlert" icon="drawable/radiobot.png" />
+			</rule>
+		</onStart>
+
+		<onEnd>
+
+			<rule>
+
+				<action id="m2" type="StartMission">
+				</action>
+			</rule>
+		</onEnd>
+
+		<dialogitem>
+			At start of this mission we have shown an alert dialog.
+			Never use
+			alerts with onEnd rules.
+		</dialogitem>
+	</mission>
+
+	<mission id="m2" type="NPCTalk">
+
+		<dialogitem>
+			That was an Alert with only a message.
+		</dialogitem>
+	</mission>
+
+</game>

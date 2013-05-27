@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<game name="NPCTalk Dialog Demo" xmlformat="5">
-	<mission type="NPCTalk" id="NPC_Dialog" charimage="drawable/NPCTalk_Dialog.jpg"
-		nextdialogbuttontext="Mehr Text ..." endbuttontext="Weiter bitte ..."
-		textsize="15" cancel="fail">
-
-		<dialogitem speaker="Schwarzer Kreuzritter"
-			nextdialogbuttontext="Was sagt der weisse dazu?">
-			Unser Bischof spricht mit Gott selbst.
-        </dialogitem>
-		<dialogitem speaker="Weisser Kreuzritter"
-			nextdialogbuttontext="und der schwarze?">
-			Das ist doch nicht wahr!
-        </dialogitem>
-		<dialogitem speaker="Schwarzer ...">
-			Doch. Würde Gott etwa mit einem Lügner
+<game
+	name="NPCTalk Dialog Demo"
+	xmlformat="5"
+>
+	<mission
+		type="NPCTalk"
+		id="NPC_Dialog"
+		image="drawable/NPCTalk_Dialog.jpg"
+		nextdialogbuttontext="Mehr Text ..."
+		endbuttontext="Weiter bitte ..."
+		textsize="15"
+	>
+		<dialogitem
+			speaker="Schwarzer Kreuzritter"
+			nextdialogbuttontext="Was sagt der weisse dazu?"
+		> Unser Bischof spricht mit Gott selbst.
+		</dialogitem>
+		<dialogitem
+			speaker="Weisser Kreuzritter"
+			nextdialogbuttontext="und der schwarze?"
+		> Das ist doch nicht wahr!
+		</dialogitem>
+		<dialogitem speaker="Schwarzer ..."> Doch. Würde Gott etwa mit einem Lügner
 			sprechen?
-        </dialogitem>
+		</dialogitem>
 	</mission>
 </game>

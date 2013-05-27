@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game
+	name="WepPage Demo"
+	xmlformat="5"
+>
+	<mission
+		id="M_1"
+		type="WebPage"
+		url="http://www.vis.bayern.de"
+		buttontext="Webvorschau verlassen"
+	>
+	</mission>
+</game>
