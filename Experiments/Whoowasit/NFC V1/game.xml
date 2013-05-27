@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<game
-	name="WW NFC V_1"
-	xmlformat="5"
->
+<game name="WW NFC V_1" xmlformat="5">
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- GAME INTRODUCTION -->
-	<mission type="StartAndExitScreen" id="Game_Intro_1"
-		image="drawable/Startscreen" duration="interactive">
+	<mission type="StartAndExitScreen" id="Game_Intro_1" image="drawable/Startscreen"
+		duration="interactive">
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="Game_Intro_2" />
 			</rule>
 		</onEnd>
 	</mission>
-	
-	<mission
-		id="Game_Intro_2"
-		image="drawable/Game_Intro"
-		type="NPCTalk"
-	>
+
+	<mission id="Game_Intro_2" image="drawable/Game_Intro" type="NPCTalk">
 		<onStart>
 			<rule>
 				<action type="Vibrate" />
@@ -27,13 +20,13 @@
 		</onStart>
 		<onEnd>
 			<rule>
-				<action
-					id="Suspects_Presentation"
-					type="StartMission" />
+				<action id="Suspects_Presentation" type="StartMission" />
 			</rule>
 		</onEnd>
-		<dialogitem>Hej! Ich bin Thognus. Kannst du mir helfen? Meine Zauberschokolade ist weg. Die hat einer geklaut. Ich glaube das war einer der gierigen Drachen - bestimmt. Kennst du die?
-		
+		<dialogitem>Hej! Ich bin Thognus. Kannst du mir helfen? Meine
+			Zauberschokolade ist weg. Die hat einer geklaut. Ich glaube das war
+			einer der gierigen Drachen - bestimmt. Kennst du die?
+
 		</dialogitem>
 		<dialogitem>
 		</dialogitem>
@@ -41,16 +34,11 @@
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- SUSPECTS PRESENTATION -->
-	<mission
-		id="Suspects_Presentation"
-		image="drawable/Suspects_Presentation"
-		type="NPCTalk"
-	>
+	<mission id="Suspects_Presentation" image="drawable/Suspects_Presentation"
+		type="NPCTalk">
 		<onEnd>
 			<rule>
-				<action
-					id="Suspect_1"
-					type="StartMission" />
+				<action id="Suspect_1" type="StartMission" />
 			</rule>
 		</onEnd>
 		<dialogitem>Die folgenden Personen sind verdächtig:
@@ -58,31 +46,19 @@
 		<dialogitem>TODO
 		</dialogitem>
 	</mission>
-	<mission
-		id="Suspect_1"
-		image="drawable/Suspect_1"
-		type="NPCTalk"
-	>
+	<mission id="Suspect_1" image="drawable/Suspect_1" type="NPCTalk">
 		<onEnd>
 			<rule>
-				<action
-					id="Suspect_2"
-					type="StartMission" />
+				<action id="Suspect_2" type="StartMission" />
 			</rule>
 		</onEnd>
 		<dialogitem>Verdächtiger EINS ... TODO
 		</dialogitem>
 	</mission>
-	<mission
-		id="Suspect_2"
-		image="drawable/Suspect_2"
-		type="NPCTalk"
-	>
+	<mission id="Suspect_2" image="drawable/Suspect_2" type="NPCTalk">
 		<onEnd>
 			<rule>
-				<action
-					id="Rooms_Presentation"
-					type="StartMission" />
+				<action id="Rooms_Presentation" type="StartMission" />
 			</rule>
 		</onEnd>
 		<dialogitem>Verdächtiger ZWEI ... TODO
@@ -91,16 +67,11 @@
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- ROOMS PRESENTATION -->
-	<mission
-		id="Rooms_Presentation"
-		image="drawable/Rooms_Presentation"
-		type="NPCTalk"
-	>
+	<mission id="Rooms_Presentation" image="drawable/Rooms_Presentation"
+		type="NPCTalk">
 		<onEnd>
 			<rule>
-				<action
-					id="Game_Action"
-					type="StartMission" />
+				<action id="Game_Action" type="StartMission" />
 			</rule>
 		</onEnd>
 		<dialogitem>In den folgenden Räumen findet das Spiel statt ...
@@ -111,16 +82,10 @@
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- GAME ACTION (might be used for rounds) -->
-	<mission
-		id="Game_Action"
-		image="drawable/Game_Action"
-		type="NPCTalk"
-	>
+	<mission id="Game_Action" image="drawable/Game_Action" type="NPCTalk">
 		<onEnd>
 			<rule>
-				<action
-					id="Game_Action_Scanner"
-					type="StartMission" />
+				<action id="Game_Action_Scanner" type="StartMission" />
 			</rule>
 		</onEnd>
 		<dialogitem>Du kannst im Spiel eine der folgenden Aktionen durchführen
@@ -135,13 +100,9 @@
 			(QR Code scannen)
 		</dialogitem>
 	</mission>
-	<mission
-		type="QRTagReadingProduct"
-		id="Game_Action_Scanner"
+	<mission type="NFCTagReadingProduct" id="Game_Action_Scanner"
 		taskdescription="Gehe zu einem Raum, einem Tier oder einer Truhe ..."
-		mode="treasure"
-		initial_image="drawable/Game_Action_Scanner"
-	>
+		mode="treasure" initial_image="drawable/Game_Action_Scanner">
 		<onEnd>
 			<rule>
 				<if>
@@ -150,9 +111,7 @@
 						<string>Room_A</string>
 					</eq>
 				</if>
-				<action
-					type="StartMission"
-					id="Room_A" />
+				<action type="StartMission" id="Room_A" />
 			</rule>
 			<rule>
 				<if>
@@ -161,9 +120,7 @@
 						<string>Room_B</string>
 					</eq>
 				</if>
-				<action
-					type="StartMission"
-					id="Room_B" />
+				<action type="StartMission" id="Room_B" />
 			</rule>
 			<!-- -->
 			<!-- RULES LEADING TO: ANIMAL A -->
@@ -184,9 +141,7 @@
 						</eq>
 					</and>
 				</if>
-				<action
-					type="StartMission"
-					id="Animal_A_Hungry__I_Have_Food" />
+				<action type="StartMission" id="Animal_A_Hungry__I_Have_Food" />
 			</rule>
 			<rule>
 				<if>
@@ -207,9 +162,7 @@
 						</not>
 					</and>
 				</if>
-				<action
-					type="StartMission"
-					id="Animal_A_Hungry__I_Have_NO_Food" />
+				<action type="StartMission" id="Animal_A_Hungry__I_Have_NO_Food" />
 			</rule>
 			<rule>
 				<if>
@@ -224,9 +177,7 @@
 						</eq>
 					</and>
 				</if>
-				<action
-					type="StartMission"
-					id="Animal_A_Full" />
+				<action type="StartMission" id="Animal_A_Full" />
 			</rule>
 			<!-- -->
 			<!-- RULES LEADING TO: ANIMAL B -->
@@ -247,9 +198,7 @@
 						</eq>
 					</and>
 				</if>
-				<action
-					type="StartMission"
-					id="Animal_B_Hungry__I_Have_Food" />
+				<action type="StartMission" id="Animal_B_Hungry__I_Have_Food" />
 			</rule>
 			<rule>
 				<if>
@@ -270,9 +219,7 @@
 						</not>
 					</and>
 				</if>
-				<action
-					type="StartMission"
-					id="Animal_A_Hungry__I_Have_NO_Food" />
+				<action type="StartMission" id="Animal_A_Hungry__I_Have_NO_Food" />
 			</rule>
 			<rule>
 				<if>
@@ -287,9 +234,7 @@
 						</eq>
 					</and>
 				</if>
-				<action
-					type="StartMission"
-					id="Animal_B_Full" />
+				<action type="StartMission" id="Animal_B_Full" />
 			</rule>
 			<!-- -->
 			<!-- RULE LEADING TO: CHEST A With Key -->
@@ -306,9 +251,7 @@
 						</geq>
 					</and>
 				</if>
-				<action
-					type="StartMission"
-					id="Chest_A__With_Key" />
+				<action type="StartMission" id="Chest_A__With_Key" />
 			</rule>
 			<!-- -->
 			<!-- RULES LEADING TO: CHEST B With Key -->
@@ -325,9 +268,7 @@
 						</geq>
 					</and>
 				</if>
-				<action
-					type="StartMission"
-					id="Chest_B__With_Key" />
+				<action type="StartMission" id="Chest_B__With_Key" />
 			</rule>
 			<!-- -->
 			<!-- RULE LEADING TO: some CHEST without any Key -->
@@ -344,20 +285,75 @@
 						</eq>
 					</and>
 				</if>
-				<action
-					type="StartMission"
-					id="Chest__No_Key" />
+				<action type="StartMission" id="Chest__No_Key" />
 			</rule>
+
+			<!-- This is error mission, in expected data is not found from NFC tag -->
+			<rule>
+				<if>
+					<and>
+						<not>
+							<eq>
+								<var>$_Game_Action_Scanner.result</var>
+								<string>Room_A</string>
+							</eq>
+						</not>
+						<not>
+							<eq>
+								<var>$_Game_Action_Scanner.result</var>
+								<string>Room_B</string>
+							</eq>
+						</not>
+						<not>
+							<eq>
+								<var>$_Game_Action_Scanner.result</var>
+								<string>Animal_A</string>
+							</eq>
+						</not>
+						<not>
+							<eq>
+								<var>$_Game_Action_Scanner.result</var>
+								<string>Animal_B</string>
+							</eq>
+						</not>
+						<not>
+							<eq>
+								<var>$_Game_Action_Scanner.result</var>
+								<string>Chest_A</string>
+							</eq>
+						</not>
+						<not>
+							<eq>
+								<var>$_Game_Action_Scanner.result</var>
+								<string>Chest_B</string>
+							</eq>
+						</not>
+					</and>
+				</if>
+				<action type="StartMission" id="ErrorMission" />
+			</rule>
+
 		</onEnd>
 	</mission>
+
+	<!-- -->
+	<!-- ################################################################ -->
+	<!-- ErrorMission -->
+	<mission id="ErrorMission" type="NPCTalk">
+		<onEnd>
+			<rule>
+				<action id="Game_Action_Scanner" type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>Error! Please look for required NFC Tags.
+		</dialogitem>
+	</mission>
+
+
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- ROOM A -->
-	<mission
-		id="Room_A"
-		loopUntilSuccess="false"
-		type="MultipleChoiceQuestion"
-	>
+	<mission id="Room_A" loopUntilSuccess="false" type="MultipleChoiceQuestion">
 		<onStart>
 			<rule>
 				<action type="Vibrate" />
@@ -367,22 +363,16 @@
 			<rule>
 				<!-- Back to Action Scanner to interact with animal or chest: -->
 				<if>
-					<missionState
-						id="Room_A"
-						state="failed" />
+					<missionState id="Room_A" state="failed" />
 				</if>
-				<action
-					id="Game_Action_Scanner"
-					type="StartMission" />
+				<action id="Game_Action_Scanner" type="StartMission" />
 			</rule>
 			<!-- Look around: -->
 			<rule>
 				<if>
 					<and>
 						<!-- Success means Player looks: -->
-						<missionState
-							id="Room_A"
-							state="succeeded" />
+						<missionState id="Room_A" state="succeeded" />
 						<eq>
 							<!-- 0 means its still there, i.e. initial state -->
 							<var>Food_A</var>
@@ -390,17 +380,13 @@
 						</eq>
 					</and>
 				</if>
-				<action
-					id="Find_Food_A"
-					type="StartMission" />
+				<action id="Find_Food_A" type="StartMission" />
 			</rule>
 			<rule>
 				<if>
 					<and>
 						<!-- Success means Player looks: -->
-						<missionState
-							id="Room_A"
-							state="succeeded" />
+						<missionState id="Room_A" state="succeeded" />
 						<gt>
 							<!-- 1 means its gone, i.e. already taken; 2 means taken and fed -->
 							<var>Food_A</var>
@@ -408,41 +394,29 @@
 						</gt>
 					</and>
 				</if>
-				<action
-					id="Find_Nothing"
-					type="StartMission" />
-				<!-- DO WE COME BACK TO HERE? THEN call the game action scanner here
+				<action id="Find_Nothing" type="StartMission" />
+				<!-- DO WE COME BACK TO HERE? THEN call the game action scanner here 
 					at end. TODO -->
 			</rule>
 		</onEnd>
 		<question>
 			<questiontext> Du bist in Raum A. Was möchtest du tun?
 			</questiontext>
-			<answer
-				correct="0"
-				onChoose="Dazu scanne bitte den zugehörigen QR Code"
-			> Mit Tier A sprechen
+			<answer correct="0" onChoose="Dazu scanne bitte den zugehörigen QR Code">
+				Mit Tier A sprechen
 			</answer>
-			<answer
-				correct="0"
-				onChoose="Dazu scanne bitte den zugehörigen QR Code"
-			> Die Truhe hier in Raum A untersuchen
+			<answer correct="0" onChoose="Dazu scanne bitte den zugehörigen QR Code">
+				Die Truhe hier in Raum A untersuchen
 			</answer>
-			<answer
-				correct="1"
-				onChoose="OK. Mal sehen, ob du etwas findest ..."
-			> Dich umschauen
+			<answer correct="1" onChoose="OK. Mal sehen, ob du etwas findest ...">
+				Dich umschauen
 			</answer>
 		</question>
 	</mission>
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- ROOM B -->
-	<mission
-		id="Room_B"
-		loopUntilSuccess="false"
-		type="MultipleChoiceQuestion"
-	>
+	<mission id="Room_B" loopUntilSuccess="false" type="MultipleChoiceQuestion">
 		<onStart>
 			<rule>
 				<action type="Vibrate" />
@@ -452,22 +426,16 @@
 			<rule>
 				<!-- Back to Action Scanner to interact with animal or chest: -->
 				<if>
-					<missionState
-						id="Room_B"
-						state="failed" />
+					<missionState id="Room_B" state="failed" />
 				</if>
-				<action
-					id="Game_Action_Scanner"
-					type="StartMission" />
+				<action id="Game_Action_Scanner" type="StartMission" />
 			</rule>
 			<!-- Look around: -->
 			<rule>
 				<if>
 					<and>
 						<!-- Success means Player looks: -->
-						<missionState
-							id="Room_B"
-							state="succeeded" />
+						<missionState id="Room_B" state="succeeded" />
 						<eq>
 							<!-- 0 means its still there, i.e. initial state -->
 							<var>Food_B</var>
@@ -475,17 +443,13 @@
 						</eq>
 					</and>
 				</if>
-				<action
-					id="Find_Food_B"
-					type="StartMission" />
+				<action id="Find_Food_B" type="StartMission" />
 			</rule>
 			<rule>
 				<if>
 					<and>
 						<!-- Success means Player looks: -->
-						<missionState
-							id="Room_B"
-							state="succeeded" />
+						<missionState id="Room_B" state="succeeded" />
 						<gt>
 							<!-- 1 means its gone, i.e. already taken; 2 means taken and fed -->
 							<var>Food_B</var>
@@ -493,41 +457,30 @@
 						</gt>
 					</and>
 				</if>
-				<action
-					id="Find_Nothing"
-					type="StartMission" />
-				<!-- DO WE COME BACK TO HERE? THEN call the game action scanner here
+				<action id="Find_Nothing" type="StartMission" />
+				<!-- DO WE COME BACK TO HERE? THEN call the game action scanner here 
 					at end. TODO -->
 			</rule>
 		</onEnd>
 		<question>
 			<questiontext> Du bist in Raum B. Was möchtest du tun?
 			</questiontext>
-			<answer
-				correct="0"
-				onChoose="Dazu scanne bitte den zugehörigen QR Code"
-			> Mit Tier B sprechen
+			<answer correct="0" onChoose="Dazu scanne bitte den zugehörigen QR Code">
+				Mit Tier B sprechen
 			</answer>
-			<answer
-				correct="0"
-				onChoose="Dazu scanne bitte den zugehörigen QR Code"
-			> Die Truhe hier in Raum B untersuchen
+			<answer correct="0" onChoose="Dazu scanne bitte den zugehörigen QR Code">
+				Die Truhe hier in Raum B untersuchen
 			</answer>
-			<answer
-				correct="1"
-				onChoose="OK. Mal sehen, ob du etwas findest ..."
-			> Dich umschauen
+			<answer correct="1" onChoose="OK. Mal sehen, ob du etwas findest ...">
+				Dich umschauen
 			</answer>
 		</question>
 	</mission>
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- ANIMAL A -->
-	<mission
-		id="Animal_A_Hungry__I_Have_Food"
-		loopUntilSuccess="false"
-		type="MultipleChoiceQuestion"
-	>
+	<mission id="Animal_A_Hungry__I_Have_Food" loopUntilSuccess="false"
+		type="MultipleChoiceQuestion">
 		<onStart>
 			<rule>
 				<action type="Vibrate" />
@@ -536,66 +489,47 @@
 		<onSuccess>
 			<rule>
 				<!-- TODO: Mampf Sound abspielen -->
-				<action
-					var="Food_B"
-					type="SetVariable"
-				>
+				<action var="Food_B" type="SetVariable">
 					<!-- 2 means it is taken and given to the animal -->
 					<value>
 						<num>2</num>
 					</value>
 				</action>
-				<action
-					var="Animal_A_Full"
-					type="SetVariable"
-				>
-					<!-- 1 means animal is full;
-						THIS IS REDUNDANT: ONE COULD USE FOOD_B
+				<action var="Animal_A_Full" type="SetVariable">
+					<!-- 1 means animal is full; THIS IS REDUNDANT: ONE COULD USE FOOD_B 
 						INSTEAD, BUT IT IS CLEARER AND MORE RESUSABLE -->
 					<value>
 						<num>1</num>
 					</value>
 				</action>
 				<!-- GET a key: -->
-				<action
-					type="IncrementVariable"
-					var="NumberOfKeys" />
+				<action type="IncrementVariable" var="NumberOfKeys" />
 			</rule>
 		</onSuccess>
 		<!-- TODO: onFail Sound abspielen der Unbehagen ausdrückt -->
 		<onEnd>
 			<rule>
-				<action
-					id="Game_Action_Scanner"
-					type="StartMission" />
+				<action id="Game_Action_Scanner" type="StartMission" />
 			</rule>
 		</onEnd>
 		<question>
 			<questiontext>Ich bin so hungrig! Gibst du mir Essen B?
 			</questiontext>
-			<answer
-				correct="1"
-				onChoose="Oh Danke. Hier hast du einen Schlüssel!"
-			> Ja, hier ist Essen B.
+			<answer correct="1" onChoose="Oh Danke. Hier hast du einen Schlüssel!">
+				Ja, hier ist Essen B.
 			</answer>
-			<answer
-				correct="0"
-				onChoose="Das ist aber nicht nett von dir! Dann helfe ich dir auch nicht."
-			> Nein, das behalte ich lieber.
+			<answer correct="0"
+				onChoose="Das ist aber nicht nett von dir! Dann helfe ich dir auch nicht.">
+				Nein, das behalte ich lieber.
 			</answer>
 		</question>
 	</mission>
 	<!-- -->
-	<mission
-		id="Animal_A_Hungry__I_Have_NO_Food"
-		image="drawable/Animal_A_Hungry"
-		type="NPCTalk"
-	>
+	<mission id="Animal_A_Hungry__I_Have_NO_Food" image="drawable/Animal_A_Hungry"
+		type="NPCTalk">
 		<onEnd>
 			<rule>
-				<action
-					id="Game_Action_Scanner"
-					type="StartMission" />
+				<action id="Game_Action_Scanner" type="StartMission" />
 			</rule>
 		</onEnd>
 		<dialogitem>Ich bin Tier A und habe Hunger.</dialogitem>
@@ -603,16 +537,11 @@
 		</dialogitem>
 	</mission>
 	<!-- -->
-	<mission
-		id="Animal_A_Full"
-		image="drawable/Animal_A_Full"
-		type="NPCTalk"
-	>
+	<mission id="Animal_A_Full" image="drawable/Animal_A_Full"
+		type="NPCTalk">
 		<onEnd>
 			<rule>
-				<action
-					id="Game_Action_Scanner"
-					type="StartMission" />
+				<action id="Game_Action_Scanner" type="StartMission" />
 			</rule>
 		</onEnd>
 		<dialogitem>Ich bin Tier A und bin satt.</dialogitem>
@@ -622,11 +551,8 @@
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- ANIMAL B -->
-	<mission
-		id="Animal_B_Hungry__I_Have_Food"
-		loopUntilSuccess="false"
-		type="MultipleChoiceQuestion"
-	>
+	<mission id="Animal_B_Hungry__I_Have_Food" loopUntilSuccess="false"
+		type="MultipleChoiceQuestion">
 		<onStart>
 			<rule>
 				<action type="Vibrate" />
@@ -635,21 +561,14 @@
 		<onSuccess>
 			<rule>
 				<!-- TODO: Mampf Sound abspielen -->
-				<action
-					var="Food_A"
-					type="SetVariable"
-				>
+				<action var="Food_A" type="SetVariable">
 					<!-- 2 means it is taken and given to the animal -->
 					<value>
 						<num>2</num>
 					</value>
 				</action>
-				<action
-					var="Animal_B_Full"
-					type="SetVariable"
-				>
-					<!-- 1 means animal is full;
-						THIS IS REDUNDANT: ONE COULD USE FOOD_B
+				<action var="Animal_B_Full" type="SetVariable">
+					<!-- 1 means animal is full; THIS IS REDUNDANT: ONE COULD USE FOOD_B 
 						INSTEAD, BUT IT IS CLEARER AND MORE RESUSABLE -->
 					<value>
 						<num>1</num>
@@ -660,37 +579,28 @@
 		<!-- TODO: onFail Sound abspielen der Unbehagen ausdrückt -->
 		<onEnd>
 			<rule>
-				<action
-					id="Game_Action_Scanner"
-					type="StartMission" />
+				<action id="Game_Action_Scanner" type="StartMission" />
 			</rule>
 		</onEnd>
 		<question>
 			<questiontext>Ich bin so hungrig! Gibst du mir Essen A?
 			</questiontext>
-			<answer
-				correct="1"
-				onChoose="Oh Danke. Ich habe gesehen, dass der Dieb humpelt!"
-			> Ja, hier ist Essen A.
+			<answer correct="1"
+				onChoose="Oh Danke. Ich habe gesehen, dass der Dieb humpelt!"> Ja,
+				hier ist Essen A.
 			</answer>
-			<answer
-				correct="0"
-				onChoose="Das ist aber nicht nett von dir! Dann helfe ich dir auch nicht."
-			> Nein, das behalte ich lieber.
+			<answer correct="0"
+				onChoose="Das ist aber nicht nett von dir! Dann helfe ich dir auch nicht.">
+				Nein, das behalte ich lieber.
 			</answer>
 		</question>
 	</mission>
 	<!-- -->
-	<mission
-		id="Animal_B_Hungry__I_Have_NO_Food"
-		image="drawable/Animal_B_Hungry"
-		type="NPCTalk"
-	>
+	<mission id="Animal_B_Hungry__I_Have_NO_Food" image="drawable/Animal_B_Hungry"
+		type="NPCTalk">
 		<onEnd>
 			<rule>
-				<action
-					id="Game_Action_Scanner"
-					type="StartMission" />
+				<action id="Game_Action_Scanner" type="StartMission" />
 			</rule>
 		</onEnd>
 		<dialogitem>Ich bin Tier B und habe Hunger.</dialogitem>
@@ -698,16 +608,11 @@
 		</dialogitem>
 	</mission>
 	<!-- -->
-	<mission
-		id="Animal_B_Full"
-		image="drawable/Animal_B_Full"
-		type="NPCTalk"
-	>
+	<mission id="Animal_B_Full" image="drawable/Animal_B_Full"
+		type="NPCTalk">
 		<onEnd>
 			<rule>
-				<action
-					id="Game_Action_Scanner"
-					type="StartMission" />
+				<action id="Game_Action_Scanner" type="StartMission" />
 			</rule>
 		</onEnd>
 		<dialogitem>Ich bin Tier B und bin satt.</dialogitem>
@@ -717,11 +622,8 @@
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- CHEST A (THE RIGHT ONE) -->
-	<mission
-		id="Chest_A__With_Key"
-		loopUntilSuccess="false"
-		type="MultipleChoiceQuestion"
-	>
+	<mission id="Chest_A__With_Key" loopUntilSuccess="false"
+		type="MultipleChoiceQuestion">
 		<onStart>
 			<rule>
 				<action type="Vibrate" />
@@ -730,49 +632,38 @@
 		<onSuccess>
 			<rule>
 				<!-- TODO: Truhe Öffnen Sound abspielen -->
-				<action
-					var="NumberOfKeys"
-					type="DecrementVariable" />
+				<action var="NumberOfKeys" type="DecrementVariable" />
 			</rule>
 		</onSuccess>
 		<onEnd>
 			<rule>
 				<!-- IF OPENING: -->
 				<if>
-					<missionState
-						id="Chest_A__With_Key"
-						state="succeeded" />
+					<missionState id="Chest_A__With_Key" state="succeeded" />
 				</if>
 				<!-- Sieges-Sound abspielen -->
-				<action
-					id="Game_Won"
-					type="StartMission" />
+				<action id="Game_Won" type="StartMission" />
 			</rule>
 		</onEnd>
 		<question>
 			<questiontext>Möchtest du diese Truhe öffnen? Du verlierst dadurch
 				aber einen Schlüssel!
 			</questiontext>
-			<answer
-				correct="1"
-				onChoose="OK, Dann schu mal rein. Stell am Schloss die Zahl 456 ein."
-			> Ja, ich gebe dir einen Schlüssel dafür.
+			<answer correct="1"
+				onChoose="OK, Dann schu mal rein. Stell am Schloss die Zahl 456 ein.">
+				Ja, ich gebe dir einen Schlüssel dafür.
 			</answer>
-			<answer
-				correct="0"
-				onChoose="Oh du denkst das ist doch die Falsche Truhe? Na dann noch viel Glück!"
-			> Nein, lieber doch nicht.
+			<answer correct="0"
+				onChoose="Oh du denkst das ist doch die Falsche Truhe? Na dann noch viel Glück!">
+				Nein, lieber doch nicht.
 			</answer>
 		</question>
 	</mission>
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- CHEST B (THE WRONG ONE) -->
-	<mission
-		id="Chest_B__With_Key"
-		loopUntilSuccess="false"
-		type="MultipleChoiceQuestion"
-	>
+	<mission id="Chest_B__With_Key" loopUntilSuccess="false"
+		type="MultipleChoiceQuestion">
 		<onStart>
 			<rule>
 				<action type="Vibrate" />
@@ -781,54 +672,40 @@
 		<onSuccess>
 			<rule>
 				<!-- TODO: Truhe Öffnen Sound abspielen -->
-				<action
-					var="NumberOfKeys"
-					type="DecrementVariable" />
+				<action var="NumberOfKeys" type="DecrementVariable" />
 			</rule>
 		</onSuccess>
 		<onEnd>
 			<rule>
 				<!-- IF OPENING: -->
 				<if>
-					<missionState
-						id="Chest_B__With_Key"
-						state="succeeded" />
+					<missionState id="Chest_B__With_Key" state="succeeded" />
 				</if>
 				<!-- Verlierer-Sound abspielen -->
-				<action
-					id="Game_Lost"
-					type="StartMission" />
+				<action id="Game_Lost" type="StartMission" />
 			</rule>
 		</onEnd>
 		<question>
 			<questiontext>Möchtest du diese Truhe öffnen? Du verlierst dadurch
 				aber einen Schlüssel!
 			</questiontext>
-			<answer
-				correct="1"
-				onChoose="OK, Dann schu mal rein. Stell am Schloss die Zahl 789 ein."
-			> Ja, ich gebe dir einen Schlüssel dafür.
+			<answer correct="1"
+				onChoose="OK, Dann schu mal rein. Stell am Schloss die Zahl 789 ein.">
+				Ja, ich gebe dir einen Schlüssel dafür.
 			</answer>
-			<answer
-				correct="0"
-				onChoose="Oh du denkst das ist doch die Falsche Truhe? Na dann noch viel Glück!"
-			> Nein, lieber doch nicht.
+			<answer correct="0"
+				onChoose="Oh du denkst das ist doch die Falsche Truhe? Na dann noch viel Glück!">
+				Nein, lieber doch nicht.
 			</answer>
 		</question>
 	</mission>
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- ANY CHEST WITHOUT KEY -->
-	<mission
-		id="Chest__No_Key"
-		image="drawable/Chest_Closed"
-		type="NPCTalk"
-	>
+	<mission id="Chest__No_Key" image="drawable/Chest_Closed" type="NPCTalk">
 		<onEnd>
 			<rule>
-				<action
-					id="Game_Action_Scanner"
-					type="StartMission" />
+				<action id="Game_Action_Scanner" type="StartMission" />
 			</rule>
 		</onEnd>
 		<dialogitem>Du kannst diese Truhe nicht öffnen ...
@@ -839,17 +716,10 @@
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- FIND FOOD A -->
-	<mission
-		id="Find_Food_A"
-		image="drawable/Food_A"
-		type="NPCTalk"
-	>
+	<mission id="Find_Food_A" image="drawable/Food_A" type="NPCTalk">
 		<onStart>
 			<rule>
-				<action
-					var="Food_A"
-					type="SetVariable"
-				>
+				<action var="Food_A" type="SetVariable">
 					<!-- 1 means its already taken, i.e. we move it in our "inventory" -->
 					<value>
 						<num>1</num>
@@ -859,12 +729,10 @@
 		</onStart>
 		<onEnd>
 			<rule>
-				<action
-					id="Game_Action_Scanner"
-					type="StartMission" />
+				<action id="Game_Action_Scanner" type="StartMission" />
 			</rule>
 		</onEnd>
-		<!-- We SHOULD not do anything onEnd and instead come back to the calling
+		<!-- We SHOULD not do anything onEnd and instead come back to the calling 
 			mission ... TODO -->
 		<dialogitem>Du findest Essen A!
 		</dialogitem>
@@ -874,17 +742,10 @@
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- FIND FOOD B -->
-	<mission
-		id="Find_Food_B"
-		image="drawable/Food_B"
-		type="NPCTalk"
-	>
+	<mission id="Find_Food_B" image="drawable/Food_B" type="NPCTalk">
 		<onStart>
 			<rule>
-				<action
-					var="Food_B"
-					type="SetVariable"
-				>
+				<action var="Food_B" type="SetVariable">
 					<!-- 1 means its already taken, i.e. we move it in our "inventory" -->
 					<value>
 						<num>1</num>
@@ -894,12 +755,10 @@
 		</onStart>
 		<onEnd>
 			<rule>
-				<action
-					id="Game_Action_Scanner"
-					type="StartMission" />
+				<action id="Game_Action_Scanner" type="StartMission" />
 			</rule>
 		</onEnd>
-		<!-- We SHOULD not do anything onEnd and instead come back to the calling
+		<!-- We SHOULD not do anything onEnd and instead come back to the calling 
 			mission ... TODO -->
 		<dialogitem>Du findest Essen B!
 		</dialogitem>
@@ -909,19 +768,13 @@
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- FIND NOTHING -->
-	<mission
-		id="Find_Nothing"
-		image="drawable/Nothing"
-		type="NPCTalk"
-	>
+	<mission id="Find_Nothing" image="drawable/Nothing" type="NPCTalk">
 		<onEnd>
 			<rule>
-				<action
-					id="Game_Action_Scanner"
-					type="StartMission" />
+				<action id="Game_Action_Scanner" type="StartMission" />
 			</rule>
 		</onEnd>
-		<!-- We SHOULD not do anything onEnd and instead come back to the calling
+		<!-- We SHOULD not do anything onEnd and instead come back to the calling 
 			mission ... TODO -->
 		<dialogitem>Hier ist nichts.
 		</dialogitem>
@@ -932,11 +785,7 @@
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- GAME WON -->
-	<mission
-		id="Game_Won"
-		image="drawable/Game_Won"
-		type="NPCTalk"
-	>
+	<mission id="Game_Won" image="drawable/Game_Won" type="NPCTalk">
 		<onEnd>
 			<rule>
 				<action type="EndGame" />
@@ -959,11 +808,7 @@
 	<!-- -->
 	<!-- ################################################################ -->
 	<!-- GAME LOST -->
-	<mission
-		id="Game_Lost"
-		image="drawable/Game_Lost"
-		type="NPCTalk"
-	>
+	<mission id="Game_Lost" image="drawable/Game_Lost" type="NPCTalk">
 		<onEnd>
 			<rule>
 				<action type="EndGame" />
