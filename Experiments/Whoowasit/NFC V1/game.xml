@@ -291,44 +291,7 @@
 			<!-- This is error mission, in expected data is not found from NFC tag -->
 			<rule>
 				<if>
-					<and>
-						<not>
-							<eq>
-								<var>$_Game_Action_Scanner.result</var>
-								<string>Room_A</string>
-							</eq>
-						</not>
-						<not>
-							<eq>
-								<var>$_Game_Action_Scanner.result</var>
-								<string>Room_B</string>
-							</eq>
-						</not>
-						<not>
-							<eq>
-								<var>$_Game_Action_Scanner.result</var>
-								<string>Animal_A</string>
-							</eq>
-						</not>
-						<not>
-							<eq>
-								<var>$_Game_Action_Scanner.result</var>
-								<string>Animal_B</string>
-							</eq>
-						</not>
-						<not>
-							<eq>
-								<var>$_Game_Action_Scanner.result</var>
-								<string>Chest_A</string>
-							</eq>
-						</not>
-						<not>
-							<eq>
-								<var>$_Game_Action_Scanner.result</var>
-								<string>Chest_B</string>
-							</eq>
-						</not>
-					</and>
+					<noRuleFiredYet />
 				</if>
 				<action type="StartMission" id="ErrorMission" />
 			</rule>
@@ -406,7 +369,8 @@
 				Mit Tier A sprechen
 			</answer>
 			<answer correct="0" onChoose="Dazu scanne bitte den zugehörigen QR Code">
-				Die Truhe hier in Raum A untersuchen
+				Die Truhe hier in Raum A
+				untersuchen
 			</answer>
 			<answer correct="1" onChoose="OK. Mal sehen, ob du etwas findest ...">
 				Dich umschauen
@@ -469,7 +433,8 @@
 				Mit Tier B sprechen
 			</answer>
 			<answer correct="0" onChoose="Dazu scanne bitte den zugehörigen QR Code">
-				Die Truhe hier in Raum B untersuchen
+				Die Truhe hier in Raum B
+				untersuchen
 			</answer>
 			<answer correct="1" onChoose="OK. Mal sehen, ob du etwas findest ...">
 				Dich umschauen
