@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game name="Wer wird Millionär?" xmlformat="5">
+	<mission type="StartAndExitScreen" id="startscreen" image="images/startscreen"
+		duration="interactive">
+		<onStart>
+			<rule>
+				<action type="SetVariable" var="Number_Of_Questions" value="3" />
+				<action type="SetVariable" var="Guthaben" value="100" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="willkommen" />
+			</rule>
+		</onEnd>
+	</mission>
+	<mission id="willkommen" image="images/willkommen" type="NPCTalk"
+		mode="chunk" endbuttontext="Dann los ...">
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action id="frage_1" type="StartMission" />
+			</rule>
+		</onEnd>
+		<dialogitem>
+			Willkommen zu
+			<b>"Wer wird Millionär?"</b>
+		</dialogitem>
+		<dialogitem>
+			Diesmal geht es um die Planeten unseres Sonnensystems.
+		</dialogitem>
+		<dialogitem>
+			Du startest mit 100 Punkten. Antwortest du auf eine Frage
+			<b>richtig, verdoppelt</b>
+			sich dein Einsatz.
+		</dialogitem>
+		<dialogitem>
+			Antwortest du
+			<b>falsch, verlierst</b>
+			du das Spiel und bekommst gar keine Punkte.
+		</dialogitem>
+		<dialogitem>
+			In disem Spiel haben wir @Number_Of_Questions@ Fragen für
+			dich!
+		</dialogitem>
+	</mission>
+	<mission id="frage_1" loopUntilSuccess="false" type="MultipleChoiceQuestion">
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<onSuccess>
+			<rule>
+				<action type="PlayAudio" file="sounds/won" />
+				<action type="setVariable" var="Guthaben">
+					<value>
+						<var>200</var>
+					</value>
+				</action>
+				<action id="frage_2" type=" StartMission " />
+			</rule>
+		</onSuccess>
+		<onFail>
+			<rule>
+				<action type="PlayAudio" file="sounds/lost" />
+				<action id="verloren" type="StartMission" />
+			</rule>
+		</onFail>
+		<question>
+			<questiontext>Welcher der vier Planeten hier ist der schwerste?
+			</questiontext>
+			<answer correct="1" onChoose="OK">Erde
+			</answer>
+			<answer correct="0" onChoose="OK">Mars
+			</answer>
+			<answer correct="0" onChoose="OK">Merkur
+			</answer>
+			<answer correct="0" onChoose="OK">Venus
+			</answer>
+		</question>
+	</mission>
+	<mission id="frage_2" loopUntilSuccess="false" type="MultipleChoiceQuestion">
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<onSuccess>
+			<rule>
+				<action type="PlayAudio" file="sounds/won" />
+				<action type="setVariable" var="Guthaben">
+					<value>
+						<var>400</var>
+					</value>
+				</action>
+				<action id="frage_3" type=" StartMission " />
+			</rule>
+		</onSuccess>
+		<onFail>
+			<rule>
+				<action type="PlayAudio" file="sounds/lost" />
+				<action id="verloren" type="StartMission" />
+			</rule>
+		</onFail>
+		<question>
+			<questiontext>Wo dauert der "Tag" länger als das "Jahr"? D.h. welcher
+				Planet dreht
+				sich schneller um die Sonne als um sich selbst?
+			</questiontext>
+			<answer correct="0" onChoose="OK">Auf dem Mars
+			</answer>
+			<answer correct="1" onChoose="OK">Auf der Venus
+			</answer>
+			<answer correct="0" onChoose="OK">Auf der Erde
+			</answer>
+			<answer correct="0" onChoose="OK">Auf dem Saturn
+			</answer>
+		</question>
+	</mission>
+	<mission id="frage_3" loopUntilSuccess="false" type="MultipleChoiceQuestion">
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<onSuccess>
+			<rule>
+				<action type="PlayAudio" file="sounds/won" />
+				<action type="setVariable" var="Guthaben">
+					<value>
+						<var>800</var>
+					</value>
+				</action>
+				<action id="frage_3" type=" StartMission " />
+			</rule>
+		</onSuccess>
+		<onFail>
+			<rule>
+				<action type="PlayAudio" file="sounds/lost" />
+				<action id="verloren" type="StartMission" />
+			</rule>
+		</onFail>
+		<question>
+			<questiontext>Wieviele Planeten hat unser Sonnensystem? Tipp: Pluto
+				wurde 2006 zu einem "Plutoiden" degradiert und gilt nun offiziell
+				nicht mehr als Planet.
+			</questiontext>
+			<answer correct="0" onChoose="OK">6
+			</answer>
+			<answer correct="1" onChoose="OK">8
+			</answer>
+			<answer correct="0" onChoose="OK">9
+			</answer>
+			<answer correct="0" onChoose="OK">11
+			</answer>
+		</question>
+	</mission>
+	<mission id="gewonnen" image="drawable/gewonnen" type="NPCTalk">
+		<onEnd>
+			<rule>
+				<action type="EndGame" />
+			</rule>
+		</onEnd>
+		<dialogitem>Super, du hast es geschafft und alle @Number_Of_Questions@
+			Fragen richtig beantwortet!
+		</dialogitem>
+		<dialogitem>Damit hast du @Guthaben@ Punkte erreicht. Toll.
+		</dialogitem>
+		<dialogitem>Tschüß und bis bald!
+		</dialogitem>
+	</mission>
+	<mission id="verloren" image="drawable/verloren" type="NPCTalk">
+		<onEnd>
+			<rule>
+				<action type="EndGame" />
+			</rule>
+		</onEnd>
+		<dialogitem>Schade. Du hast leider verloren. Du hattest zuletzt
+			@Guthaben@ Punkte.
+		</dialogitem>
+		<dialogitem>Vielleicht klappt es beim nächsten mal!
+		</dialogitem>
+	</mission>
+	<mission id="ende" image="drawable/ende" type="NPCTalk"
+		bgcolor="#FFFFFFFF">
+		<onEnd>
+			<rule>
+				<action type="EndGame" />
+			</rule>
+		</onEnd>
+		<dialogitem>Für's erste verabschiedet sich diese App jetzt von Euch.
+		</dialogitem>
+		<dialogitem>Tschüß und bis bald!
+		</dialogitem>
+	</mission>
+
+</game>
