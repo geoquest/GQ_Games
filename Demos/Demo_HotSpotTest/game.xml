@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game name="Demo HotSpotTest" xmlformat="5">
+	<mission type="HotSpotTest" id="Karte" targetID="HS_Geburtshaus">
+	</mission>
+	<hotspot id="HS_Geburtshaus" latlong="49.011302,8.360302"
+		radius="20" initialVisibility="true" initialActivity="true"
+		img="icons/marker_01.png">
+		<onEnter>
+			<rule>
+				<if>
+					<missionState id="M_Geburtshaus_Intro" state="new"></missionState>
+				</if>
+				<action type="SetHotspotVisibility" id="HS_Geburtshaus"
+					visible="false" />
+				<action type="SetHotspotActivity" id="HS_Geburtshaus" mode="false" />
+				<action type="SetHotspotActivity" id="HS_MuelburgerTor" mode="true" />
+				<action type="SetHotspotVisibility" id="HS_MuelburgerTor"
+					visible="true" />
+				<action type="StartMission" id="M_Geburtshaus_Intro" />
+			</rule>
+		</onEnter>
+	</hotspot>
+	<hotspot id="HS_MuelburgerTor" latlong="49.010421,8.387495"
+		radius="40" initialVisibility="false" initialActivity="false"
+		img="icons/marker_02.png">
+		<onEnter>
+			<rule>
+				<if>
+					<missionState id="M_MuelburgerTor_Intro" state="new"></missionState>
+				</if>
+				<action type="SetHotspotVisibility" id="HS_MuelburgerTor"
+					visible="false" />
+				<action type="SetHotspotActivity" id="HS_MuelburgerTor" mode="false" />
+				<action type="SetHotspotActivity" id="HS_Erbprinzenstr" mode="true" />
+				<action type="SetHotspotVisibility" id="HS_Erbprinzenstr"
+					visible="true" />
+				<action type="StartMission" id="M_MuelburgerTor_Intro" />
+			</rule>
+		</onEnter>
+	</hotspot>
+	<hotspot id="HS_Erbprinzenstr" latlong="49.008432,8.404856"
+		radius="30" initialVisibility="false" initialActivity="false"
+		img="icons/marker_03.png">
+		<onEnter>
+			<rule>
+				<if>
+					<missionState id="M_Erbprinzenstr_Intro" state="new"></missionState>
+				</if>
+				<action type="SetHotspotVisibility" id="HS_Erbprinzenstr"
+					visible="false" />
+				<action type="SetHotspotActivity" id="HS_Erbprinzenstr" mode="false" />
+				<action type="SetHotspotActivity" id="HS_Lyzeum" mode="true" />
+				<action type="SetHotspotVisibility" id="HS_Lyzeum" visible="true" />
+				<action type="StartMission" id="M_Lyzeum_Intro" />
+			</rule>
+		</onEnter>
+	</hotspot>
+	<hotspot id="HS_Lyzeum" latlong="49.008432,8.404856" radius="30"
+		initialVisibility="false" initialActivity="false" img="icons/marker_03.png">
+		<onEnter>
+			<rule>
+				<if>
+					<missionState id="M_Lyzeum_Intro" state="new"></missionState>
+				</if>
+				<action type="SetHotspotVisibility" id="HS_Lyzeum" visible="false" />
+				<action type="SetHotspotActivity" id="HS_Lyzeum" mode="false" />
+				<action type="StartMission" id="M_Lyzeum_Intro" />
+			</rule>
+		</onEnter>
+	</hotspot>
+
+</game>
