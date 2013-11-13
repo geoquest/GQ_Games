@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game name="Inventory Demo" xmlformat="5">
+	<!-- First StartScreen Mission does NOT have specified a duration attribute. 
+		Hence, the default value of 5000ms is used. -->
+	<mission type="StartAndExitScreen" id="screen_1" duration="interactive"
+		image="drawable/StartScreen.jpg">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="NPC_1" />
+			</rule>
+		</onEnd>
+	</mission>
+
+
+	<mission type="NPCTalk" id="NPC_1" image="drawable/Kreuzblume.jpg"
+		nextdialogbuttontext="Mehr Text ..." endbuttontext="Mit der Tour fortfahren ...">
+		<dialogitem>Herzlich Willkommen vor dem Kölner Dom.
+		</dialogitem>
+		<dialogitem>Hier findest du einen alten hölzernen Rosenkranz.
+		</dialogitem>
+		<dialogitem>Vielleicht ist dir ja schon bald nach einem Gebet zumute.
+		</dialogitem>
+		<onStart>
+			<rule>
+				<action type="AddItemToInventory" itemType="Rosenkranz"
+					numberOfItems="1" />
+			</rule>
+		</onStart>
+	</mission>
+</game>
