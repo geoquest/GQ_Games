@@ -14,7 +14,7 @@
 			</rule>
 		</onEnd>
 	</mission>
-	<mission id="willkommen" image="images/willkommen" type="NPCTalk"
+	<mission id="willkommen" image="images/planets" type="NPCTalk"
 		mode="chunk" endbuttontext="Dann los ...">
 		<onStart>
 			<rule>
@@ -160,7 +160,7 @@
 			</answer>
 		</question>
 	</mission>
-	<mission id="gewonnen" image="drawable/gewonnen" type="NPCTalk">
+	<mission id="gewonnen" image="images/planetWon" type="NPCTalk">
 		<onEnd>
 			<rule>
 				<action type="EndGame" />
@@ -174,7 +174,7 @@
 		<dialogitem>Tschüß und bis bald!
 		</dialogitem>
 	</mission>
-	<mission id="verloren" image="drawable/verloren" type="NPCTalk">
+	<mission id="verloren" image="images/planetLost" type="NPCTalk">
 		<onEnd>
 			<rule>
 				<action type="EndGame" />
@@ -186,17 +186,4 @@
 		<dialogitem>Vielleicht klappt es beim nächsten mal!
 		</dialogitem>
 	</mission>
-	<mission id="ende" image="drawable/ende" type="NPCTalk"
-		bgcolor="#FFFFFFFF">
-		<onEnd>
-			<rule>
-				<action type="EndGame" />
-			</rule>
-		</onEnd>
-		<dialogitem>Für's erste verabschiedet sich diese App jetzt von Euch.
-		</dialogitem>
-		<dialogitem>Tschüß und bis bald!
-		</dialogitem>
-	</mission>
-
 </game>
