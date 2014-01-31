@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game name="Background Demo" xmlformat="5" bg="images/background">
+	<mission type="StartAndExitScreen" id="startscreen-1"
+		image="images/carlbenzstartscreen.png" duration="interactive">
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="M_MuelburgerTor_Intro" />
+			</rule>
+		</onEnd>
+	</mission>
+
+	<mission type="NPCTalk" id="M_MuelburgerTor_Intro" image="images/muehlburgerTor"
+		nextdialogbuttontext="Weiter ..." endbuttontext="Zum Film..." mode="chunk">
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="M_Erbprinzenstr_Intro" />
+			</rule>
+		</onEnd>
+		<dialogitem>
+			<b>Glocaler Hintergrund:</b>
+		</dialogitem>
+		<dialogitem>
+			Der hier gezeigte Hintergrund ist global im game xml
+			element definiert.
+		</dialogitem>
+	</mission>
+	<mission type="NPCTalk" id="M_Erbprinzenstr_Intro" image="images/erbprinzenstr"
+		nextdialogbuttontext="Weiter ..." endbuttontext="Zum Film..." mode="chunk">
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="M_Lyzeum_Intro" />
+			</rule>
+		</onEnd>
+		<dialogitem>
+			<b>Erbprinzenstraße 13:</b>
+		</dialogitem>
+		<dialogitem>
+			Die wahrscheinlich erste, gemeinsame Wohnung der Familie
+			Benz in
+			Karlsruhe ab 1846. Das Wohnviertel musste erst der
+			vierspurigen
+			Kriegsstraße
+			Platz machen und später ganz für das
+			„Ettlinger Tor
+			Einkaufzentrum“
+			mit 130 Geschäften weichen. Die Familie
+			wohnte etwa in
+			Höhe der
+			<i>heutigen Apollo Optik
+				Filiale
+			</i>
+			.
+		</dialogitem>
+	</mission>
+	<mission type="NPCTalk" id="M_Lyzeum_Intro" image="images/lyzeum"
+		nextdialogbuttontext="Weiter ..." endbuttontext="Zum Film..." mode="chunk">
+		<onStart>
+			<rule>
+				<action type="Vibrate" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="Karte" />
+			</rule>
+		</onEnd>
+		<dialogitem>
+			<b>Auf dem Lyceum:</b>
+		</dialogitem>
+		<dialogitem>
+			Ab dem Jahre 1853 konnte Carl Benz mit neun Jahren auf das
+			Lyceum – sprich: Gymnasium – wechseln. Es war in den Seitenpavillons
+			der ev. Stadtkirche bis 1874
+			untergebracht.
+		</dialogitem>
+	</mission>
+</game>

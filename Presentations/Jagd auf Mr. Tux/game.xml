@@ -175,7 +175,7 @@
       	</mission> 	
       	 
       	<!-- Finde QR-Tag -->
-      	<mission type="QRTagReadingProduct" id="Kodierte_Informationen_QR-Tag" buttontext="QR-Tag gefunden!"
+      	<mission type="QRTagReading" id="Kodierte_Informationen_QR-Tag" buttontext="QR-Tag gefunden!"
 				initial_image="drawable/QR-Tag_Hint.png"
 				taskdescription="Finde den versteckten Zettel, auf dem kodierte Informationen abgebildet sind. Dein Handy wird dir beim entschlüsseln Helfen."
 				mode="treasure" cancel="no" feedbacktext="@result@">
@@ -337,7 +337,7 @@
    		<dialogitem speaker="Horst">Lass uns hingehen und nachsehen!</dialogitem>	
    	</mission>	
       	
-   	<mission type="QRTagReadingProduct" id="üPhone_QR-Tag" buttontext="QR-Tag gefunden!"
+   	<mission type="QRTagReading" id="üPhone_QR-Tag" buttontext="QR-Tag gefunden!"
 		initial_image="drawable/Phone.png"
 		taskdescription="Findet das üPhone in dem Raum. Euer Handy wird euch beim Erkennen des üPhones Helfen."
 		mode="treasure" cancel="no" feedbacktext="@result@">

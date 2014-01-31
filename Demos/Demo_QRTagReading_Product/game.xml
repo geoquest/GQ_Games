@@ -31,7 +31,7 @@
         </dialogitem>
 	</mission>
 
-	<mission type="QRTagReadingProduct" id="QR_Product_1" buttontext="QR-Tag scannen ..."
+	<mission type="QRTagReading" id="QR_Product_1" buttontext="QR-Tag scannen ..."
 		taskdescription="Suche einen QR-Tag der den Text 'ABC' enthält." mode="product"
 		initial_image="drawable/abc.png" expected_content="ABC" cancel="fail">
 		<onEnd>
@@ -68,7 +68,7 @@
         </dialogitem>
 	</mission>
 
-	<mission type="QRTagReadingProduct" id="QR_Product_2" buttontext="BarCode scannen ..."
+	<mission type="QRTagReading" id="QR_Product_2" buttontext="BarCode scannen ..."
 		taskdescription="Suche einen BarCode der den Text 'Hallo BarCodes' enthält."
 		mode="product" initial_image="drawable/LinearBarCode.gif"
 		expected_content="Hallo BarCodes" cancel="fail">
@@ -105,7 +105,7 @@
         </dialogitem>
 	</mission>
 
-	<mission type="QRTagReadingProduct" id="QR_Product_3" buttontext="BarCode scannen ..."
+	<mission type="QRTagReading" id="QR_Product_3" buttontext="BarCode scannen ..."
 		taskdescription="Suche eine Cola Flasche 0.5l PET" mode="product"
 		initial_image="drawable/BarCodeCola.jpg" expected_content="54491229"
 		cancel="fail" if_right="Ja du hast den richtigen Code gescannt. Prost!">

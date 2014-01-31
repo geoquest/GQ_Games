@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<game name="Demo VideoPlay" xmlformat="5">
+
+	<mission type="VideoPlay" id="mission1" file="videos/demo.mp4">
+	</mission>
+</game>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game
-	name="OSMap Spike"
+	name="MapOSM Spike"
 	xmlformat="5"
 >
 	<mission
-		type="OSMap"
+		type="MapOSM"
 		id="Map_Mission"
 		mapkind="map"
 		zoomlevel="18"

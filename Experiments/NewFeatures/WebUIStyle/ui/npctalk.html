@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+ <head>
+
+  <script language="javascript"> 
+  
+  function callTojavaFn(){
+ 	 var msg = "Calling from Java Script";
+	 JsHandler.jsFnCall(msg);
+  }
+  
+  function setProceedButtonText(text) {
+  	var proceedButton = document.getElementById("GQ_proceedButton");
+  	proceedButton.value = text;
+  }
+  
+  function addDialogItemText(text) {
+  	var itemNode = document.createElement("div");
+  	itemNode.className = "dialogItem";
+  }
+
+  </script>
+
+ </head>
+
+ <body style="text-align:center">
+ 	<div id="dialogItemContainer">
+ 	</div>
+
+<input type="button" onClick="callTojavaFn()" value="Call Java Fn" id="GQ_proceedButton">
+
+ </body>
+
+</html>

@@ -22,8 +22,27 @@
 		</dialogitem>
 		<onStart>
 			<rule>
-				<action type="AddItemToInventory" itemType="Rosenkranz"
+				<action type="AddItemsToInventory" itemType="Rosenkranz"
 					numberOfItems="1" />
+			</rule>
+		</onStart>
+		<onEnd>
+			<rule>
+				<action type="StartMission" id="NPC_2" />
+			</rule>
+		</onEnd>
+	</mission>
+
+	<mission type="NPCTalk" id="NPC_2" image="drawable/Kreuzblume.jpg"
+		nextdialogbuttontext="Mehr Text ..." endbuttontext="Mit der Tour fortfahren ...">
+		<dialogitem>Ah du schon wieder!
+		</dialogitem>
+		<dialogitem>Diesmal findest du zwei Münzen.
+		</dialogitem>
+		<onStart>
+			<rule>
+				<action type="AddItemsToInventory" itemType="Münze"
+					numberOfItems="2" />
 			</rule>
 		</onStart>
 	</mission>

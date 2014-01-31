@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<game name="Demo OSMap" xmlformat="5">
-	<mission type="OSMap" id="Karte" zoomlevel="18"
+<game name="Demo MapOSM" xmlformat="5">
+	<mission type="MapOSM" id="Karte" zoomlevel="18"
 		bg="images/background.9.png">
 	</mission>
 	<hotspot id="HS_Geburtshaus" latlong="49.011302,8.360302"
