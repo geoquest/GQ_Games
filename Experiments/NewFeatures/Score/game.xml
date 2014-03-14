@@ -3,7 +3,7 @@
 	<mission type="NPCTalk" id="Intro">
 		<onEnd>
 			<rule>
-				<action type="Score" value="100" />
+				<action type="AddToScore" value="100" />
 				<action type="StartMission" id="username" />
 			</rule>
 		</onEnd>
@@ -31,7 +31,7 @@
 	<mission type="NPCTalk" id="m2">
 		<onStart>
 			<rule>
-				<action type="Score" value="200" />
+				<action type="AddToScore" value="200" />
 			</rule>
 		</onStart>
 		<onEnd>
@@ -47,7 +47,7 @@
 	<mission type="NPCTalk" id="m3">
 		<onStart>
 			<rule>
-				<action type="Score" value="-150" />
+				<action type="AddToScore" value="-150" />
 			</rule>
 		</onStart>
 		<onEnd>
@@ -63,13 +63,13 @@
 	<mission type="NPCTalk" id="m4">
 		<onStart>
 			<rule>
-				<action type="Score" value="-400" />
+				<action type="AddToScore" value="-400" />
 			</rule>
 		</onStart>
 		<onEnd>
 			<rule>
 				<action type="StartMission" id="m5" />
-				<action type="Score" value="333" />
+				<action type="AddToScore" value="333" />
 			</rule>
 		</onEnd>
 		<dialogitem>Auch wenn du jetzt eigentlich 400 Punkte verlierst, werden
@@ -100,7 +100,7 @@
 	<mission type="NPCTalk" id="m6">
 		<onStart>
 			<rule>
-				<action type="Score" value="222" />
+				<action type="AddToScore" value="222" />
 			</rule>
 		</onStart>
 		<onEnd>
